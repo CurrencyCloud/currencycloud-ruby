@@ -1,4 +1,6 @@
-TODO
+[![Build Status](https://travis-ci.org/CurrencyCloud/currencycloud-ruby.png?branch=master)](https://travis-ci.org/CurrencyCloud/currencycloud-ruby)
+
+### TODO
 
 - Session timeout
 - Update from object (.save method)

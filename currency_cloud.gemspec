@@ -3,7 +3,7 @@ $:.unshift(File.join(File.dirname(__FILE__), 'lib'))
 require 'currency_cloud/version'
 
 spec = Gem::Specification.new do |s|
-  s.name = 'Currency Cloud'
+  s.name = 'currencycloud'
   s.version = CurrencyCloud::Version
   s.summary = 'Ruby SDK for the Currency Cloud API'
   s.description = 'Ruby SDK for the Currency Cloud API - https://connect.currencycloud.com/'
