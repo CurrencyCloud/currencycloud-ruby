@@ -47,9 +47,9 @@ module CurrencyCloud
     def time_taken(description)
       # TODO: --verbose mode?
       t1 = Time.now
-      puts "Going #{description}"
+      # puts "Going #{description}"
       yield if block_given?
-      puts "Took #{(Time.now - t1)} seconds #{description}"
+      # puts "Took #{(Time.now - t1)} seconds #{description}"
     end
     
     def full_route(environment=nil)

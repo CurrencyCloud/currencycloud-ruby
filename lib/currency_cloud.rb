@@ -7,11 +7,11 @@ Dir[lib_path].sort.each { |f| require f}
 
 module CurrencyCloud
   class << self
-     attr_accessor :environment, :login_id, :api_key
+     attr_accessor :environment, :login_id, :api_key, :token
   end
   
   def self.session
-    @session ||= CurrencyCloud::Session.new(environment, login_id, api_key)
+    @session ||= CurrencyCloud::Session.new(environment, login_id, api_key, token)
   end
   
   def self.reset_session

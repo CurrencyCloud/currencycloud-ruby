@@ -15,11 +15,11 @@ module CurrencyCloud
       end
     end
    
-    def initialize(environment, login_id, api_key)
+    def initialize(environment, login_id, api_key, token)
       @environment = environment
       @login_id = login_id
       @api_key = api_key
-      authenticate
+      @token = token || authenticate
     end
     
     def environment_url
@@ -30,7 +30,7 @@ module CurrencyCloud
     
     def authenticate
       validate
-      @token = request_handler.authenticate(environment, login_id, api_key)
+      request_handler.authenticate(environment, login_id, api_key)
     end
     
     def validate
