@@ -28,14 +28,14 @@ module CurrencyCloud
     
     def handle_failure
       case response.code
-      when 400
-        raise CurrencyCloud::BadRequestError.new(response)
-      when 401
-        raise CurrencyCloud::AuthenticationError.new(response)
-      when 404
-        raise CurrencyCloud::NotFoundError.new(response)
-      else
-        raise CurrencyCloud::UnexpectedNetworkError.new(response)
+        when 400
+          raise CurrencyCloud::BadRequestError.new(response)
+        when 401
+          raise CurrencyCloud::AuthenticationError.new(response)
+        when 404
+          raise CurrencyCloud::NotFoundError.new(response)
+        else
+          raise CurrencyCloud::UnexpectedError.new(response)
       end
     end
     

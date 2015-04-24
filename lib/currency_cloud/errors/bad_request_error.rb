@@ -1,5 +1,5 @@
 module CurrencyCloud
   
-  class BadRequestError < StandardError; end
+  class BadRequestError < ApiError; end
   
 end

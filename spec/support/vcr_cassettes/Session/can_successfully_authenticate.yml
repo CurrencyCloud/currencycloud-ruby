@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.thecurrencycloud.com/v2/authenticate/api
+    body:
+      encoding: UTF-8
+      string: login_id=demo_user%40gmail.com&api_key=9e80d856abcdb883154cf090aa53b284810698a2cc26e067b773700fc36a0ee2
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 24 Apr 2015 16:46:57 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '49'
+      Connection:
+      - keep-alive
+      X-Request-Id:
+      - '2771448357178571540'
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"auth_token":"8461b35abb0062f979bf1bf6daebc193"}'
+    http_version: 
+  recorded_at: Fri, 24 Apr 2015 16:46:56 GMT
+recorded_with: VCR 2.9.3

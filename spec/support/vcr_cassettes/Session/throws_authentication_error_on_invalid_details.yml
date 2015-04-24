@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.thecurrencycloud.com/v2/authenticate/api
+    body:
+      encoding: UTF-8
+      string: login_id=non-existent-login-id&api_key=efb5ae2af84978b7a37f18dd61c8bbe139b403009faea83484405a3dcb64c4d8
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 24 Apr 2015 17:01:51 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '176'
+      Connection:
+      - keep-alive
+      X-Request-Id:
+      - '2771455852852800530'
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"error_code":"auth_failed","error_messages":{"username":[{"code":"invalid_supplied_credentials","message":"Authentication
+        failed with the supplied credentials","params":{}}]}}'
+    http_version: 
+  recorded_at: Fri, 24 Apr 2015 17:01:50 GMT
+recorded_with: VCR 2.9.3

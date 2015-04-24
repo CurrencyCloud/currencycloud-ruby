@@ -1,0 +1,11 @@
+module CurrencyCloud
+  
+  class UnexpectedError < ApiError
+    attr_reader :inner_error
+
+    def initialize(e)
+      @inner_error = e
+    end
+  end
+  
+end

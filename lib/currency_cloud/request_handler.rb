@@ -11,8 +11,11 @@ module CurrencyCloud
     def authenticate(environment, login_id, api_key)
       @route = 'authenticate/api'
       params = {:login_id => login_id, :api_key => api_key}
-      @response = HTTParty.post(full_route(environment), {:body => params})
+      @response = HTTParty.post(full_route(environment), :body => params)
       handle_response['auth_token'] # rescue errors?
+    rescue => e
+      raise e if e.class.ancestors.include?(CurrencyCloud::ApiError)
+      raise UnexpectedError.new(e)
     end
     
     def get(route, params, opts={})
@@ -22,11 +25,9 @@ module CurrencyCloud
         @response = HTTParty.get(full_route, {:query => params, :headers => { 'X-Auth-Token' => session.token}}.merge(opts))
       end
       handle_response
-    rescue SocketError => e
-      puts "Could not connect to API, please check your connection or the API status"
-      raise e
-    #rescue CurrencyCloud::SessionExpiredError
-    #  retry
+    rescue => e
+      raise e if e.class.ancestors.include?(CurrencyCloud::ApiError)
+      raise UnexpectedError.new(e)
     end
     
     def post(route, params, opts={})
@@ -36,9 +37,9 @@ module CurrencyCloud
         @response = HTTParty.post(full_route, {:body => params, :headers => { 'X-Auth-Token' => session.token}}.merge(opts))
       end
       handle_response
-    rescue SocketError => e
-      puts "Could not connect to API, please check your connection or the API status"
-      raise e
+    rescue => e
+      raise e if e.class.ancestors.include?(CurrencyCloud::ApiError)
+      raise UnexpectedError.new(e)
     end
 
     private

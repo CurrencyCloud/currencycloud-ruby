@@ -1,5 +1,5 @@
 module CurrencyCloud
   
-  class AuthenticationError < StandardError; end
+  class AuthenticationError < ApiError; end
   
 end
