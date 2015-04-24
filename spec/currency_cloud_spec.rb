@@ -53,13 +53,13 @@ describe CurrencyCloud do
     it "raises an error if the environment is not set" do
       CurrencyCloud.environment = nil
       expect { CurrencyCloud.session }
-       .to raise_error(CurrencyCloud::AuthenticationError, "'' is not a valid environment, must be one of: production, demonstration, test")
+       .to raise_error(CurrencyCloud::AuthenticationError, "'' is not a valid environment, must be one of: production, demonstration, uat, test")
     end
     
     it "raises an error if the environment is invalid" do
       CurrencyCloud.environment = :invalid
       expect { CurrencyCloud.session }
-       .to raise_error(CurrencyCloud::AuthenticationError, "'invalid' is not a valid environment, must be one of: production, demonstration, test")
+       .to raise_error(CurrencyCloud::AuthenticationError, "'invalid' is not a valid environment, must be one of: production, demonstration, uat, test")
     end
     
     it "raises an error if the login_id is not set" do
@@ -110,7 +110,7 @@ describe CurrencyCloud do
     it "raises an error if it cannot create a session" do
       CurrencyCloud.environment = :invalid
       expect { CurrencyCloud.request(:post, 'conversions/create', {}) }
-       .to raise_error(CurrencyCloud::AuthenticationError, "'invalid' is not a valid environment, must be one of: production, demonstration, test")
+       .to raise_error(CurrencyCloud::AuthenticationError, "'invalid' is not a valid environment, must be one of: production, demonstration, uat, test")
     end
     
   end

@@ -12,8 +12,8 @@ module CurrencyCloud
       @actions ||= actions
       @actions.each do |action|
         self.class_eval do # self.class.instance_eval # metaclass.instance_eval
-          klass = Kernel.const_get("CurrencyCloud::Actions::#{action.to_s.capitalize}")
-          self.extend(klass)
+          action_module = CurrencyCloud::Actions.const_get(action.to_s.capitalize)
+          self.extend(action_module)
         end
       end
     end
@@ -27,11 +27,7 @@ module CurrencyCloud
     def keys
       @object.keys
     end
-    
-    def inspect
-      @object
-    end
-    
+
     def inspect
       "#<#{self.class}:0x#{self.object_id.to_s(16)} #{@object.inspect}>"
     end
