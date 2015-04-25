@@ -4,7 +4,7 @@ module CurrencyCloud
     
     resource :beneficiaries
     
-    actions :create, :retrieve, :find
+    actions :create, :retrieve, :find, :update, :delete
     
     def self.validate(params)
       response = CurrencyCloud.request(:post, "#{self.resource}/validate", params)

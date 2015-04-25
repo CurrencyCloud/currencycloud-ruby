@@ -1,6 +1,5 @@
 module CurrencyCloud
   module Actions
-    
     module Update
 
       # TODO: Add .save instance method, which calls update on changed attributes
@@ -9,8 +8,6 @@ module CurrencyCloud
         response = CurrencyCloud.request(:post, "#{self.resource}/#{id}", params)
         new(response)
       end
-       
     end
-    
   end
 end

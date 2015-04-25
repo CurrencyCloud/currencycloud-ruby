@@ -89,8 +89,30 @@ describe 'Error', :vcr => true do
     expect(error_message.message).to eq('Authentication failed with the supplied credentials')
     expect(error_message.params).to be_empty
   end
+
+  it 'is raised when a resource is not found' do
+    CurrencyCloud.token = '656485646b068f6e9c81e3d885fa54f5'
+    error = nil
+    begin
+      CurrencyCloud::Beneficiary.retrieve('081596c9-02de-483e-9f2a-4cf55dcdf98c') 
+      raise 'Should fail'
+    rescue CurrencyCloud::NotFoundError => error
+    end 
+
+    expect(error.code).to eq('beneficiary_not_found')
+    expect(error.raw_response).to_not be_nil
+    expect(error.status_code).to eq(404)
+    expect(error.messages.length).to eq(1)
+
+    error_message = error.messages[0]
+    expect(error_message.field).to eq('id')
+    expect(error_message.code).to eq('beneficiary_not_found')
+    expect(error_message.message).to eq('Beneficiary was not found for this id')
+    expect(error_message.params).to be_empty
+  end
   
   it 'is raised on an internal server error' do
+
     error = nil
     begin
       CurrencyCloud.session

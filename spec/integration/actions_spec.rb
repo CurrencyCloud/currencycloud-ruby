@@ -4,7 +4,7 @@ describe 'Actions', :vcr => true do
   before do
     CurrencyCloud.reset_session
     CurrencyCloud.environment = :demonstration
-    CurrencyCloud.token = 'e5070d4a16c5ffe4ed9fb268a2a716be'
+    CurrencyCloud.token = '4df5b3e5882a412f148dcd08fa4e5b73'
   end
 
   it "can #create" do
@@ -48,7 +48,7 @@ describe 'Actions', :vcr => true do
     expect(beneficiary.bank_account_holder_name).to eq('Test User')
     expect(beneficiary.payment_types).to include('regular')
     expect(beneficiary.created_at).to eq('2015-04-25T09:21:00+00:00')
-    expect(beneficiary.updated_at).to eq('2015-04-25T09:21:00+00:00')
+    expect(beneficiary.updated_at).to eq('2015-04-25T10:58:21+00:00')
   end
 
   it "can #find" do
@@ -70,5 +70,22 @@ describe 'Actions', :vcr => true do
     expect(pagination.next_page).to eq(-1)
     expect(pagination.order).to eq('created_at')
     expect(pagination.order_asc_desc).to eq('asc')    
+  end
+
+  it "can #update" do
+    beneficiary = CurrencyCloud::Beneficiary.update('081596c9-02de-483e-9f2a-4cf55dcdf98c', :bank_account_holder_name => 'Test User 2')
+    expect(beneficiary).to be_a_kind_of(CurrencyCloud::Beneficiary)
+    expect(beneficiary.bank_account_holder_name).to eq('Test User 2')
+  end
+
+  it "can #delete" do
+    beneficiary = CurrencyCloud::Beneficiary.delete('081596c9-02de-483e-9f2a-4cf55dcdf98c')
+    expect(beneficiary).to be_a_kind_of(CurrencyCloud::Beneficiary)
+
+    expect(beneficiary.id).to eq('081596c9-02de-483e-9f2a-4cf55dcdf98c')
+    expect(beneficiary.bank_account_holder_name).to eq('Test User 2')
+    expect(beneficiary.payment_types).to include('regular')
+    expect(beneficiary.created_at).to eq('2015-04-25T09:21:00+00:00')
+    expect(beneficiary.updated_at).to eq('2015-04-25T11:06:27+00:00')
   end
 end

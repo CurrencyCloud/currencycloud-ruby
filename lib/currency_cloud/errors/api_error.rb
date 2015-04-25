@@ -34,4 +34,5 @@ module CurrencyCloud
   class ForbiddenError < ApiError; end
   class TooManyRequestsError < ApiError; end
   class InternalApplicationError < ApiError; end
+  class NotFoundError < ApiError; end
 end
