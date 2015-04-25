@@ -13,6 +13,11 @@ module CurrencyCloud
   def self.session
     @session ||= CurrencyCloud::Session.new(environment, login_id, api_key, token)
   end
+
+  def self.close_session
+    @session.close if @session
+    true
+  end
   
   def self.reset_session
     @session = nil

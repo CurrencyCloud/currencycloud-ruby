@@ -1,0 +1,34 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.thecurrencycloud.com/v2/authenticate/api
+    body:
+      encoding: UTF-8
+      string: login_id=rjnienaber%40gmail.com2&api_key=ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0
+    headers: {}
+  response:
+    status:
+      code: 429
+      message: Too Many Requests
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 25 Apr 2015 06:45:44 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"error_code":"too_many_requests","error_messages":{"base":[{"code":"too_many_requests","message":"Too
+        many requests have been made to the api. Please refer to the Developer Center
+        for more information","params":{}}]}}'
+    http_version: 
+  recorded_at: Sat, 25 Apr 2015 06:45:44 GMT
+recorded_with: VCR 2.9.3

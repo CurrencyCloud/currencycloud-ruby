@@ -6,6 +6,5 @@ module CurrencyCloud
     def initialize(e)
       @inner_error = e
     end
-  end
-  
+  end   
 end

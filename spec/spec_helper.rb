@@ -1,4 +1,5 @@
 require 'currency_cloud'
+require 'pry'
 require 'vcr'
 
 VCR.configure do |c|

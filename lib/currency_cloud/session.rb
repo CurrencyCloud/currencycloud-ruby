@@ -19,18 +19,27 @@ module CurrencyCloud
       @environment = environment
       @login_id = login_id
       @api_key = api_key
-      @token = token || authenticate
+      
+      if token
+        @token = token
+      else
+        authenticate
+      end
     end
     
     def environment_url
       Environments[environment]
+    end
+
+    def close
+      request_handler.post('authenticate/close_session', nil)
     end
     
     private
     
     def authenticate
       validate
-      request_handler.authenticate(environment, login_id, api_key)
+      @token = request_handler.authenticate(login_id, api_key)
     end
     
     def validate
@@ -40,9 +49,7 @@ module CurrencyCloud
     end
     
     def request_handler
-      RequestHandler.new
+      RequestHandler.new(self)
     end
-    
   end
-  
 end

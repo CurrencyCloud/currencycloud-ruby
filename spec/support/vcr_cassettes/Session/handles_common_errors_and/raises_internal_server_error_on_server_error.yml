@@ -6,22 +6,16 @@ http_interactions:
     body:
       encoding: UTF-8
       string: login_id=rjnienaber%40gmail.com&api_key=ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
+    headers: {}
   response:
     status:
-      code: 200
-      message: OK
+      code: 500
+      message: Internal Server Error
     headers:
       Server:
       - nginx
       Date:
-      - Fri, 24 Apr 2015 22:16:25 GMT
+      - Sat, 25 Apr 2015 06:52:42 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -29,12 +23,12 @@ http_interactions:
       Connection:
       - keep-alive
       X-Request-Id:
-      - '2771614184683036607'
+      - '2771875643610572878'
       X-Content-Type-Options:
       - nosniff
     body:
       encoding: UTF-8
-      string: '{"auth_token":"af74248c0a70212610a3169eea8d3f3a"}'
+      string: '{"error_code":"internal_application_error","error_messages":{"base":[{"code":"internal_application_error","message":"A general application error occurred","params":{"request_id":2771875643610572878}}]}}'
     http_version: 
-  recorded_at: Fri, 24 Apr 2015 22:16:25 GMT
+  recorded_at: Sat, 25 Apr 2015 06:52:42 GMT
 recorded_with: VCR 2.9.3

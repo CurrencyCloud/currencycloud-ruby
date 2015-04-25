@@ -4,8 +4,8 @@ require 'net/http'
 describe 'Session', :vcr => true do
   before(:each) do
     CurrencyCloud.environment = :demonstration
-    CurrencyCloud.login_id = 'demo_user@gmail.com'
-    CurrencyCloud.api_key = 'ecbb3e83ec36bf23b2cf33405fe0e9c1824e37f71b0dc830615058a9570283e3'
+    CurrencyCloud.login_id = 'rjnienaber@gmail.com'
+    CurrencyCloud.api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0'
     CurrencyCloud.token = nil
   end
 
@@ -16,7 +16,7 @@ describe 'Session', :vcr => true do
   describe 'can successfully' do
     it 'authenticate' do
       expect(CurrencyCloud.session).to_not be_nil
-      expect(CurrencyCloud.session.token).to eq('7465e7c733396f5b30bf0fca11cd3395')
+      expect(CurrencyCloud.session.token).to eq('af74248c0a70212610a3169eea8d3f3a')
     end
   
     it 'use just a token' do
@@ -26,11 +26,19 @@ describe 'Session', :vcr => true do
 
       response = CurrencyCloud::Beneficiary.find
       expect(response).to_not be_nil
-      
     end
 
-    pending 'handles session timeout error'
-    pending 'close a session'
+    it 'close a session' do
+      CurrencyCloud.session 
+      expect(CurrencyCloud.close_session).to eq(true)
+    end
+
+    it 'handles session timeout error' do
+      CurrencyCloud.token = '3068d3ff160ab0636648d98b4e4e10ad'
+
+      response = CurrencyCloud::Beneficiary.find
+      expect(response).to_not be_nil
+    end
   end
 
   describe 'handles common errors and' do
@@ -92,6 +100,69 @@ describe 'Session', :vcr => true do
 
       expect(error.inner_error).to_not be_nil
       expect(error.inner_error.class).to eq(Timeout::Error)
+    end
+
+    it 'raises forbidden error on authorization failure' do
+      error = nil
+      begin
+        CurrencyCloud.session
+        raise 'Should have failed'
+      rescue CurrencyCloud::ForbiddenError => error
+      end
+
+      expect(error.code).to eq('auth_failed')
+      expect(error.raw_response).to_not be_nil
+      expect(error.status_code).to eq(403)
+      expect(error.messages.length).to eq(1)
+
+      error_message = error.messages[0]
+      expect(error_message.field).to eq('username')
+      expect(error_message.code).to eq('invalid_supplied_credentials')
+      expect(error_message.message).to eq('Authentication failed with the supplied credentials')
+      expect(error_message.params).to be_empty
+    end
+    
+    it 'raises internal server error on server error' do
+      error = nil
+      begin
+        CurrencyCloud.session
+        raise 'Should have failed'
+      rescue CurrencyCloud::InternalApplicationError => error
+      end
+
+      expect(error.code).to eq('internal_application_error')
+      expect(error.raw_response).to_not be_nil
+      expect(error.status_code).to eq(500)
+      expect(error.messages.length).to eq(1)
+
+      error_message = error.messages[0]
+      expect(error_message.field).to eq('base')
+      expect(error_message.code).to eq('internal_application_error')
+      expect(error_message.message).to eq('A general application error occurred')
+      expect(error_message.params).to include("request_id" => 2771875643610572878)
+    end
+    
+    it 'raises too many requests error when rate limited' do
+      CurrencyCloud.login_id = 'rjnienaber@gmail.com2'
+
+      error = nil
+      begin
+        CurrencyCloud.session
+        
+        raise 'Should have failed'
+      rescue CurrencyCloud::TooManyRequestsError => error
+      end
+
+      expect(error.code).to eq('too_many_requests')
+      expect(error.raw_response).to_not be_nil
+      expect(error.status_code).to eq(429)
+      expect(error.messages.length).to eq(1)
+
+      error_message = error.messages[0]
+      expect(error_message.field).to eq('base')
+      expect(error_message.code).to eq('too_many_requests')
+      expect(error_message.message).to eq('Too many requests have been made to the api. Please refer to the Developer Center for more information')
+      expect(error_message.params).to be_empty
     end
   end
 end

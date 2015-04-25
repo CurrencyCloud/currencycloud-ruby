@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.thecurrencycloud.com/v2/authenticate/api
+    body:
+      encoding: UTF-8
+      string: login_id=rjnienaber%40gmail.com&api_key=ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 24 Apr 2015 22:17:33 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '49'
+      Connection:
+      - keep-alive
+      X-Request-Id:
+      - '2771614754789653555'
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"auth_token":"2ec8a86c8cf6e0378a20ca6793f3260c"}'
+    http_version: 
+  recorded_at: Fri, 24 Apr 2015 22:17:33 GMT
+- request:
+    method: post
+    uri: https://devapi.thecurrencycloud.com/v2/authenticate/close_session
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      X-Auth-Token:
+      - 2ec8a86c8cf6e0378a20ca6793f3260c
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 24 Apr 2015 22:33:15 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      X-Request-Id:
+      - '2771622659047755249'
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: "{}"
+    http_version: 
+  recorded_at: Fri, 24 Apr 2015 22:33:15 GMT
+recorded_with: VCR 2.9.3

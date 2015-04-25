@@ -28,4 +28,10 @@ module CurrencyCloud
       end
     end
   end
+
+  class BadRequestError < ApiError; end
+  class AuthenticationError < ApiError; end
+  class ForbiddenError < ApiError; end
+  class TooManyRequestsError < ApiError; end
+  class InternalApplicationError < ApiError; end
 end
