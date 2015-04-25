@@ -43,7 +43,7 @@ module CurrencyCloud
 
     def headers
       headers = {}
-      headers['X-Auth-Token'] if session.token
+      headers['X-Auth-Token'] = session.token if session.token
       headers
     end
         
