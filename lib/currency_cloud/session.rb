@@ -21,6 +21,7 @@ module CurrencyCloud
       @api_key = api_key
       
       if token
+        self.class.validate_environment(environment)
         @token = token
       else
         authenticate
@@ -35,13 +36,14 @@ module CurrencyCloud
       request_handler.post('authenticate/close_session', nil)
     end
     
-    private
     
     def authenticate
       validate
-      @token = request_handler.authenticate(login_id, api_key)
+      params = {:login_id => login_id, :api_key => api_key}
+      @token = request_handler.post('authenticate/api', params, :should_retry => false)['auth_token']
     end
     
+    private
     def validate
       self.class.validate_environment(environment)
       raise CurrencyCloud::ConfigError, "login_id must be set using CurrencyCloud.login_id=" unless login_id

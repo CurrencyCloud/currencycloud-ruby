@@ -2,7 +2,6 @@
 
 ### TODO
 
-- Session timeout
 - Additional debug logging
 - Update from object (.save method)
 - Delete from object (.delete method)

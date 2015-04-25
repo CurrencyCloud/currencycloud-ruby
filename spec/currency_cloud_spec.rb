@@ -44,7 +44,7 @@ describe CurrencyCloud do
       CurrencyCloud.api_key = 'e3b0d6895f91f46d9eaf5c95aa0f64dca9007b7ab0778721b6cdc0a8bc7c563b'
 
       request_handler = double('RequestHandler')
-      expect(request_handler).to receive(:authenticate).and_return({'auth_token' => '123'})
+      expect(request_handler).to receive(:post).and_return({'auth_token' => '123'})
       expect(CurrencyCloud::RequestHandler).to receive(:new).and_return(request_handler)
 
       expect(CurrencyCloud.session).to be_a(CurrencyCloud::Session)
