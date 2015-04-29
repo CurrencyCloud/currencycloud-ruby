@@ -1,14 +1,13 @@
 module CurrencyCloud
   
-  class Beneficiary < ResourcefulObject
+  class Beneficiary < Resource
     
     resource :beneficiaries
     
     actions :create, :retrieve, :find, :update, :delete
     
     def self.validate(params)
-      response = CurrencyCloud.request(:post, "#{self.resource}/validate", params)
-      new(response)
+      new(request.get("#{self.resource}/validate", params))
     end
         
   end

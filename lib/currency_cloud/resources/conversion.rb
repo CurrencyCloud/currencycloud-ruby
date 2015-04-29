@@ -1,6 +1,6 @@
 module CurrencyCloud
   
-  class Conversion < ResourcefulObject
+  class Conversion < Resource
     
     resource :conversions
     

@@ -1,10 +1,9 @@
 module CurrencyCloud
   module Actions
     module Create
-       def create(params={})
-         response = CurrencyCloud.request(:post, "#{self.resource}/create", params)
-         new(response)
-       end
+      def create(params={})
+        post("create", params)
+      end
     end
   end
 end

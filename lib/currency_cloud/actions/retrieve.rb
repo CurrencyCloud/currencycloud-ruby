@@ -1,14 +1,9 @@
 module CurrencyCloud
-  module Actions
-    
+  module Actions    
     module Retrieve
-
-       def retrieve(id)
-         response = CurrencyCloud.request(:get, "#{self.resource}/#{id}")
-         new(response)
-       end 
-      
+      def retrieve(id)
+        get(id)
+      end       
     end
-    
   end
 end

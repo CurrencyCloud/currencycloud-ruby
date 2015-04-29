@@ -74,45 +74,5 @@ describe CurrencyCloud do
       expect { CurrencyCloud.session }
        .to raise_error(CurrencyCloud::ConfigError, "api_key must be set using CurrencyCloud.api_key=")
     end
-
   end
-
-  describe "#request" do
-
-    it "calls the RequestHandler when issuing a get request" do
-      CurrencyCloud.environment = :demonstration
-      CurrencyCloud.login_id = 'test@example.com'
-      CurrencyCloud.api_key = 'e3b0d6895f91f46d9eaf5c95aa0f64dca9007b7ab0778721b6cdc0a8bc7c563b'
-
-      expect(CurrencyCloud::Session).to receive(:new).and_return(double('Session'))
-
-      request_handler = double('RequestHandler')
-      expect(request_handler).to receive(:get)
-      expect(CurrencyCloud::RequestHandler).to receive(:new).and_return(request_handler)
-
-      CurrencyCloud.request(:get, 'conversions/find', {})
-    end
-
-    it "calls the RequestHandler when issuing a post request" do
-      CurrencyCloud.environment = :demonstration
-      CurrencyCloud.login_id = 'test@example.com'
-      CurrencyCloud.api_key = 'e3b0d6895f91f46d9eaf5c95aa0f64dca9007b7ab0778721b6cdc0a8bc7c563b'
-
-      expect(CurrencyCloud::Session).to receive(:new).and_return(double('Session'))
-
-      request_handler = double('RequestHandler')
-      expect(request_handler).to receive(:post)
-      expect(CurrencyCloud::RequestHandler).to receive(:new).and_return(request_handler)
-
-      CurrencyCloud.request(:post, 'conversions/create', {})
-    end
-
-    it "raises an error if it cannot create a session" do
-      CurrencyCloud.environment = :invalid
-      expect { CurrencyCloud.request(:post, 'conversions/create', {}) }
-       .to raise_error(CurrencyCloud::ConfigError, "'invalid' is not a valid environment, must be one of: production, demonstration, uat")
-    end
-    
-  end
-  
 end

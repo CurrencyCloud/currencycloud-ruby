@@ -1,0 +1,37 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://devapi.thecurrencycloud.com/v2/accounts/current
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - cfa3eace5c2b61ceccb4169584d09cfb
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 27 Apr 2015 21:52:17 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '459'
+      Connection:
+      - keep-alive
+      X-Request-Id:
+      - '2773776363343519430'
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"id":"8ec3a69b-02d1-4f09-9a6b-6bd54a61b3a8","account_name":"Currency
+        Cloud","brand":"thecurrencycloud","your_reference":null,"status":"enabled","street":null,"city":null,"state_or_province":null,"country":null,"postal_code":null,"spread_table":"fxcg_rfx_default","legal_entity_type":null,"created_at":"2015-04-24T15:57:55+00:00","updated_at":"2015-04-24T15:57:55+00:00","identification_type":null,"identification_value":null,"short_reference":"150424-00002"}'
+    http_version: 
+  recorded_at: Mon, 27 Apr 2015 21:52:17 GMT
+recorded_with: VCR 2.9.3

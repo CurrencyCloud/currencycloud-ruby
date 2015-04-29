@@ -2,7 +2,7 @@ require 'set'
 
 module CurrencyCloud
 
-  class ResourcefulObject
+  class Resource
   
     def self.resource(resource=nil)
       @resource ||= resource
@@ -53,7 +53,17 @@ module CurrencyCloud
         end
       end
     end
-    
+
+    def self.get(url, params={})
+      new(RequestHandler.new.get("#{self.resource}/#{url}", params))
+    end
+
+    def self.post(url, params={})
+      new(RequestHandler.new.post("#{self.resource}/#{url}", params))
+    end
+
+    def self.request
+      RequestHandler.new
+    end
   end
-  
 end

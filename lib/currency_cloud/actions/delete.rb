@@ -8,11 +8,8 @@ module CurrencyCloud
       # TODO: Disable all actionable methods / freeze?
       
       def delete(id)
-        response = CurrencyCloud.request(:post, "#{self.resource}/#{id}/delete")
-        new(response)
-      end
-       
+        post("#{id}/delete")
+      end       
     end
-    
   end
 end

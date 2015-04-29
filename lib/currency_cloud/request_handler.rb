@@ -4,17 +4,17 @@ module CurrencyCloud
     
     attr_reader :session
     
-    def initialize(session)
+    def initialize(session = CurrencyCloud.session)
       @session = session
     end
     
-    def get(route, params, opts={})
+    def get(route, params={}, opts={})
       retry_authenticate('get', route, params, opts) do |url, options|
         HTTParty.get(url, options)
       end
     end
     
-    def post(route, params, opts={})
+    def post(route, params={}, opts={})
       retry_authenticate('post', route, params, opts) do |url, options|
         HTTParty.post(url, options)
       end

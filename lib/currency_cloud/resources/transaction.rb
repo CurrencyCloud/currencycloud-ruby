@@ -1,10 +1,7 @@
 module CurrencyCloud
-  
-  class Transaction < ResourcefulObject
-    
+  class Transaction < Resource
     resource :transactions
     
     actions :retrieve, :find
-    
   end
 end

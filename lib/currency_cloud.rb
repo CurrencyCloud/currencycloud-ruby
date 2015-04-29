@@ -2,6 +2,7 @@ require 'rubygems'
 require 'httparty'
 require 'json'
 
+require 'currency_cloud/resource'
 lib_path = File.join(File.dirname(__FILE__), '**/*.*')
 Dir[lib_path].sort.each { |f| require f}
 
@@ -22,9 +23,4 @@ module CurrencyCloud
   def self.reset_session
     @session = nil
   end
-  
-  def self.request(method, route, params={})
-    CurrencyCloud::RequestHandler.new(session).send(method, route, params)
-  end
-  
 end

@@ -88,4 +88,14 @@ describe 'Actions', :vcr => true do
     expect(beneficiary.created_at).to eq('2015-04-25T09:21:00+00:00')
     expect(beneficiary.updated_at).to eq('2015-04-25T11:06:27+00:00')
   end
+
+  it "can #current" do
+    account = CurrencyCloud::Account.current
+
+    expect(account).to be_a_kind_of(CurrencyCloud::Account)
+    expect(account.id).to eq('8ec3a69b-02d1-4f09-9a6b-6bd54a61b3a8')
+    expect(account.postal_code).to be_nil
+    expect(account.created_at).to eq('2015-04-24T15:57:55+00:00')
+    expect(account.updated_at).to eq('2015-04-24T15:57:55+00:00')
+  end
 end

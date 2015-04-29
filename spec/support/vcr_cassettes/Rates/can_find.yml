@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://devapi.thecurrencycloud.com/v2/rates/find
+    body:
+      encoding: UTF-8
+      string: currency_pair=GBPUSD%2CEURGBP
+    headers:
+      X-Auth-Token:
+      - 242993ca94b9d1c6c1d8f7d3275a6f36
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 27 Apr 2015 20:33:51 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '90'
+      Connection:
+      - keep-alive
+      X-Request-Id:
+      - '2773736887435072763'
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"rates":{"EURGBP":["0.71445","0.71508"],"GBPUSD":["1.52264","1.52334"]},"unavailable":[]}'
+    http_version: 
+  recorded_at: Mon, 27 Apr 2015 20:33:52 GMT
+recorded_with: VCR 2.9.3

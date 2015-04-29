@@ -1,10 +1,11 @@
 module CurrencyCloud
   
-  class Payment < ResourcefulObject
+  class Payment < Resource
     
     resource :payments
     
     actions :create, :retrieve, :find, :delete, :update
     
+    #TODO: authorize, authorizations
   end
 end

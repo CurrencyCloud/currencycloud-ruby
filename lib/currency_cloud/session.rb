@@ -33,14 +33,14 @@ module CurrencyCloud
     end
 
     def close
-      request_handler.post('authenticate/close_session', nil)
+      request.post('authenticate/close_session')
     end
     
     
     def authenticate
       validate
       params = {:login_id => login_id, :api_key => api_key}
-      @token = request_handler.post('authenticate/api', params, :should_retry => false)['auth_token']
+      @token = request.post('authenticate/api', params, :should_retry => false)['auth_token']
     end
 
     def reauthenticate
@@ -55,7 +55,7 @@ module CurrencyCloud
       raise CurrencyCloud::ConfigError, "api_key must be set using CurrencyCloud.api_key=" unless api_key
     end
     
-    def request_handler
+    def request
       RequestHandler.new(self)
     end
   end
