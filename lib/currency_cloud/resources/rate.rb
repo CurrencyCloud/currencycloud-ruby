@@ -1,5 +1,5 @@
 module CurrencyCloud
-  class Rates < Struct.new(:currencies, :unavailable); end
+  class Rates < Resource; end
 
   class Rate < Resource
     resource :rates
@@ -11,7 +11,7 @@ module CurrencyCloud
                 new(currency_pair: currency_pair, bid: bid_offer[0], offer: bid_offer[1])
               end
 
-      Rates.new(rates, response['unavailable'])
+      Rates.new(currencies: rates, unavailable: response['unavailable'])
     end
 
     def self.detailed(params)

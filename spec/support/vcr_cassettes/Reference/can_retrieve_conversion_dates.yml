@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://devapi.thecurrencycloud.com/v2/reference/conversion_dates
+    body:
+      encoding: UTF-8
+      string: conversion_pair=GBPUSD
+    headers:
+      X-Auth-Token:
+      - 1c9da5726314246acfb09ec5651307a5
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 29 Apr 2015 21:04:08 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '845'
+      Connection:
+      - keep-alive
+      X-Request-Id:
+      - '2775201681275056976'
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"invalid_conversion_dates":{"2015-05-02":"No trading on Saturday","2015-05-03":"No
+        trading on Sunday","2015-05-04":"Early May bank holiday","2015-05-09":"No
+        trading on Saturday","2015-05-10":"No trading on Sunday","2015-05-16":"No
+        trading on Saturday","2015-05-17":"No trading on Sunday","2015-05-23":"No
+        trading on Saturday","2015-05-24":"No trading on Sunday","2015-05-25":"Spring
+        bank holiday","2015-05-30":"No trading on Saturday","2015-05-31":"No trading
+        on Sunday","2015-06-06":"No trading on Saturday","2015-06-07":"No trading
+        on Sunday","2015-06-13":"No trading on Saturday","2015-06-14":"No trading
+        on Sunday","2015-06-20":"No trading on Saturday","2015-06-21":"No trading
+        on Sunday","2015-06-27":"No trading on Saturday","2015-06-28":"No trading
+        on Sunday"},"first_conversion_date":"2015-04-30","default_conversion_date":"2015-04-30"}'
+    http_version: 
+  recorded_at: Wed, 29 Apr 2015 21:04:08 GMT
+recorded_with: VCR 2.9.3

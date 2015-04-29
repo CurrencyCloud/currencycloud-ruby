@@ -55,11 +55,15 @@ module CurrencyCloud
     end
 
     def self.get(url, params={})
-      new(RequestHandler.new.get("#{self.resource}/#{url}", params))
+      new(request.get(build_url(url), params))
     end
 
     def self.post(url, params={})
-      new(RequestHandler.new.post("#{self.resource}/#{url}", params))
+      new(request.post(build_url(url), params))
+    end
+
+    def self.build_url(url)
+      "#{self.resource}/#{url}"
     end
 
     def self.request
