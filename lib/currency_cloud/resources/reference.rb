@@ -13,7 +13,7 @@ module CurrencyCloud
       response['currencies'].map { |c| Currency.new(c)}
     end
 
-    def self.beneficiary_required_details(params)
+    def self.beneficiary_required_details(params={})
       request.get(build_url("beneficiary_required_details"), params)['details']
     end
 
@@ -21,7 +21,7 @@ module CurrencyCloud
       ConversionDates.new(request.get(build_url("conversion_dates"), params))
     end
 
-    def self.settlement_accounts(params)
+    def self.settlement_accounts(params={})
       response = request.get(build_url("settlement_accounts"), params)
       response['settlement_accounts'].map { |s| SettlementAccount.new(s)}
     end
