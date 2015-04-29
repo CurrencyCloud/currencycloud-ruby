@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    currencycloud (0.0.1)
-      httparty (~> 0.13.3)
-      json (~> 1.8.1)
+    currency_cloud (0.5)
+      httparty (~> 0.13)
+      json (~> 1.8)
 
 GEM
   remote: https://rubygems.org/
@@ -90,10 +90,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  currencycloud!
+  currency_cloud!
   guard-rspec
   rake (~> 10.3)
-  rspec (~> 3.1.0)
+  rspec (~> 3.1)
   sinatra
-  vcr (~> 2.9.3)
-  webmock (~> 1.21.0)
+  vcr (~> 2.9)
+  webmock (~> 1.21)

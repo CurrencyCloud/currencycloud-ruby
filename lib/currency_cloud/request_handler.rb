@@ -47,7 +47,7 @@ module CurrencyCloud
       params_key = verb == :get ? :query : :body
       options[params_key] = params
       options.merge!(opts)
-      options[:debug_output] = $stdout
+      # options[:debug_output] = $stdout
       options
     end
 

@@ -21,3 +21,10 @@ task :kiosk do
   Thread.new { play }
   @irb = IRB.irb nil, self
 end
+
+desc "Test and build gem"
+task :build do
+  sh("rm -f currency_cloud*.gem")
+  sh("rspec")
+  sh("gem build currency_cloud.gemspec")
+end
