@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    currency_cloud (0.5)
+    currency_cloud (0.5.1)
       httparty (~> 0.13)
       json (~> 1.8)
 

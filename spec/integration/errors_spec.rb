@@ -10,6 +10,41 @@ describe 'Error', :vcr => true do
     CurrencyCloud.token = nil
   end
 
+  it 'contains full details for api error' do
+    CurrencyCloud.login_id = 'non-existent-login-id'
+    CurrencyCloud.api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb57528f0'
+
+    error = nil
+    begin
+      CurrencyCloud.session
+      raise 'Should have failed'
+    rescue CurrencyCloud::BadRequestError => error
+    end
+
+    expected_error = %Q{CurrencyCloud::BadRequestError
+---
+platform: #{error.platform}
+request:
+  parameters:
+    login_id: non-existent-login-id
+    api_key: ef0fd50fca1fb14c1fab3a8436b9ecb57528f0
+  verb: post
+  url: https://devapi.thecurrencycloud.com/v2/authenticate/api
+response:
+  status_code: 400
+  date: Wed, 29 Apr 2015 22:46:53 GMT
+  request_id: 2775253392756800903
+errors:
+- field: api_key
+  code: api_key_length_is_invalid
+  message: api_key should be 64 character(s) long
+  params:
+    length: 64
+}
+    expect(error.to_s).to eq(expected_error)
+
+  end
+
   it 'is raised on a bad request' do
     CurrencyCloud.login_id = 'non-existent-login-id'
     CurrencyCloud.api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb57528f0'
@@ -66,6 +101,19 @@ describe 'Error', :vcr => true do
     rescue CurrencyCloud::UnexpectedError => error
     end
 
+        expected_error = %Q{CurrencyCloud::UnexpectedError
+---
+platform: ruby-2.2.0
+request:
+  parameters:
+    login_id: rjnienaber@gmail.com
+    api_key: ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0
+  verb: post
+  url: https://devapi.thecurrencycloud.com/v2/authenticate/api
+inner_error: Timeout::Error
+}
+
+    expect(error.to_s).to eq(expected_error)
     expect(error.inner_error).to_not be_nil
     expect(error.inner_error.class).to eq(Timeout::Error)
   end

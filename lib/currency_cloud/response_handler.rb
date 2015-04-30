@@ -2,17 +2,16 @@ module CurrencyCloud
   
   class ResponseHandler
     
-    attr_reader :response
+    attr_reader :verb, :route, :params, :response
     
-    def self.process(response)
-      new(response).data
-    end
-    
-    def initialize(response)
+    def initialize(verb, route, params, response)
+      @verb = verb
+      @route = route
+      @params = params
       @response = response
     end
     
-    def data
+    def process
       if success?
         return parsed_response
       else
@@ -28,15 +27,15 @@ module CurrencyCloud
     
     def handle_failure
       error_class = case response.code
-        when 400 then CurrencyCloud::BadRequestError
-        when 401 then CurrencyCloud::AuthenticationError
-        when 403 then CurrencyCloud::ForbiddenError
-        when 404 then CurrencyCloud::NotFoundError
-        when 429 then CurrencyCloud::TooManyRequestsError
-        when 500 then CurrencyCloud::InternalApplicationError
-        else CurrencyCloud::UnexpectedError
+        when 400 then BadRequestError
+        when 401 then AuthenticationError
+        when 403 then ForbiddenError
+        when 404 then NotFoundError
+        when 429 then TooManyRequestsError
+        when 500 then InternalApplicationError
       end
-      raise error_class.new(response)
+      raise error_class.new(verb, route, params, response) if error_class
+      raise UnexpectedError.new(verb, route, params, response)
     end
     
     def parsed_response

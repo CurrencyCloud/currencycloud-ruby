@@ -33,4 +33,72 @@ http_interactions:
       string: '{"settlement_cut_off_time":"2015-04-29T14:00:00Z","currency_pair":"GBPUSD","client_buy_currency":"GBP","client_sell_currency":"USD","client_buy_amount":"10000.00","client_sell_amount":"15234.00","fixed_side":"buy","mid_market_rate":"1.5231","client_rate":"1.5234","partner_rate":null,"core_rate":"1.5234","deposit_required":null,"deposit_amount":"0.0","deposit_currency":"USD"}'
     http_version: 
   recorded_at: Mon, 27 Apr 2015 20:35:49 GMT
+- request:
+    method: get
+    uri: https://devapi.thecurrencycloud.com/v2/rates/detailed?amount=10000&buy_currency=GBP&fixed_side=buy&sell_currency=USD
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - 242993ca94b9d1c6c1d8f7d3275a6f36
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 29 Apr 2015 23:20:48 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '176'
+      Connection:
+      - keep-alive
+      X-Request-Id:
+      - '2775270469295108108'
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"error_code":"auth_failed","error_messages":{"username":[{"code":"invalid_supplied_credentials","message":"Authentication
+        failed with the supplied credentials","params":{}}]}}'
+    http_version: 
+  recorded_at: Wed, 29 Apr 2015 23:20:48 GMT
+- request:
+    method: post
+    uri: https://devapi.thecurrencycloud.com/v2/authenticate/api
+    body:
+      encoding: UTF-8
+      string: login_id=rjnienaber%40gmail.com2&api_key=ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0
+    headers:
+      X-Auth-Token:
+      - 242993ca94b9d1c6c1d8f7d3275a6f36
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 29 Apr 2015 23:20:50 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '176'
+      Connection:
+      - keep-alive
+      X-Request-Id:
+      - '2775270486365916175'
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"error_code":"auth_failed","error_messages":{"username":[{"code":"invalid_supplied_credentials","message":"Authentication
+        failed with the supplied credentials","params":{}}]}}'
+    http_version: 
+  recorded_at: Wed, 29 Apr 2015 23:20:50 GMT
 recorded_with: VCR 2.9.3

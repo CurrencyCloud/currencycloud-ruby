@@ -23,27 +23,30 @@ module CurrencyCloud
     private
     def retry_authenticate(verb, route, params, opts)
       should_retry = opts[:should_retry].nil? ? true : opts.delete(:should_retry)
-      description = "to #{verb}: #{route}"
       
       options = process_options(verb, params, opts)
+      full_url = build_url(route)
 
       response = nil
       retry_count = should_retry ? 0 : 2
       while retry_count < 3
-        response = yield(full_url(route), options)
+        response = yield(full_url, options)
         break unless response.code == 401 && should_retry
         session.reauthenticate
         retry_count += 1
       end
-      
-      process_response(response)
+
+      response_handler = CurrencyCloud::ResponseHandler.new(verb, full_url, params, response)
+      response_handler.process
+    rescue ApiError, UnexpectedError
+      raise
     rescue => e
-      raise if e.class.ancestors.include?(ApiError) || e.is_a?(UnexpectedError)
-      raise UnexpectedError.new(e)
+      raise UnexpectedError.new(verb, full_url, params, e)
     end
 
     def process_options(verb, params, opts)
       options = {:headers => headers }
+      #TODO: should this be a symbol?
       params_key = verb == :get ? :query : :body
       options[params_key] = params
       options.merge!(opts)
@@ -53,16 +56,12 @@ module CurrencyCloud
 
     def headers
       headers = {}
-      headers['X-Auth-Token'] = session.token if session.token
+      headers['X-Auth-Token'] = session.token if session && session.token
       headers
     end
         
-    def full_url(route)
+    def build_url(route)
       "#{session.environment_url}/#{CurrencyCloud::ApiVersion}/" + route
-    end
-    
-    def process_response(response)
-      CurrencyCloud::ResponseHandler.process(response)
     end
   end
 end
