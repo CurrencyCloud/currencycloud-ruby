@@ -62,8 +62,14 @@ module CurrencyCloud
     end
 
     def platform
-      platform = "ruby-#{RUBY_VERSION}"
-      defined?(JRUBY_VERSION) ? "#{platform} (jruby-#{JRUBY_VERSION})" : platform
+      base = "ruby-#{RUBY_VERSION}"
+      implementation = case RUBY_ENGINE
+                       when 'ruby' then ''
+                       when 'jruby' then ' (jruby-#{JRUBY_VERSION})"'
+                       when 'rbx' then ' (rbx-#{Rubinius::VERSION})'
+                       else ' (other)'
+                       end
+      "#{base}#{implementation}"
     end
   end
 

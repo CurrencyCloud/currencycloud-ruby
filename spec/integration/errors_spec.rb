@@ -42,7 +42,6 @@ errors:
     length: 64
 }
     expect(error.to_s).to eq(expected_error)
-
   end
 
   it 'is raised on a bad request' do
@@ -103,7 +102,7 @@ errors:
 
         expected_error = %Q{CurrencyCloud::UnexpectedError
 ---
-platform: ruby-2.2.0
+platform: #{error.platform}
 request:
   parameters:
     login_id: rjnienaber@gmail.com
