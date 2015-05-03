@@ -51,8 +51,8 @@ module CurrencyCloud
 
     def process_options(verb, opts)
       options = {:headers => headers }
-      options.merge(opts)
       # options[:debug_output] = $stdout
+      options.merge(opts)
       # options
     end
 
