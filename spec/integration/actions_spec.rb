@@ -98,4 +98,21 @@ describe 'Actions', :vcr => true do
     expect(account.created_at).to eq('2015-04-24T15:57:55+00:00')
     expect(account.updated_at).to eq('2015-04-24T15:57:55+00:00')
   end
+
+  it "can #validate beneficiaries" do
+    params = {
+      :bank_country => 'GB',
+      :currency => 'GBP',
+      :account_number => '12345678',
+      :routing_code_type_1 => 'sort_code',
+      :routing_code_value_1 => '123456',
+      :payment_types => ['regular']
+    }
+
+    beneficiary = CurrencyCloud::Beneficiary.validate(params)
+    expect(beneficiary).to be_a_kind_of(CurrencyCloud::Beneficiary)
+
+    expect(beneficiary.account_number).to include('12345678')
+    expect(beneficiary.payment_types).to include('regular')
+  end
 end
