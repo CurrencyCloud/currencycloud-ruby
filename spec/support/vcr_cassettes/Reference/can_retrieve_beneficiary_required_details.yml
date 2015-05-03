@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: get
-    uri: https://devapi.thecurrencycloud.com/v2/reference/beneficiary_required_details
+    uri: https://devapi.thecurrencycloud.com/v2/reference/beneficiary_required_details?bank_account_country=GB&beneficiary_country=GB&currency=GBP
     body:
-      encoding: UTF-8
-      string: currency=GBP&bank_account_country=GB&beneficiary_country=GB
+      encoding: US-ASCII
+      string: ''
     headers:
       X-Auth-Token:
       - 1c9da5726314246acfb09ec5651307a5

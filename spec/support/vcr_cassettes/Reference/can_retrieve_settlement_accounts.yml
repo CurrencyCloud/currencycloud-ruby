@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: get
-    uri: https://devapi.thecurrencycloud.com/v2/reference/settlement_accounts
+    uri: https://devapi.thecurrencycloud.com/v2/reference/settlement_accounts?currency=GBP
     body:
-      encoding: UTF-8
-      string: currency=GBP
+      encoding: US-ASCII
+      string: ''
     headers:
       X-Auth-Token:
       - 1c9da5726314246acfb09ec5651307a5

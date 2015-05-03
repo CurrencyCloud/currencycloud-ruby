@@ -9,13 +9,15 @@ module CurrencyCloud
     end
     
     def get(route, params={}, opts={})
-      retry_authenticate('get', route, params, opts) do |url, options|
+      retry_authenticate('get', route, params, opts) do |url, params, options|
+        options.merge!(:query => params)
         HTTParty.get(url, options)
       end
     end
     
     def post(route, params={}, opts={})
-      retry_authenticate('post', route, params, opts) do |url, options|
+      retry_authenticate('post', route, params, opts) do |url, params, options|
+        options.merge!(:body => params)
         HTTParty.post(url, options)
       end
     end
@@ -24,13 +26,13 @@ module CurrencyCloud
     def retry_authenticate(verb, route, params, opts)
       should_retry = opts[:should_retry].nil? ? true : opts.delete(:should_retry)
       
-      options = process_options(verb, params, opts)
+      options = process_options(verb, opts)
       full_url = build_url(route)
 
       response = nil
       retry_count = should_retry ? 0 : 2
       while retry_count < 3
-        response = yield(full_url, options)
+        response = yield(full_url, params, options)
         break unless response.code == 401 && should_retry
         session.reauthenticate
         retry_count += 1
@@ -44,14 +46,11 @@ module CurrencyCloud
       raise UnexpectedError.new(verb, full_url, params, e)
     end
 
-    def process_options(verb, params, opts)
+    def process_options(verb, opts)
       options = {:headers => headers }
-      #TODO: should this be a symbol?
-      params_key = verb == :get ? :query : :body
-      options[params_key] = params
-      options.merge!(opts)
+      options.merge(opts)
       # options[:debug_output] = $stdout
-      options
+      # options
     end
 
     def headers

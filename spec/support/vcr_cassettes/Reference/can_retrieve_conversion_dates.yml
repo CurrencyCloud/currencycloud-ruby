@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: get
-    uri: https://devapi.thecurrencycloud.com/v2/reference/conversion_dates
+    uri: https://devapi.thecurrencycloud.com/v2/reference/conversion_dates?conversion_pair=GBPUSD
     body:
-      encoding: UTF-8
-      string: conversion_pair=GBPUSD
+      encoding: US-ASCII
+      string: ''
     headers:
       X-Auth-Token:
       - 1c9da5726314246acfb09ec5651307a5

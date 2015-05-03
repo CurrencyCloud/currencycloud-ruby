@@ -4,7 +4,7 @@ describe 'Rates', :vcr => true do
   before do
     CurrencyCloud.reset_session
     CurrencyCloud.environment = :demonstration
-    CurrencyCloud.token = '242993ca94b9d1c6c1d8f7d3275a6f36'
+    CurrencyCloud.token = 'bbdd421bdda373ea69670c9101fa9197'
   end
 
   it 'can #find' do
