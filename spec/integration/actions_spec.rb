@@ -115,4 +115,15 @@ describe 'Actions', :vcr => true do
     expect(beneficiary.account_number).to include('12345678')
     expect(beneficiary.payment_types).to include('regular')
   end
+
+  it "can use #currency to retrieve balance" do
+    balance = CurrencyCloud::Balance.currency('GBP')
+
+    expect(balance).to be_a_kind_of(CurrencyCloud::Balance)
+
+    expect(balance.id).to eq("5a998e06-3eb7-46d6-ba58-f749864159ce")
+    expect(balance.amount).to eq('999866.78')
+    expect(balance.created_at).to eq('2014-12-04T09:50:35+00:00')
+    expect(balance.updated_at).to eq('2015-03-23T14:33:37+00:00')
+  end
 end

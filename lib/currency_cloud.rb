@@ -22,5 +22,6 @@ module CurrencyCloud
   
   def self.reset_session
     @session = nil
+    @token = nil
   end
 end

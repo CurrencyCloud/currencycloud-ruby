@@ -3,6 +3,8 @@ module CurrencyCloud
     resource :balances
     actions :find
 
-    #TODO: currency
+    def self.currency(ccy)
+      get(ccy)
+    end
   end
 end
