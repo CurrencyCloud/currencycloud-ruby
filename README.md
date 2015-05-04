@@ -58,6 +58,28 @@ balances = CurrencyCloud::Balance.find
 #  #<CurrencyCloud::Pagination total_entries=5, total_pages=1, current_page=1, per_page=25, previous_page=-1, next_page=-1, order="created_at", order_asc_desc="asc">>
 ```
 
+## On Behalf Of
+If you want to make calls on behalf of another user (e.g. someone who has a sub-account with you), you 
+can execute certain commands 'on behalf of' the user's contact_id. Here is an example:
+
+```ruby
+CurrencyCloud.on_behalf_of("c6ece846-6df1-461d-acaa-b42a6aa74045") do
+  beneficiary = CurrencyCloud::Beneficiary.create(<params>)
+  conversion = CurrencyCloud::Conversion.create(<params>)
+  payment = CurrencyCloud::Payment.create(<params>)
+end
+```
+
+Alternatively, you can just merge it with an existing params `Hash`, for example:
+
+```ruby
+CurrencyCloud::Account.create(account_name: 'My Test User', on_behalf_of: "c6ece846-6df1-461d-acaa-b42a6aa74045")
+```
+
+Each of the above transactions will be executed in scope of the limits for that contact and linked to that contact. Note
+that the real user who executed the transaction will also be stored.
+
+
 ## Errors
 When an error occurs in the API, the library aims to give us much information
 as possible. Here is an example:

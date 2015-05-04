@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe CurrencyCloud do
 
-  before(:each) do
+  before do
     CurrencyCloud.environment = nil
     CurrencyCloud.login_id = nil
     CurrencyCloud.api_key = nil
@@ -73,6 +73,34 @@ describe CurrencyCloud do
       CurrencyCloud.login_id = 'test@example.com'
       expect { CurrencyCloud.session }
        .to raise_error(CurrencyCloud::ConfigError, "api_key must be set using CurrencyCloud.api_key=")
+    end
+  end
+
+  describe "#on_behalf_of" do
+    before do
+      CurrencyCloud.environment = :demonstration
+      CurrencyCloud.token = '4df5b3e5882a412f148dcd08fa4e5b73'
+    end
+
+    it "sets the value on the session, and removes it when done" do
+      expect(CurrencyCloud.session.on_behalf_of).to be_nil
+      CurrencyCloud.on_behalf_of('c6ece846-6df1-461d-acaa-b42a6aa74045') do
+        expect(CurrencyCloud.session.on_behalf_of).to eq('c6ece846-6df1-461d-acaa-b42a6aa74045')
+      end
+      expect(CurrencyCloud.session.on_behalf_of).to be_nil
+    end
+
+    it "still removes the value from the session on error" do
+      expect(CurrencyCloud.session.on_behalf_of).to be_nil
+
+      expect do 
+        CurrencyCloud.on_behalf_of('c6ece846-6df1-461d-acaa-b42a6aa74045') do
+          expect(CurrencyCloud.session.on_behalf_of).to eq('c6ece846-6df1-461d-acaa-b42a6aa74045')
+          raise 'Completed Expected error'
+        end
+      end.to raise_error('Completed Expected error')
+      
+      expect(CurrencyCloud.session.on_behalf_of).to be_nil
     end
   end
 end

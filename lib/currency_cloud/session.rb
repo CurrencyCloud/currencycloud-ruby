@@ -7,7 +7,7 @@ module CurrencyCloud
                      :uat => 'https://api-uat1.ccycloud.com'}
    
     attr_reader :environment, :login_id, :api_key
-    attr_accessor :token
+    attr_accessor :token, :on_behalf_of
     
     def self.validate_environment(environment)
       unless Environments.keys.include?(environment)

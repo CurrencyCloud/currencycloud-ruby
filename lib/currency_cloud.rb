@@ -24,4 +24,11 @@ module CurrencyCloud
     @session = nil
     @token = nil
   end
+
+  def self.on_behalf_of(contact_id)
+    session.on_behalf_of = contact_id
+    yield
+  ensure
+    session.on_behalf_of = nil
+  end
 end

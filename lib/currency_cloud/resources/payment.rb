@@ -5,7 +5,5 @@ module CurrencyCloud
     resource :payments
     
     actions :create, :retrieve, :find, :delete, :update
-    
-    #TODO: authorize, authorizations
   end
 end
