@@ -11,12 +11,13 @@ module CurrencyCloud
     def self.actions(*actions)
       @actions ||= actions
       @actions.each do |action|
-        self.class_eval do # self.class.instance_eval # metaclass.instance_eval
+        self.class_eval do
           action_module = CurrencyCloud::Actions.const_get(action.to_s.capitalize)
           self.extend(action_module)
         end
 
         self.include(CurrencyCloud::Actions::Save) if action == :update
+        self.include(CurrencyCloud::Actions::InstanceDelete) if action == :delete
       end
     end
     
