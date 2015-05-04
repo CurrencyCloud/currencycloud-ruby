@@ -15,8 +15,12 @@ module CurrencyCloud
           action_module = CurrencyCloud::Actions.const_get(action.to_s.capitalize)
           self.extend(action_module)
         end
+
+        self.include(CurrencyCloud::Actions::Save) if action == :update
       end
     end
+    
+    attr_reader :changed_attributes
     
     def initialize(object)
       @object = object

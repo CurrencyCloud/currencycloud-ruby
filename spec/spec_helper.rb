@@ -1,4 +1,3 @@
-require 'currency_cloud'
 require 'pry'
 require 'vcr'
 
@@ -9,3 +8,5 @@ VCR.configure do |c|
   c.allow_http_connections_when_no_cassette = true
   c.default_cassette_options = {:record => :new_episodes}
 end
+
+require 'currency_cloud'
