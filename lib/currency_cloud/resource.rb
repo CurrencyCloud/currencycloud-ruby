@@ -16,8 +16,9 @@ module CurrencyCloud
           self.extend(action_module)
         end
 
-        self.include(CurrencyCloud::Actions::Save) if action == :update
-        self.include(CurrencyCloud::Actions::InstanceDelete) if action == :delete
+
+        self.send(:include, CurrencyCloud::Actions::Save) if action == :update
+        self.send(:include, CurrencyCloud::Actions::InstanceDelete) if action == :delete
       end
     end
     
