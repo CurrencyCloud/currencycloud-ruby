@@ -1,5 +1,6 @@
 module CurrencyCloud
   class ApiErrorMessage
+
     attr_reader :field, :code, :message, :params
 
     def initialize(field, error)
@@ -20,6 +21,8 @@ module CurrencyCloud
   end
 
   class ApiError < StandardError
+    include ErrorUtils
+
     attr_reader :code, :messages, :raw_response, :status_code
 
     def initialize(verb, route, params, raw_response)
@@ -59,17 +62,6 @@ module CurrencyCloud
         'errors' => messages.map(&:to_h)
       }
       "#{class_name}#{$/}#{YAML.dump(error_details)}"
-    end
-
-    def platform
-      base = "ruby-#{RUBY_VERSION}"
-      implementation = case RUBY_ENGINE
-                       when 'ruby' then ''
-                       when 'jruby' then ' (jruby-#{JRUBY_VERSION})"'
-                       when 'rbx' then ' (rbx-#{Rubinius::VERSION})'
-                       else ' (other)'
-                       end
-      "#{base}#{implementation}"
     end
   end
 

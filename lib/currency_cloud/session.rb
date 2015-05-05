@@ -11,7 +11,7 @@ module CurrencyCloud
     
     def self.validate_environment(environment)
       unless Environments.keys.include?(environment)
-        raise CurrencyCloud::ConfigError, "'#{environment}' is not a valid environment, must be one of: #{Environments.keys.join(", ")}"
+        raise CurrencyCloud::GeneralError, "'#{environment}' is not a valid environment, must be one of: #{Environments.keys.join(", ")}"
       end
     end
    
@@ -51,8 +51,8 @@ module CurrencyCloud
     private
     def validate
       self.class.validate_environment(environment)
-      raise CurrencyCloud::ConfigError, "login_id must be set using CurrencyCloud.login_id=" unless login_id
-      raise CurrencyCloud::ConfigError, "api_key must be set using CurrencyCloud.api_key=" unless api_key
+      raise CurrencyCloud::GeneralError, "login_id must be set using CurrencyCloud.login_id=" unless login_id
+      raise CurrencyCloud::GeneralError, "api_key must be set using CurrencyCloud.api_key=" unless api_key
     end
     
     def request

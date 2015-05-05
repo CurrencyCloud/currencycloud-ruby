@@ -3,8 +3,6 @@ module CurrencyCloud
   class RequestHandler
     
     attr_reader :session
-
-    UUID_REGEX = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i
     
     def initialize(session = CurrencyCloud.session)
       @session = session
@@ -57,7 +55,7 @@ module CurrencyCloud
     end
 
     def process_params(params)
-      if session && session.on_behalf_of && UUID_REGEX.match(session.on_behalf_of)
+      if session && session.on_behalf_of && CurrencyCloud::UUID_REGEX.match(session.on_behalf_of)
         params.merge!(on_behalf_of: session.on_behalf_of)  
       end
       

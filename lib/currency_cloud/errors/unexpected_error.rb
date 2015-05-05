@@ -1,6 +1,8 @@
 module CurrencyCloud
   
   class UnexpectedError < StandardError
+    include ErrorUtils
+
     attr_reader :inner_error
 
     def initialize(verb, route, params, e)
@@ -25,11 +27,6 @@ module CurrencyCloud
         'inner_error' => inner_error.to_s
       }
       "#{class_name}#{$/}#{YAML.dump(error_details)}"
-    end
-
-    def platform
-      platform = "ruby-#{RUBY_VERSION}"
-      defined?(JRUBY_VERSION) ? "#{platform} (jruby-#{JRUBY_VERSION})" : platform
     end
   end   
 end
