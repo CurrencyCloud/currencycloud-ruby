@@ -27,12 +27,12 @@ module CurrencyCloud
       should_retry = opts[:should_retry].nil? ? true : opts.delete(:should_retry)
       
       params = process_params(params)
-      options = process_options(verb, opts)
       full_url = build_url(route)
 
       response = nil
       retry_count = should_retry ? 0 : 2
       while retry_count < 3
+        options = process_options(verb, opts)
         response = yield(full_url, params, options)
         break unless response.code == 401 && should_retry
         session.reauthenticate

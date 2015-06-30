@@ -40,11 +40,11 @@ module CurrencyCloud
     def authenticate
       validate
       params = {:login_id => login_id, :api_key => api_key}
-      @token = request.post('authenticate/api', params, :should_retry => false)['auth_token']
+      CurrencyCloud.token = @token = request.post('authenticate/api', params, :should_retry => false)['auth_token']
     end
 
     def reauthenticate
-      token = nil
+      CurrencyCloud.token = @token = nil
       authenticate
     end
     

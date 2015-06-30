@@ -33,5 +33,8 @@ describe 'Authentication', :vcr => true do
 
     response = CurrencyCloud::Beneficiary.find
     expect(response).to_not be_nil
+
+    #should have changed after reauthentication
+    expect(CurrencyCloud.token).to eq('038022bcd2f372cac7bab448db7b5c3b')
   end
 end
