@@ -60,12 +60,20 @@ module CurrencyCloud
       end
     end
 
+    def post(url, params={})
+      hash = self.class.request.post(self.class.build_url(url), params)
+
+      hash.each do |k, v|
+        send("#{k}=", v)
+      end
+    end
+
     def self.get(url, params={})
       new(request.get(build_url(url), params))
     end
 
     def self.post(url, params={})
-      new(request.post(build_url(url), params))
+      new.post(url, params)
     end
 
     def self.build_url(url)
