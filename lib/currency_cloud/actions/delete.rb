@@ -2,7 +2,7 @@ module CurrencyCloud
   module Actions
     module Delete
       def self.extended(base)
-        base.include(InstanceDelete)
+        base.send(:include, InstanceDelete) # Private before Ruby 2.1
       end
 
       # TODO: Set state to be deleted
