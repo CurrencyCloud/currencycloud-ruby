@@ -1,6 +1,10 @@
 module CurrencyCloud
-  class Payer < Resource
-    resource :payers
-    actions :retrieve
+  module Resources
+    class Payer
+      include CurrencyCloud::Resource
+
+      resource :payers
+      actions :retrieve
+    end
   end
 end

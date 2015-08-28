@@ -1,17 +1,15 @@
 module CurrencyCloud
   module Actions
-    
+
     module Find
 
       def find(params={})
-        response = request.get("#{self.resource}/find", params)
+        response = client.get("find", params)
         mixin_class.new(self.resource, self, response)
       end
-       
-      def first(params={})
-        entities = find((params || {}).merge(per_page: 1))
-        return nil if entities.empty?
 
+      def first(params={})
+        entities = find(params.merge(per_page: 1)) || []
         entities.first
       end
 

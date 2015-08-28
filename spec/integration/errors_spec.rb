@@ -141,10 +141,10 @@ inner_error: Timeout::Error
     CurrencyCloud.token = '656485646b068f6e9c81e3d885fa54f5'
     error = nil
     begin
-      CurrencyCloud::Beneficiary.retrieve('081596c9-02de-483e-9f2a-4cf55dcdf98c') 
+      CurrencyCloud::Resources::Beneficiary.retrieve('081596c9-02de-483e-9f2a-4cf55dcdf98c')
       raise 'Should fail'
     rescue CurrencyCloud::NotFoundError => error
-    end 
+    end
 
     expect(error.code).to eq('beneficiary_not_found')
     expect(error.raw_response).to_not be_nil
@@ -157,7 +157,7 @@ inner_error: Timeout::Error
     expect(error_message.message).to eq('Beneficiary was not found for this id')
     expect(error_message.params).to be_empty
   end
-  
+
   it 'is raised on an internal server error' do
 
     error = nil
@@ -178,14 +178,14 @@ inner_error: Timeout::Error
     expect(error_message.message).to eq('A general application error occurred')
     expect(error_message.params).to include("request_id" => 2771875643610572878)
   end
-  
+
   it 'is raised when too many requests have been issued' do
     CurrencyCloud.login_id = 'rjnienaber@gmail.com2'
 
     error = nil
     begin
       CurrencyCloud.session
-      
+
       raise 'Should have failed'
     rescue CurrencyCloud::TooManyRequestsError => error
     end

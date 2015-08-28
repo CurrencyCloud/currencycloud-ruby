@@ -1,10 +1,7 @@
 module CurrencyCloud
   module Resources
-    class Transaction
+    class ConversionDates
       include CurrencyCloud::Resource
-
-      resource :transactions
-      actions :retrieve, :find
     end
   end
 end

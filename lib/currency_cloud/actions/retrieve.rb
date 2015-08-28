@@ -1,9 +1,10 @@
 module CurrencyCloud
-  module Actions    
+  module Actions
     module Retrieve
       def retrieve(id)
-        get(id)
-      end       
+        attrs = client.get(id)
+        new(attrs)
+      end
     end
   end
 end

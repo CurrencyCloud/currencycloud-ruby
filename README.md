@@ -2,7 +2,7 @@
 
 # Currency Cloud
 
-This is the official Ruby SDK for v2 of Currency Cloud's API. Additional documentation 
+This is the official Ruby SDK for v2 of Currency Cloud's API. Additional documentation
 for each API endpoint can be found at [connect.currencycloud.com][connect]. If you have any queries or you require support, please contact our implementation team at implementation@currencycloud.com.
 
 ## Installation
@@ -39,41 +39,41 @@ CurrencyCloud.api_key = '<your api key>'
 CurrencyCloud.environment = :demonstration # use :production when ready
 
 ## Make API calls ##
-currencies = CurrencyCloud::Reference.currencies
-#[#<CurrencyCloud::Currency:0x3fcb6d03960c {"code"=>"AED", "decimal_places"=>2, "name"=>"United Arab Emirates Dirham"}>,
-# #<CurrencyCloud::Currency:0x3fcb6d0390f8 {"code"=>"AUD", "decimal_places"=>2, "name"=>"Australian Dollar"}>,
-# #<CurrencyCloud::Currency:0x3fcb6d038d24 {"code"=>"CAD", "decimal_places"=>2, "name"=>"Canadian Dollar"}>,
+currencies = CurrencyCloud::Resources::Reference.currencies
+#[#<CurrencyCloud::Resources::Currency:0x3fcb6d03960c {"code"=>"AED", "decimal_places"=>2, "name"=>"United Arab Emirates Dirham"}>,
+# #<CurrencyCloud::Resources::Currency:0x3fcb6d0390f8 {"code"=>"AUD", "decimal_places"=>2, "name"=>"Australian Dollar"}>,
+# #<CurrencyCloud::Resources::Currency:0x3fcb6d038d24 {"code"=>"CAD", "decimal_places"=>2, "name"=>"Canadian Dollar"}>,
 # <snip .../>
-# #<CurrencyCloud::Currency:0x3fcb6d0295b8 {"code"=>"TRY", "decimal_places"=>2, "name"=>"Turkish Lira"}>,
-# #<CurrencyCloud::Currency:0x3fcb6d028fc8 {"code"=>"USD", "decimal_places"=>2, "name"=>"United States Dollar"}>,
-# #<CurrencyCloud::Currency:0x3fcb6d0288d4 {"code"=>"ZAR", "decimal_places"=>2, "name"=>"South African Rand"}>]
+# #<CurrencyCloud::Resources::Currency:0x3fcb6d0295b8 {"code"=>"TRY", "decimal_places"=>2, "name"=>"Turkish Lira"}>,
+# #<CurrencyCloud::Resources::Currency:0x3fcb6d028fc8 {"code"=>"USD", "decimal_places"=>2, "name"=>"United States Dollar"}>,
+# #<CurrencyCloud::Resources::Currency:0x3fcb6d0288d4 {"code"=>"ZAR", "decimal_places"=>2, "name"=>"South African Rand"}>]
 
-balances = CurrencyCloud::Balance.find
+balances = CurrencyCloud::Resources::Balance.find
 
-#<CurrencyCloud::Balances:0x007f96da812838
+#<CurrencyCloud::Resources::Balances:0x007f96da812838
 # @collection=
-#  [#<CurrencyCloud::Balance:0x3fcb6d4093b8 {"id"=>"5a998e06-3eb7-46d6-ba58-f749864159ce", "account_id"=>"e7483671-5dc6-0132-e126-002219414986", "currency"=>"GBP", "amount"=>"20034.78", "created_at"=>"2014-12-04T09:50:35+00:00", "updated_at"=>"2015-03-23T14:33:37+00:00"}>,
-#   #<CurrencyCloud::Balance:0x3fcb6d4089b8 {"id"=>"7b3796d0-35f3-4f47-8554-8020750a8f9d", "account_id"=>"e7483671-5dc6-0132-e126-002219414986", "currency"=>"EUR", "amount"=>"3012.16", "created_at"=>"2014-12-04T09:50:41+00:00", "updated_at"=>"2015-04-13T08:22:50+00:00"}>,
+#  [#<CurrencyCloud::Resources::Balance:0x3fcb6d4093b8 {"id"=>"5a998e06-3eb7-46d6-ba58-f749864159ce", "account_id"=>"e7483671-5dc6-0132-e126-002219414986", "currency"=>"GBP", "amount"=>"20034.78", "created_at"=>"2014-12-04T09:50:35+00:00", "updated_at"=>"2015-03-23T14:33:37+00:00"}>,
+#   #<CurrencyCloud::Resources::Balance:0x3fcb6d4089b8 {"id"=>"7b3796d0-35f3-4f47-8554-8020750a8f9d", "account_id"=>"e7483671-5dc6-0132-e126-002219414986", "currency"=>"EUR", "amount"=>"3012.16", "created_at"=>"2014-12-04T09:50:41+00:00", "updated_at"=>"2015-04-13T08:22:50+00:00"}>,
 # @pagination=
 #  #<CurrencyCloud::Pagination total_entries=5, total_pages=1, current_page=1, per_page=25, previous_page=-1, next_page=-1, order="created_at", order_asc_desc="asc">>
 ```
 
 ## On Behalf Of
-If you want to make calls on behalf of another user (e.g. someone who has a sub-account with you), you 
+If you want to make calls on behalf of another user (e.g. someone who has a sub-account with you), you
 can execute certain commands 'on behalf of' the user's contact_id. Here is an example:
 
 ```ruby
 CurrencyCloud.on_behalf_of("c6ece846-6df1-461d-acaa-b42a6aa74045") do
-  beneficiary = CurrencyCloud::Beneficiary.create(<params>)
-  conversion = CurrencyCloud::Conversion.create(<params>)
-  payment = CurrencyCloud::Payment.create(<params>)
+  beneficiary = CurrencyCloud::Resources::Beneficiary.create(<params>)
+  conversion = CurrencyCloud::Resources::Conversion.create(<params>)
+  payment = CurrencyCloud::Resources::Payment.create(<params>)
 end
 ```
 
 Alternatively, you can just merge it with an existing params `Hash`, for example:
 
 ```ruby
-CurrencyCloud::Account.create(account_name: 'My Test User', on_behalf_of: "c6ece846-6df1-461d-acaa-b42a6aa74045")
+CurrencyCloud::Resources::Account.create(account_name: 'My Test User', on_behalf_of: "c6ece846-6df1-461d-acaa-b42a6aa74045")
 ```
 
 Each of the above transactions will be executed in scope of the limits for that contact and linked to that contact. Note
@@ -126,7 +126,7 @@ error in any correspondence can be very helpful.
 
 # Development
 
-Test cases can be run with: `bundle exec rspec`. There is also a `Guardfile` that 
+Test cases can be run with: `bundle exec rspec`. There is also a `Guardfile` that
 is useful for continuously rerunning tests while you develop.
 
 ## Dependencies

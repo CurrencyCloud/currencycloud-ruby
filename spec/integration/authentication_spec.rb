@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'Authentication', :vcr => true do
-  before(:each) do
+  before do
     CurrencyCloud.reset_session
     CurrencyCloud.environment = :demonstration
     CurrencyCloud.login_id = 'rjnienaber@gmail.com'
@@ -19,19 +19,19 @@ describe 'Authentication', :vcr => true do
     CurrencyCloud.api_key = nil
     CurrencyCloud.token = '7fbba909f66ee6721b2e20a5fa1ccae7'
 
-    response = CurrencyCloud::Beneficiary.find
+    response = CurrencyCloud::Resources::Beneficiary.find
     expect(response).to_not be_nil
   end
 
   it 'can be closed' do
-    CurrencyCloud.session 
+    CurrencyCloud.session
     expect(CurrencyCloud.close_session).to eq(true)
   end
 
   it 'handles session timeout error' do
     CurrencyCloud.token = '3907f05da86533710efc589d58f51f45'
 
-    response = CurrencyCloud::Beneficiary.find
+    response = CurrencyCloud::Resources::Beneficiary.find
     expect(response).to_not be_nil
 
     #should have changed after reauthentication
