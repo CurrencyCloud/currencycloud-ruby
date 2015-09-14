@@ -8,7 +8,7 @@ describe 'Rates', :vcr => true do
   end
 
   it 'can #find' do
-    rates = CurrencyCloud::Resources::Rate.find(currency_pair: 'GBPUSD,EURGBP')
+    rates = CurrencyCloud::Rate.find(currency_pair: 'GBPUSD,EURGBP')
 
     expect(rates).to_not be_nil
     expect(rates.currencies).to_not be_empty
@@ -18,7 +18,7 @@ describe 'Rates', :vcr => true do
 
     currencies.each do |b|
       expect(b).to_not be_nil
-      expect(b).to be_a_kind_of(CurrencyCloud::Resources::Rate)
+      expect(b).to be_a_kind_of(CurrencyCloud::Rate)
     end
 
     rate = currencies.first
@@ -30,9 +30,9 @@ describe 'Rates', :vcr => true do
   end
 
   it 'can provided #detailed rate' do
-    detailed_rate = CurrencyCloud::Resources::Rate.detailed(buy_currency: 'GBP', sell_currency: 'USD', fixed_side: 'buy', amount: '10000')
+    detailed_rate = CurrencyCloud::Rate.detailed(buy_currency: 'GBP', sell_currency: 'USD', fixed_side: 'buy', amount: '10000')
 
-    expect(detailed_rate).to be_a_kind_of(CurrencyCloud::Resources::Rate)
+    expect(detailed_rate).to be_a_kind_of(CurrencyCloud::Rate)
     expect(detailed_rate.client_sell_amount).to eq('15234.00')
     expect(detailed_rate.settlement_cut_off_time).to eq('2015-04-29T14:00:00Z')
   end

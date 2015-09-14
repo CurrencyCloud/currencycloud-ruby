@@ -18,8 +18,8 @@ describe 'Settlements', :vcr => true do
   end
 
   it 'can #add_conversion' do
-    conversion = CurrencyCloud::Resources::Conversion.create(@params)
-    settlement = CurrencyCloud::Resources::Settlement.create
+    conversion = CurrencyCloud::Conversion.create(@params)
+    settlement = CurrencyCloud::Settlement.create
 
     updated_settlement = settlement.add_conversion(conversion.id)
 
@@ -38,7 +38,7 @@ describe 'Settlements', :vcr => true do
   end
 
   it 'can #remove_conversion' do
-    settlement = CurrencyCloud::Resources::Settlement.retrieve("63eeef54-3531-4e65-827a-7d0f37503fcc")
+    settlement = CurrencyCloud::Settlement.retrieve("63eeef54-3531-4e65-827a-7d0f37503fcc")
     deleted_settlement = settlement.remove_conversion('24d2ee7f-c7a3-4181-979e-9c58dbace992')
 
     expect(deleted_settlement).to_not be_nil
@@ -48,7 +48,7 @@ describe 'Settlements', :vcr => true do
   end
 
   it 'can #release' do
-    settlement = CurrencyCloud::Resources::Settlement.retrieve("51c619e0-0256-40ad-afba-ca4114b936f9")
+    settlement = CurrencyCloud::Settlement.retrieve("51c619e0-0256-40ad-afba-ca4114b936f9")
     released_settlement = settlement.release
 
     expect(released_settlement).to eq(settlement)
@@ -57,7 +57,7 @@ describe 'Settlements', :vcr => true do
   end
 
   it 'can #unrelease' do
-    settlement = CurrencyCloud::Resources::Settlement.retrieve("51c619e0-0256-40ad-afba-ca4114b936f9")
+    settlement = CurrencyCloud::Settlement.retrieve("51c619e0-0256-40ad-afba-ca4114b936f9")
     unreleased_settlement = settlement.unrelease
 
     expect(unreleased_settlement).to eq(settlement)

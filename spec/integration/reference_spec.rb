@@ -8,7 +8,7 @@ describe 'Reference', :vcr => true do
   end
 
   it 'can retrieve #beneficiary_required_details' do
-    details = CurrencyCloud::Resources::Reference.beneficiary_required_details(:currency => 'GBP', :bank_account_country => 'GB', :beneficiary_country => 'GB')
+    details = CurrencyCloud::Reference.beneficiary_required_details(:currency => 'GBP', :bank_account_country => 'GB', :beneficiary_country => 'GB')
     expect(details).to_not be_empty
 
     details = details.first
@@ -25,7 +25,7 @@ describe 'Reference', :vcr => true do
   end
 
   it 'can retrieve #conversion_dates' do
-    dates = CurrencyCloud::Resources::Reference.conversion_dates(:conversion_pair => 'GBPUSD')
+    dates = CurrencyCloud::Reference.conversion_dates(:conversion_pair => 'GBPUSD')
 
     expect(dates.invalid_conversion_dates).to_not be_empty
     invalid_conversion_date = dates.invalid_conversion_dates.first
@@ -35,22 +35,22 @@ describe 'Reference', :vcr => true do
   end
 
   it 'can retrieve #currencies' do
-    currencies = CurrencyCloud::Resources::Reference.currencies
+    currencies = CurrencyCloud::Reference.currencies
     expect(currencies).to_not be_empty
 
     currency = currencies.first
-    expect(currency).to be_a_kind_of(CurrencyCloud::Resources::Currency)
+    expect(currency).to be_a_kind_of(CurrencyCloud::Currency)
     expect(currency.code).to eq('AED')
     expect(currency.name).to eq('United Arab Emirates Dirham')
     expect(currency.decimal_places).to eq(2)
   end
 
   it 'can retrieve #settlement_accounts' do
-    settlement_accounts = CurrencyCloud::Resources::Reference.settlement_accounts(:currency => 'GBP')
+    settlement_accounts = CurrencyCloud::Reference.settlement_accounts(:currency => 'GBP')
     expect(settlement_accounts).to_not be_empty
 
     settlement_account = settlement_accounts.first
-    expect(settlement_account).to be_a_kind_of(CurrencyCloud::Resources::SettlementAccount)
+    expect(settlement_account).to be_a_kind_of(CurrencyCloud::SettlementAccount)
     expect(settlement_account.bank_account_holder_name).to eq("The Currency Cloud GBP - Client Seg A/C")
     expect(settlement_account.bank_address).to be_empty
   end

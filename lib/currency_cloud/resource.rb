@@ -1,4 +1,5 @@
-require 'set'
+require "set"
+require_relative "./actions"
 
 module CurrencyCloud
   module Resource

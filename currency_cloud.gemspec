@@ -4,7 +4,7 @@ require 'currency_cloud/version'
 
 spec = Gem::Specification.new do |s|
   s.name = 'currency_cloud'
-  s.version = CurrencyCloud::Version
+  s.version = CurrencyCloud::VERSION
   s.summary = 'Ruby SDK for the Currency Cloud API'
   s.description = 'Ruby SDK for the Currency Cloud API - https://connect.currencycloud.com/'
   s.authors = ['Liam McAndrew', 'Richard Nienaber']

@@ -141,7 +141,7 @@ inner_error: Timeout::Error
     CurrencyCloud.token = '656485646b068f6e9c81e3d885fa54f5'
     error = nil
     begin
-      CurrencyCloud::Resources::Beneficiary.retrieve('081596c9-02de-483e-9f2a-4cf55dcdf98c')
+      CurrencyCloud::Beneficiary.retrieve('081596c9-02de-483e-9f2a-4cf55dcdf98c')
       raise 'Should fail'
     rescue CurrencyCloud::NotFoundError => error
     end
