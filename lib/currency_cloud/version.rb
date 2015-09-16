@@ -1,8 +1,6 @@
 # Separate Gem version from 'API version'
 
 module CurrencyCloud
-
-  ApiVersion = 'v2' # API Version
-  Version = '0.7.1' # Gem Version
-
+  API_VERSION = 'v2' # API Version
+  VERSION = '0.7.1' # Gem Version
 end

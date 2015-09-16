@@ -55,7 +55,7 @@ describe 'Actions', :vcr => true do
     beneficiaries = CurrencyCloud::Beneficiary.find
     expect(beneficiaries).to_not be_empty
     expect(beneficiaries.length).to eq(1)
-    
+
     beneficiaries.each do |b|
       expect(b).to_not be_nil
       expect(b).to be_a_kind_of(CurrencyCloud::Beneficiary)
@@ -69,7 +69,7 @@ describe 'Actions', :vcr => true do
     expect(pagination.previous_page).to eq(-1)
     expect(pagination.next_page).to eq(-1)
     expect(pagination.order).to eq('created_at')
-    expect(pagination.order_asc_desc).to eq('asc')    
+    expect(pagination.order_asc_desc).to eq('asc')
   end
 
   it "can #update" do

@@ -1,6 +1,8 @@
 module CurrencyCloud
-  class Account < Resource
-    resource :accounts
+  class Contact
+    include CurrencyCloud::Resource
+
+    resource :contacts
     actions :create, :retrieve, :find, :update, :current
   end
 end

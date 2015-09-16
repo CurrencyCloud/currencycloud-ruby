@@ -22,7 +22,7 @@ describe 'Reference', :vcr => true do
     expect(details["beneficiary_last_name"]).to eq("^.{1,255}")
     expect(details["acct_number"]).to eq("^[0-9A-Z]{1,50}$")
     expect(details["sort_code"]).to eq("^\\d{6}$")
-  end 
+  end
 
   it 'can retrieve #conversion_dates' do
     dates = CurrencyCloud::Reference.conversion_dates(:conversion_pair => 'GBPUSD')
@@ -32,7 +32,7 @@ describe 'Reference', :vcr => true do
     expect(invalid_conversion_date).to eq(["2015-05-02", "No trading on Saturday"])
     expect(dates.first_conversion_date).to eq('2015-04-30')
     expect(dates.default_conversion_date).to eq('2015-04-30')
-  end 
+  end
 
   it 'can retrieve #currencies' do
     currencies = CurrencyCloud::Reference.currencies
@@ -43,7 +43,7 @@ describe 'Reference', :vcr => true do
     expect(currency.code).to eq('AED')
     expect(currency.name).to eq('United Arab Emirates Dirham')
     expect(currency.decimal_places).to eq(2)
-  end 
+  end
 
   it 'can retrieve #settlement_accounts' do
     settlement_accounts = CurrencyCloud::Reference.settlement_accounts(:currency => 'GBP')
@@ -53,5 +53,5 @@ describe 'Reference', :vcr => true do
     expect(settlement_account).to be_a_kind_of(CurrencyCloud::SettlementAccount)
     expect(settlement_account.bank_account_holder_name).to eq("The Currency Cloud GBP - Client Seg A/C")
     expect(settlement_account.bank_address).to be_empty
-  end 
+  end
 end

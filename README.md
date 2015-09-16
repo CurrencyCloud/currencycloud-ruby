@@ -2,7 +2,7 @@
 
 # Currency Cloud
 
-This is the official Ruby SDK for v2 of Currency Cloud's API. Additional documentation 
+This is the official Ruby SDK for v2 of Currency Cloud's API. Additional documentation
 for each API endpoint can be found at [connect.currencycloud.com][connect]. If you have any queries or you require support, please contact our implementation team at implementation@currencycloud.com.
 
 ## Installation
@@ -59,7 +59,7 @@ balances = CurrencyCloud::Balance.find
 ```
 
 ## On Behalf Of
-If you want to make calls on behalf of another user (e.g. someone who has a sub-account with you), you 
+If you want to make calls on behalf of another user (e.g. someone who has a sub-account with you), you
 can execute certain commands 'on behalf of' the user's contact_id. Here is an example:
 
 ```ruby
@@ -126,7 +126,7 @@ error in any correspondence can be very helpful.
 
 # Development
 
-Test cases can be run with: `bundle exec rspec`. There is also a `Guardfile` that 
+Test cases can be run with: `bundle exec rspec`. There is also a `Guardfile` that
 is useful for continuously rerunning tests while you develop.
 
 ## Dependencies

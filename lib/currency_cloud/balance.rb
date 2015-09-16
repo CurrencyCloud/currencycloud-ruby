@@ -1,10 +1,12 @@
 module CurrencyCloud
-  class Balance < Resource
+  class Balance
+    include CurrencyCloud::Resource
+
     resource :balances
     actions :find
 
     def self.currency(ccy)
-      get(ccy)
+      new(client.get(ccy))
     end
   end
 end

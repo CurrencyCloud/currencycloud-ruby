@@ -14,7 +14,7 @@ describe 'Settlements', :vcr => true do
       reason: 'mortgage payment',
       term_agreement: true
     }
-    
+
   end
 
   it 'can #add_conversion' do
@@ -24,7 +24,7 @@ describe 'Settlements', :vcr => true do
     updated_settlement = settlement.add_conversion(conversion.id)
 
     expect(settlement).to eq(updated_settlement)
-    
+
     expect(settlement.conversion_ids).to eq( ["24d2ee7f-c7a3-4181-979e-9c58dbace992"])
     expect(settlement.entries).to_not be_empty
 
@@ -44,7 +44,7 @@ describe 'Settlements', :vcr => true do
     expect(deleted_settlement).to_not be_nil
     expect(deleted_settlement.type).to eq('bulk')
     expect(deleted_settlement.created_at).to eq('2015-05-04T20:29:16+00:00')
-    expect(deleted_settlement.status).to eq('open') 
+    expect(deleted_settlement.status).to eq('open')
   end
 
   it 'can #release' do
@@ -52,8 +52,8 @@ describe 'Settlements', :vcr => true do
     released_settlement = settlement.release
 
     expect(released_settlement).to eq(settlement)
-    expect(released_settlement.released_at).to eq('2015-05-04T21:44:23+00:00') 
-    expect(released_settlement.status).to eq('released') 
+    expect(released_settlement.released_at).to eq('2015-05-04T21:44:23+00:00')
+    expect(released_settlement.status).to eq('released')
   end
 
   it 'can #unrelease' do
@@ -61,7 +61,7 @@ describe 'Settlements', :vcr => true do
     unreleased_settlement = settlement.unrelease
 
     expect(unreleased_settlement).to eq(settlement)
-    expect(unreleased_settlement.released_at).to eq('') 
-    expect(unreleased_settlement.status).to eq('open') 
+    expect(unreleased_settlement.released_at).to eq('')
+    expect(unreleased_settlement.status).to eq('open')
   end
 end

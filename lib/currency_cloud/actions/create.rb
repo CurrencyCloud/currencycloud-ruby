@@ -1,8 +1,9 @@
 module CurrencyCloud
   module Actions
     module Create
-      def create(params={})
-        post("create", params)
+      def create(params = {})
+        attrs = client.post("create", params)
+        new(attrs)
       end
     end
   end

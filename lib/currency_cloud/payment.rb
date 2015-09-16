@@ -1,9 +1,8 @@
 module CurrencyCloud
-  
-  class Payment < Resource
-    
+  class Payment
+    include CurrencyCloud::Resource
+
     resource :payments
-    
     actions :create, :retrieve, :find, :delete, :update
   end
 end

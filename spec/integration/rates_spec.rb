@@ -15,7 +15,7 @@ describe 'Rates', :vcr => true do
 
     currencies = rates.currencies
     expect(currencies.length).to eq(2)
-    
+
     currencies.each do |b|
       expect(b).to_not be_nil
       expect(b).to be_a_kind_of(CurrencyCloud::Rate)
@@ -27,7 +27,7 @@ describe 'Rates', :vcr => true do
     expect(rate.offer).to eq('0.71508')
 
     expect(rates.unavailable).to be_empty
-  end 
+  end
 
   it 'can provided #detailed rate' do
     detailed_rate = CurrencyCloud::Rate.detailed(buy_currency: 'GBP', sell_currency: 'USD', fixed_side: 'buy', amount: '10000')

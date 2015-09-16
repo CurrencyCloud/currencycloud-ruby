@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'Authentication', :vcr => true do
-  before(:each) do
+  before do
     CurrencyCloud.reset_session
     CurrencyCloud.environment = :demonstration
     CurrencyCloud.login_id = 'rjnienaber@gmail.com'
@@ -24,7 +24,7 @@ describe 'Authentication', :vcr => true do
   end
 
   it 'can be closed' do
-    CurrencyCloud.session 
+    CurrencyCloud.session
     expect(CurrencyCloud.close_session).to eq(true)
   end
 
