@@ -7,8 +7,8 @@ module CurrencyCloud
 
       # TODO: Set state to be deleted
       # TODO: Disable all actionable methods / freeze?
-      def delete(id)
-        attrs = client.post("#{id}/delete")
+      def delete(id, session = CurrencyCloud.session)
+        attrs = client(session).post("#{id}/delete")
         new(attrs)
       end
     end

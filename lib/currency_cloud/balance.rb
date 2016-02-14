@@ -5,8 +5,8 @@ module CurrencyCloud
     resource :balances
     actions :find
 
-    def self.currency(ccy)
-      new(client.get(ccy))
+    def self.currency(ccy, session = CurrencyCloud.session)
+      new(client(session).get(ccy))
     end
   end
 end
