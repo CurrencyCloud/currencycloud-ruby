@@ -3,7 +3,7 @@
 # Currencycloud
 
 This is the official Ruby SDK for v2 of Currencycloud's API. Additional documentation
-for each API endpoint can be found at [connect.currencycloud.com][connect]. If you have any queries or you require support, please contact our sales team at sales@currencycloud.com.
+for each API endpoint can be found at [developer.currencycloud.com][developer]. If you have any queries or you require support, please contact our sales team at sales@currencycloud.com.
 
 ## Installation
 
@@ -121,7 +121,7 @@ The final section contains valuable information:
 - Message: A human readable message that explains the error
 - Params: A hash that contains dynamic parts of the error message for building custom error messages
 
-When troubleshooting API calls with Currency Cloud support, including the full
+When troubleshooting API calls with Currencycloud support, including the full
 error in any correspondence can be very helpful.
 
 # Development
@@ -141,7 +141,7 @@ to be backwards compatible.
 
 # Copyright
 
-Copyright (c) 2015 Currency Cloud. See [LICENSE][license] for details.
+Copyright (c) 2016 Currencycloud. See [LICENSE][license] for details.
 
 [connect]:   https://connect.currencycloud.com/documentation/getting-started/introduction
 [travis]:    https://travis-ci.org/CurrencyCloud/currencycloud-ruby
