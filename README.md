@@ -1,8 +1,8 @@
 [![Gem Version](https://badge.fury.io/rb/currency_cloud.svg)](http://badge.fury.io/rb/currency_cloud) [![Build Status](https://travis-ci.org/CurrencyCloud/currencycloud-ruby.png?branch=master)](https://travis-ci.org/CurrencyCloud/currencycloud-ruby)
 
-# Currency Cloud
+# Currencycloud
 
-This is the official Ruby SDK for v2 of Currency Cloud's API. Additional documentation
+This is the official Ruby SDK for v2 of Currencycloud's API. Additional documentation
 for each API endpoint can be found at [connect.currencycloud.com][connect]. If you have any queries or you require support, please contact our sales team at sales@currencycloud.com.
 
 ## Installation
