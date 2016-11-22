@@ -3,7 +3,7 @@
 # Currencycloud
 
 This is the official Ruby SDK for v2 of Currencycloud's API. Additional documentation
-for each API endpoint can be found at developer.currencycloud.com. If you have any queries or you require support, please contact our sales team at sales@currencycloud.com.
+for each API endpoint can be found at [developer.currencycloud.com][developer]. If you have any queries or you require support, please contact our sales team at sales@currencycloud.com.
 
 ## Installation
 
@@ -143,7 +143,7 @@ to be backwards compatible.
 
 Copyright (c) 2016 Currencycloud. See [LICENSE][license] for details.
 
-[connect]:   https://connect.currencycloud.com/documentation/getting-started/introduction
+[developer]: https://developer.currencycloud.com/documentation/getting-started/introduction/
 [travis]:    https://travis-ci.org/CurrencyCloud/currencycloud-ruby
 [jruby]:     http://jruby.org/
 [rubinius]:  http://rubini.us/
