@@ -1,8 +1,8 @@
 module CurrencyCloud
   class Session
     ENVIRONMENTS = {
-      :production => 'https://api.thecurrencycloud.com',
-      :demonstration => 'https://devapi.thecurrencycloud.com',
+      :production => 'https://api.currencycloud.com',
+      :demonstration => 'https://devapi.currencycloud.com',
       :uat => 'https://api-uat1.ccycloud.com'
     }
 
