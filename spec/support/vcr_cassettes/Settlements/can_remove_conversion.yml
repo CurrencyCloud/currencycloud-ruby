@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://devapi.thecurrencycloud.com/v2/settlements/63eeef54-3531-4e65-827a-7d0f37503fcc
+    uri: https://devapi.currencycloud.com/v2/settlements/63eeef54-3531-4e65-827a-7d0f37503fcc
     body:
       encoding: US-ASCII
       string: ''
@@ -35,7 +35,7 @@ http_interactions:
   recorded_at: Mon, 04 May 2015 21:10:09 GMT
 - request:
     method: post
-    uri: https://devapi.thecurrencycloud.com/v2/settlements/63eeef54-3531-4e65-827a-7d0f37503fcc/remove_conversion
+    uri: https://devapi.currencycloud.com/v2/settlements/63eeef54-3531-4e65-827a-7d0f37503fcc/remove_conversion
     body:
       encoding: UTF-8
       string: conversion_id=24d2ee7f-c7a3-4181-979e-9c58dbace992

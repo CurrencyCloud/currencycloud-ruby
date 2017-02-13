@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://devapi.thecurrencycloud.com/v2/beneficiaries/find
+    uri: https://devapi.currencycloud.com/v2/beneficiaries/find
     body:
       encoding: US-ASCII
       string: ''

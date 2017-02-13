@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://devapi.thecurrencycloud.com/v2/conversions/create
+    uri: https://devapi.currencycloud.com/v2/conversions/create
     body:
       encoding: UTF-8
       string: buy_currency=GBP&sell_currency=USD&fixed_side=buy&amount=1000&reason=mortgage%20payment&term_agreement=true
@@ -35,7 +35,7 @@ http_interactions:
   recorded_at: Mon, 04 May 2015 20:28:29 GMT
 - request:
     method: post
-    uri: https://devapi.thecurrencycloud.com/v2/settlements/create
+    uri: https://devapi.currencycloud.com/v2/settlements/create
     body:
       encoding: US-ASCII
       string: ''
@@ -68,7 +68,7 @@ http_interactions:
   recorded_at: Mon, 04 May 2015 20:29:16 GMT
 - request:
     method: post
-    uri: https://devapi.thecurrencycloud.com/v2/settlements/63eeef54-3531-4e65-827a-7d0f37503fcc/add_conversion
+    uri: https://devapi.currencycloud.com/v2/settlements/63eeef54-3531-4e65-827a-7d0f37503fcc/add_conversion
     body:
       encoding: UTF-8
       string: conversion_id=24d2ee7f-c7a3-4181-979e-9c58dbace992

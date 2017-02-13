@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://devapi.thecurrencycloud.com/v2/reference/beneficiary_required_details?bank_account_country=GB&beneficiary_country=GB&currency=GBP
+    uri: https://devapi.currencycloud.com/v2/reference/beneficiary_required_details?bank_account_country=GB&beneficiary_country=GB&currency=GBP
     body:
       encoding: US-ASCII
       string: ''

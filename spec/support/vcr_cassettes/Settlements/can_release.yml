@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://devapi.thecurrencycloud.com/v2/settlements/51c619e0-0256-40ad-afba-ca4114b936f9
+    uri: https://devapi.currencycloud.com/v2/settlements/51c619e0-0256-40ad-afba-ca4114b936f9
     body:
       encoding: US-ASCII
       string: ''
@@ -35,7 +35,7 @@ http_interactions:
   recorded_at: Mon, 04 May 2015 21:17:27 GMT
 - request:
     method: post
-    uri: https://devapi.thecurrencycloud.com/v2/settlements/51c619e0-0256-40ad-afba-ca4114b936f9/release
+    uri: https://devapi.currencycloud.com/v2/settlements/51c619e0-0256-40ad-afba-ca4114b936f9/release
     body:
       encoding: US-ASCII
       string: ''

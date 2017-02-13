@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://devapi.thecurrencycloud.com/v2/authenticate/api
+    uri: https://devapi.currencycloud.com/v2/authenticate/api
     body:
       encoding: US-ASCII
       string: login_id=non-existent-login-id&api_key=efb5ae2af84978b7a37f18dd61c8bbe139b403009faea83484405a3dcb64c4d8

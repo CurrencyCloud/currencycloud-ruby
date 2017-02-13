@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://devapi.thecurrencycloud.com/v2/beneficiaries/081596c9-02de-483e-9f2a-4cf55dcdf98c
+    uri: https://devapi.currencycloud.com/v2/beneficiaries/081596c9-02de-483e-9f2a-4cf55dcdf98c
     body:
       encoding: UTF-8
       string: bank_account_holder_name=Test%20User%202

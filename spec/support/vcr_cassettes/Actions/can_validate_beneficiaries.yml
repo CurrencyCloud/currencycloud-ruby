@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://devapi.thecurrencycloud.com/v2/beneficiaries/validate
+    uri: https://devapi.currencycloud.com/v2/beneficiaries/validate
     body:
       encoding: UTF-8
       string: bank_country=GB&currency=GBP&account_number=12345678&routing_code_type_1=sort_code&routing_code_value_1=123456&payment_types[]=regular

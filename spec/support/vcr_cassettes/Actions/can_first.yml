@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://devapi.thecurrencycloud.com/v2/beneficiaries/find?bank_account_holder_name=Test%20User&per_page=1
+    uri: https://devapi.currencycloud.com/v2/beneficiaries/find?bank_account_holder_name=Test%20User&per_page=1
     body:
       encoding: US-ASCII
       string: ''

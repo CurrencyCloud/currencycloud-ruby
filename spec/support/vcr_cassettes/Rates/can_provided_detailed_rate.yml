@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://devapi.thecurrencycloud.com/v2/rates/detailed?amount=10000&buy_currency=GBP&fixed_side=buy&sell_currency=USD
+    uri: https://devapi.currencycloud.com/v2/rates/detailed?amount=10000&buy_currency=GBP&fixed_side=buy&sell_currency=USD
     body:
       encoding: US-ASCII
       string: ''

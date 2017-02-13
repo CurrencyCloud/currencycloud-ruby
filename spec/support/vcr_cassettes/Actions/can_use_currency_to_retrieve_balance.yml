@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://devapi.thecurrencycloud.com/v2/balances/GBP
+    uri: https://devapi.currencycloud.com/v2/balances/GBP
     body:
       encoding: US-ASCII
       string: ''

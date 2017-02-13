@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://devapi.thecurrencycloud.com/v2/reference/currencies
+    uri: https://devapi.currencycloud.com/v2/reference/currencies
     body:
       encoding: US-ASCII
       string: ''
