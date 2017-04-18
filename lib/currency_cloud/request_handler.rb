@@ -2,7 +2,7 @@ module CurrencyCloud
   class RequestHandler
     attr_reader :session
 
-    def initialize(session = CurrencyCloud.session)
+    def initialize(session)
       @session = session
     end
 

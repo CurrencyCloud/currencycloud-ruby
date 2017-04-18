@@ -39,8 +39,8 @@ module CurrencyCloud
       !@changed_attributes.empty?
     end
 
-    def client
-      self.class.client
+    def client(session = CurrencyCloud.session)
+      self.class.client(session)
     end
 
     def metaclass
@@ -73,8 +73,8 @@ module CurrencyCloud
         end
       end
 
-      def client
-        @client ||= Client.new(resource)
+      def client(session = CurrencyCloud.session)
+        Client.new(resource, session)
       end
     end
   end

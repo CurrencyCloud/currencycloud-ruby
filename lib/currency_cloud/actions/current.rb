@@ -1,8 +1,8 @@
 module CurrencyCloud
   module Actions
     module Current
-      def current
-        attrs = client.get("current")
+      def current(session = CurrencyCloud.session)
+        attrs = client(session).get("current")
         new(attrs)
       end
     end

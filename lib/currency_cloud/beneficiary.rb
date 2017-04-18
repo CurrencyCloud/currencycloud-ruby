@@ -5,8 +5,8 @@ module CurrencyCloud
     resource :beneficiaries
     actions :create, :retrieve, :find, :update, :delete
 
-    def self.validate(params)
-      new(client.post("validate", params))
+    def self.validate(params, session = CurrencyCloud.session)
+      new(client(session).post("validate", params))
     end
   end
 end

@@ -3,13 +3,13 @@ module CurrencyCloud
 
     module Find
 
-      def find(params={})
-        response = client.get("find", params)
+      def find(params={}, session = CurrencyCloud.session)
+        response = client(session).get("find", params)
         mixin_class.new(self.resource, self, response)
       end
 
-      def first(params={})
-        entities = find(params.merge(per_page: 1)) || []
+      def first(params={}, session = CurrencyCloud.session)
+        entities = find(params.merge(per_page: 1), session) || []
         entities.first
       end
 

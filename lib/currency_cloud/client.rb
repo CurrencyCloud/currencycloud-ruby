@@ -1,7 +1,8 @@
 module CurrencyCloud
   class Client
-    def initialize(resource)
+    def initialize(resource, session = CurrencyCloud.session)
       @resource = resource
+      @session = session
     end
 
     def get(url, params={})
@@ -17,11 +18,11 @@ module CurrencyCloud
     end
 
     def request
-      RequestHandler.new
+      RequestHandler.new session
     end
 
     private
 
-    attr_reader :resource
+    attr_reader :resource, :session
   end
 end

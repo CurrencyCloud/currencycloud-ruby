@@ -21,23 +21,23 @@ module CurrencyCloud
       update_attributes(Settlement.unrelease(id))
     end
 
-    def self.add_conversion(settlement_id, conversion_id)
-      attrs = client.post("#{settlement_id}/add_conversion", conversion_id: conversion_id)
+    def self.add_conversion(settlement_id, conversion_id, session = CurrencyCloud.session)
+      attrs = client(session).post("#{settlement_id}/add_conversion", conversion_id: conversion_id)
       new(attrs)
     end
 
-    def self.remove_conversion(settlement_id, conversion_id)
-      attrs = client.post("#{settlement_id}/remove_conversion", conversion_id: conversion_id)
+    def self.remove_conversion(settlement_id, conversion_id, session = CurrencyCloud.session)
+      attrs = client(session).post("#{settlement_id}/remove_conversion", conversion_id: conversion_id)
       new(attrs)
     end
 
-    def self.release(settlement_id)
-      attrs = client.post("#{settlement_id}/release")
+    def self.release(settlement_id, session = CurrencyCloud.session)
+      attrs = client(session).post("#{settlement_id}/release")
       new(attrs)
     end
 
-    def self.unrelease(settlement_id)
-      attrs = client.post("#{settlement_id}/unrelease")
+    def self.unrelease(settlement_id, session = CurrencyCloud.session)
+      attrs = client(session).post("#{settlement_id}/unrelease")
       new(attrs)
     end
 
