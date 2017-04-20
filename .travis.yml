@@ -11,4 +11,4 @@ rvm:
   - 2.4.1
   - jruby-19mode
   - jruby-head
-  - rbx-2
+  - rbx-2.2.7
