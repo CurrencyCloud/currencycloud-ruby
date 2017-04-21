@@ -10,11 +10,8 @@ module CurrencyCloud
     end
 
     def process
-      if success?
-        return parsed_response
-      else
-        handle_failure
-      end
+      return parsed_response if success?
+      handle_failure
     end
 
     private

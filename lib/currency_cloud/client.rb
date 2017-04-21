@@ -4,11 +4,11 @@ module CurrencyCloud
       @resource = resource
     end
 
-    def get(url, params={})
+    def get(url, params = {})
       request.get(build_url(url), params)
     end
 
-    def post(url, params={})
+    def post(url, params = {})
       request.post(build_url(url), params)
     end
 

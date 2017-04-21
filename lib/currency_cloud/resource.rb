@@ -1,5 +1,5 @@
-require "set"
-require_relative "./actions"
+require 'set'
+require_relative './actions'
 
 module CurrencyCloud
   module Resource
@@ -12,11 +12,11 @@ module CurrencyCloud
     def initialize(attributes)
       @attributes = attributes
       @changed_attributes = Set.new
-      set_accessors(valid_attributes)
+      self.accessors = valid_attributes
     end
 
     def inspect
-      "#<#{self.class}:0x#{self.object_id.to_s(16)} #{@attributes.inspect}>"
+      "#<#{self.class}:0x#{object_id.to_s(16)} #{@attributes.inspect}>"
     end
 
     private
@@ -47,7 +47,7 @@ module CurrencyCloud
       class << self; self; end
     end
 
-    def set_accessors(attributes)
+    def accessors=(attributes)
       metaclass.instance_eval do
         attributes.each do |attribute|
           define_method(attribute) { @attributes[attribute] }
@@ -66,9 +66,9 @@ module CurrencyCloud
 
       def actions(*actions)
         actions.each do |action|
-          self.class_eval do
+          class_eval do
             action_module = CurrencyCloud::Actions.const_get(action.to_s.capitalize)
-            self.extend(action_module)
+            extend(action_module)
           end
         end
       end

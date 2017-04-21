@@ -1,6 +1,5 @@
 module CurrencyCloud
   class ApiErrorMessage
-
     attr_reader :field, :code, :message, :params
 
     def initialize(field, error)
@@ -45,7 +44,7 @@ module CurrencyCloud
     def to_s
       class_name = super
 
-      string_params = Hash[@params.map { |k, v| [k.to_s, v.to_s]}]
+      string_params = Hash[@params.map { |k, v| [k.to_s, v.to_s] }]
 
       error_details = {
         'platform' => platform,

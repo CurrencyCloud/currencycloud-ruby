@@ -6,16 +6,16 @@ module CurrencyCloud
       @session = session
     end
 
-    def get(route, params={}, opts={})
-      retry_authenticate('get', route, params, opts) do |url, params, options|
-        options.merge!(:query => params)
+    def get(route, params = {}, opts = {})
+      retry_authenticate('get', route, params, opts) do |url, new_params, options|
+        options[:query] = new_params
         HTTParty.get(url, options)
       end
     end
 
-    def post(route, params={}, opts={})
-      retry_authenticate('post', route, params, opts) do |url, params, options|
-        options.merge!(:body => params)
+    def post(route, params = {}, opts = {})
+      retry_authenticate('post', route, params, opts) do |url, new_params, options|
+        options[:body] = new_params
         HTTParty.post(url, options)
       end
     end
@@ -31,7 +31,7 @@ module CurrencyCloud
       response = nil
       retry_count = should_retry ? 0 : 2
       while retry_count < 3
-        options = process_options(verb, opts)
+        options = process_options(opts)
         response = yield(full_url, params, options)
         break unless response.code == 401 && should_retry
         session.reauthenticate
@@ -46,8 +46,8 @@ module CurrencyCloud
       raise UnexpectedError.new(verb, full_url, params, e)
     end
 
-    def process_options(verb, opts)
-      options = {:headers => headers }
+    def process_options(opts)
+      options = { headers: headers }
       # options[:debug_output] = $stdout
       options.merge(opts)
       # options
@@ -55,7 +55,7 @@ module CurrencyCloud
 
     def process_params(params)
       if session && session.on_behalf_of && CurrencyCloud::UUID_REGEX.match(session.on_behalf_of)
-        params.merge!(on_behalf_of: session.on_behalf_of)
+        params[:on_behalf_of] = session.on_behalf_of
       end
 
       params

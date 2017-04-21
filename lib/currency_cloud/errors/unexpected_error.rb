@@ -1,5 +1,4 @@
 module CurrencyCloud
-  
   class UnexpectedError < StandardError
     include ErrorUtils
 
@@ -15,7 +14,7 @@ module CurrencyCloud
     def to_s
       class_name = super
 
-      string_params = Hash[@params.map { |k, v| [k.to_s, v.to_s]}]
+      string_params = Hash[@params.map { |k, v| [k.to_s, v.to_s] }]
 
       error_details = {
         'platform' => platform,
@@ -28,5 +27,5 @@ module CurrencyCloud
       }
       "#{class_name}#{$/}#{YAML.dump(error_details)}"
     end
-  end   
+  end
 end

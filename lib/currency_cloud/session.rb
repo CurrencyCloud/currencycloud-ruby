@@ -1,17 +1,17 @@
 module CurrencyCloud
   class Session
     ENVIRONMENTS = {
-      :production => 'https://api.currencycloud.com',
-      :demonstration => 'https://devapi.currencycloud.com',
-      :uat => 'https://api-uat1.ccycloud.com'
-    }
+      production: 'https://api.currencycloud.com',
+      demonstration: 'https://devapi.currencycloud.com',
+      uat: 'https://api-uat1.ccycloud.com'
+    }.freeze
 
     attr_reader :environment, :login_id, :api_key
     attr_accessor :token, :on_behalf_of
 
     def self.validate_environment(environment)
       unless ENVIRONMENTS.keys.include?(environment)
-        raise CurrencyCloud::GeneralError, "'#{environment}' is not a valid environment, must be one of: #{ENVIRONMENTS.keys.join(", ")}"
+        raise CurrencyCloud::GeneralError, "'#{environment}' is not a valid environment, must be one of: #{ENVIRONMENTS.keys.join(', ')}"
       end
     end
 
@@ -38,8 +38,8 @@ module CurrencyCloud
 
     def authenticate
       validate
-      params = {:login_id => login_id, :api_key => api_key}
-      CurrencyCloud.token = @token = request.post('authenticate/api', params, :should_retry => false)['auth_token']
+      params = { login_id: login_id, api_key: api_key }
+      CurrencyCloud.token = @token = request.post('authenticate/api', params, should_retry: false)['auth_token']
     end
 
     def reauthenticate
@@ -51,8 +51,8 @@ module CurrencyCloud
 
     def validate
       self.class.validate_environment(environment)
-      raise CurrencyCloud::GeneralError, "login_id must be set using CurrencyCloud.login_id=" unless login_id
-      raise CurrencyCloud::GeneralError, "api_key must be set using CurrencyCloud.api_key=" unless api_key
+      raise CurrencyCloud::GeneralError, 'login_id must be set using CurrencyCloud.login_id=' unless login_id
+      raise CurrencyCloud::GeneralError, 'api_key must be set using CurrencyCloud.api_key=' unless api_key
     end
 
     def request

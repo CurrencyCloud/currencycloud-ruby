@@ -5,7 +5,7 @@ require 'json'
 require 'currency_cloud/resource'
 require 'currency_cloud/errors/error_utils'
 lib_path = File.join(File.dirname(__FILE__), '**/*.*')
-Dir[lib_path].sort.each { |f| require f}
+Dir[lib_path].sort.each { |f| require f }
 
 module CurrencyCloud
   UUID_REGEX = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i
