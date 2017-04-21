@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'net/http'
 
-describe 'Error', :vcr => true do
+describe 'Error', vcr: true do
   before(:each) do
     CurrencyCloud.reset_session
     CurrencyCloud.environment = :demonstration
@@ -21,7 +21,7 @@ describe 'Error', :vcr => true do
     rescue CurrencyCloud::BadRequestError => error
     end
 
-    expected_error = %Q{CurrencyCloud::BadRequestError
+    expected_error = %{CurrencyCloud::BadRequestError
 ---
 platform: #{error.platform}
 request:
@@ -64,7 +64,7 @@ errors:
     expect(error_message.field).to eq('api_key')
     expect(error_message.code).to eq('api_key_length_is_invalid')
     expect(error_message.message).to eq('api_key should be 64 character(s) long')
-    expect(error_message.params).to include("length" => 64)
+    expect(error_message.params).to include('length' => 64)
   end
 
   it 'is raised on incorrect authentication details' do
@@ -100,7 +100,7 @@ errors:
     rescue CurrencyCloud::UnexpectedError => error
     end
 
-        expected_error = %Q{CurrencyCloud::UnexpectedError
+    expected_error = %(CurrencyCloud::UnexpectedError
 ---
 platform: #{error.platform}
 request:
@@ -110,7 +110,7 @@ request:
   verb: post
   url: https://devapi.currencycloud.com/v2/authenticate/api
 inner_error: Timeout::Error
-}
+)
 
     expect(error.to_s).to eq(expected_error)
     expect(error.inner_error).to_not be_nil
@@ -159,7 +159,6 @@ inner_error: Timeout::Error
   end
 
   it 'is raised on an internal server error' do
-
     error = nil
     begin
       CurrencyCloud.session
@@ -176,7 +175,7 @@ inner_error: Timeout::Error
     expect(error_message.field).to eq('base')
     expect(error_message.code).to eq('internal_application_error')
     expect(error_message.message).to eq('A general application error occurred')
-    expect(error_message.params).to include("request_id" => 2771875643610572878)
+    expect(error_message.params).to include('request_id' => 2771875643610572878)
   end
 
   it 'is raised when too many requests have been issued' do

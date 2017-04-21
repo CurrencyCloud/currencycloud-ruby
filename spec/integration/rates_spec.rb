@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Rates', :vcr => true do
+describe 'Rates', vcr: true do
   before do
     CurrencyCloud.reset_session
     CurrencyCloud.environment = :demonstration

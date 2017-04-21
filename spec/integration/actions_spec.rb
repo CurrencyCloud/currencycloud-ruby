@@ -1,22 +1,22 @@
 require 'spec_helper'
 
-describe 'Actions', :vcr => true do
+describe 'Actions', vcr: true do
   before do
     CurrencyCloud.reset_session
     CurrencyCloud.environment = :demonstration
     CurrencyCloud.token = '4df5b3e5882a412f148dcd08fa4e5b73'
   end
 
-  it "can #create" do
+  it 'can #create' do
     params = {
-      :bank_account_holder_name => 'Test User',
-      :bank_country => 'GB',
-      :currency => 'GBP',
-      :name => 'Test User',
-      :account_number => '12345678',
-      :routing_code_type_1 => 'sort_code',
-      :routing_code_value_1 => '123456',
-      :payment_types => ['regular']
+      bank_account_holder_name: 'Test User',
+      bank_country: 'GB',
+      currency: 'GBP',
+      name: 'Test User',
+      account_number: '12345678',
+      routing_code_type_1: 'sort_code',
+      routing_code_value_1: '123456',
+      payment_types: ['regular']
     }
 
     beneficiary = CurrencyCloud::Beneficiary.create(params)
@@ -29,7 +29,7 @@ describe 'Actions', :vcr => true do
     expect(beneficiary.updated_at).to eq('2015-04-25T09:21:00+00:00')
   end
 
-  it "can #retrieve" do
+  it 'can #retrieve' do
     beneficiary = CurrencyCloud::Beneficiary.retrieve('081596c9-02de-483e-9f2a-4cf55dcdf98c')
     expect(beneficiary).to be_a_kind_of(CurrencyCloud::Beneficiary)
 
@@ -40,8 +40,8 @@ describe 'Actions', :vcr => true do
     expect(beneficiary.updated_at).to eq('2015-04-25T09:21:00+00:00')
   end
 
-  it "can #first" do
-    beneficiary = CurrencyCloud::Beneficiary.first(:bank_account_holder_name => 'Test User')
+  it 'can #first' do
+    beneficiary = CurrencyCloud::Beneficiary.first(bank_account_holder_name: 'Test User')
     expect(beneficiary).to be_a_kind_of(CurrencyCloud::Beneficiary)
 
     expect(beneficiary.id).to eq('081596c9-02de-483e-9f2a-4cf55dcdf98c')
@@ -51,7 +51,7 @@ describe 'Actions', :vcr => true do
     expect(beneficiary.updated_at).to eq('2015-04-25T10:58:21+00:00')
   end
 
-  it "can #find" do
+  it 'can #find' do
     beneficiaries = CurrencyCloud::Beneficiary.find
     expect(beneficiaries).to_not be_empty
     expect(beneficiaries.length).to eq(1)
@@ -72,13 +72,13 @@ describe 'Actions', :vcr => true do
     expect(pagination.order_asc_desc).to eq('asc')
   end
 
-  it "can #update" do
-    beneficiary = CurrencyCloud::Beneficiary.update('081596c9-02de-483e-9f2a-4cf55dcdf98c', :bank_account_holder_name => 'Test User 2')
+  it 'can #update' do
+    beneficiary = CurrencyCloud::Beneficiary.update('081596c9-02de-483e-9f2a-4cf55dcdf98c', bank_account_holder_name: 'Test User 2')
     expect(beneficiary).to be_a_kind_of(CurrencyCloud::Beneficiary)
     expect(beneficiary.bank_account_holder_name).to eq('Test User 2')
   end
 
-  it "can #delete" do
+  it 'can #delete' do
     beneficiary = CurrencyCloud::Beneficiary.delete('081596c9-02de-483e-9f2a-4cf55dcdf98c')
     expect(beneficiary).to be_a_kind_of(CurrencyCloud::Beneficiary)
 
@@ -89,7 +89,7 @@ describe 'Actions', :vcr => true do
     expect(beneficiary.updated_at).to eq('2015-04-25T11:06:27+00:00')
   end
 
-  it "can #current" do
+  it 'can #current' do
     account = CurrencyCloud::Account.current
 
     expect(account).to be_a_kind_of(CurrencyCloud::Account)
@@ -99,14 +99,14 @@ describe 'Actions', :vcr => true do
     expect(account.updated_at).to eq('2015-04-24T15:57:55+00:00')
   end
 
-  it "can #validate beneficiaries" do
+  it 'can #validate beneficiaries' do
     params = {
-      :bank_country => 'GB',
-      :currency => 'GBP',
-      :account_number => '12345678',
-      :routing_code_type_1 => 'sort_code',
-      :routing_code_value_1 => '123456',
-      :payment_types => ['regular']
+      bank_country: 'GB',
+      currency: 'GBP',
+      account_number: '12345678',
+      routing_code_type_1: 'sort_code',
+      routing_code_value_1: '123456',
+      payment_types: ['regular']
     }
 
     beneficiary = CurrencyCloud::Beneficiary.validate(params)
@@ -116,12 +116,12 @@ describe 'Actions', :vcr => true do
     expect(beneficiary.payment_types).to include('regular')
   end
 
-  it "can use #currency to retrieve balance" do
+  it 'can use #currency to retrieve balance' do
     balance = CurrencyCloud::Balance.currency('GBP')
 
     expect(balance).to be_a_kind_of(CurrencyCloud::Balance)
 
-    expect(balance.id).to eq("5a998e06-3eb7-46d6-ba58-f749864159ce")
+    expect(balance.id).to eq('5a998e06-3eb7-46d6-ba58-f749864159ce')
     expect(balance.amount).to eq('999866.78')
     expect(balance.created_at).to eq('2014-12-04T09:50:35+00:00')
     expect(balance.updated_at).to eq('2015-03-23T14:33:37+00:00')
