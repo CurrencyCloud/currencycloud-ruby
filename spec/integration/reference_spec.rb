@@ -34,6 +34,15 @@ describe 'Reference', vcr: true do
     expect(dates.default_conversion_date).to eq('2015-04-30')
   end
 
+  it 'can retrieve #payment_dates' do
+    dates = CurrencyCloud::Reference.payment_dates(currency: 'USD')
+
+    expect(dates.invalid_payment_dates).to_not be_empty
+    invalid_payment_date = dates.invalid_payment_dates.first
+    expect(invalid_payment_date).to eq(['2017-04-29', 'No trading on Saturday'])
+    expect(dates.first_payment_date).to eq('2017-04-28')
+  end
+
   it 'can retrieve #currencies' do
     currencies = CurrencyCloud::Reference.currencies
     expect(currencies).to_not be_empty
