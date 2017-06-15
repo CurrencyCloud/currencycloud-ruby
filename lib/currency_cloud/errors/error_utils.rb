@@ -11,7 +11,7 @@ module CurrencyCloud
       "#{base}#{implementation}"
     end
 
-    REDACTED_PARAMS = %i(api_key login_id token).freeze
+    REDACTED_PARAMS = [:api_key, :login_id, :token].freeze
 
     def redacted_params(params)
       redacted = params.dup
