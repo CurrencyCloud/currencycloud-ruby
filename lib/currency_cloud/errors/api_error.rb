@@ -33,6 +33,8 @@ module CurrencyCloud
       errors = raw_response.parsed_response
       @code = errors['error_code']
       @messages = []
+      
+      return unless errors['error_messages']
 
       errors['error_messages'].each do |field, messages|
         messages.each do |message|
