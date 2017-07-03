@@ -10,5 +10,19 @@ module CurrencyCloud
                        end
       "#{base}#{implementation}"
     end
+
+    REDACTED_PARAMS = [:api_key, :login_id, :token].freeze
+    REDACTED_STRING = "REDACTED".freeze
+
+    def redacted_params(params)
+      redacted = params.dup
+
+      REDACTED_PARAMS.each do |param|
+        redacted[param.to_sym] = REDACTED_STRING if redacted.key? param.to_sym
+        redacted[param.to_s] = REDACTED_STRING if redacted.key? param.to_s
+      end
+
+      redacted
+    end
   end
 end

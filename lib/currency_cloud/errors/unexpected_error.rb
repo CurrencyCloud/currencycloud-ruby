@@ -7,7 +7,7 @@ module CurrencyCloud
     def initialize(verb, route, params, e)
       @verb = verb
       @route = route
-      @params = params
+      @params = redacted_params(params)
       @inner_error = e
     end
 

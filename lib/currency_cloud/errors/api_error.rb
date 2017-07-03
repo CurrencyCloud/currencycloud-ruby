@@ -27,7 +27,7 @@ module CurrencyCloud
     def initialize(verb, route, params, raw_response)
       @verb = verb
       @route = route
-      @params = params
+      @params = redacted_params(params)
       @raw_response = raw_response
       @status_code = raw_response.code
       errors = raw_response.parsed_response

@@ -26,8 +26,8 @@ describe 'Error', vcr: true do
 platform: #{error.platform}
 request:
   parameters:
-    login_id: non-existent-login-id
-    api_key: ef0fd50fca1fb14c1fab3a8436b9ecb57528f0
+    login_id: REDACTED
+    api_key: REDACTED
   verb: post
   url: https://devapi.currencycloud.com/v2/authenticate/api
 response:
@@ -105,8 +105,8 @@ errors:
 platform: #{error.platform}
 request:
   parameters:
-    login_id: rjnienaber@gmail.com
-    api_key: ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0
+    login_id: REDACTED
+    api_key: REDACTED
   verb: post
   url: https://devapi.currencycloud.com/v2/authenticate/api
 inner_error: Timeout::Error
