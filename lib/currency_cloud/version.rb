@@ -2,5 +2,5 @@
 
 module CurrencyCloud
   API_VERSION = 'v2'.freeze # API Version
-  VERSION = '0.8.1'.freeze # Gem Version
+  VERSION = '0.8.2'.freeze # Gem Version
 end
