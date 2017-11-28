@@ -64,11 +64,16 @@ module CurrencyCloud
     def headers
       headers = {}
       headers['X-Auth-Token'] = session.token if session && session.token
+      headers['User-Agent'] = user_agent
       headers
     end
 
     def build_url(route)
       "#{session.environment_url}/#{CurrencyCloud::API_VERSION}/" + route
+    end
+
+    def user_agent
+      "CurrencyCloud/2.0 Ruby/#{CurrencyCloud::VERSION}"
     end
   end
 end
