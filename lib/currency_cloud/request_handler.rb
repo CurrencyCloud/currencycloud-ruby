@@ -73,7 +73,7 @@ module CurrencyCloud
     end
 
     def user_agent
-      "CurrencyCloud/2.0 Ruby/#{CurrencyCloud::VERSION}"
+      "CurrencyCloudSDK/2.0 Ruby/#{CurrencyCloud::VERSION}"
     end
   end
 end
