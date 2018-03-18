@@ -42,15 +42,13 @@ module CurrencyCloud
       response_handler.process
     rescue ApiError, UnexpectedError
       raise
-    rescue => e
+    rescue StandardError => e
       raise UnexpectedError.new(verb, full_url, params, e)
     end
 
     def process_options(opts)
       options = { headers: headers }
-      # options[:debug_output] = $stdout
       options.merge(opts)
-      # options
     end
 
     def process_params(params)

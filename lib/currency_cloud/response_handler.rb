@@ -22,13 +22,14 @@ module CurrencyCloud
 
     def handle_failure
       error_class = case response.code
-        when 400 then BadRequestError
-        when 401 then AuthenticationError
-        when 403 then ForbiddenError
-        when 404 then NotFoundError
-        when 429 then TooManyRequestsError
-        when 500 then InternalApplicationError
-      end
+                    when 400 then BadRequestError
+                    when 401 then AuthenticationError
+                    when 403 then ForbiddenError
+                    when 404 then NotFoundError
+                    when 429 then TooManyRequestsError
+                    when 500 then InternalApplicationError
+                    end
+
       raise error_class.new(verb, route, params, response) if error_class
       raise UnexpectedError.new(verb, route, params, response)
     end

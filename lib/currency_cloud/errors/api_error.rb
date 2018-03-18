@@ -33,7 +33,7 @@ module CurrencyCloud
       errors = raw_response.parsed_response
       @code = errors['error_code']
       @messages = []
-      
+
       return unless errors['error_messages']
 
       errors['error_messages'].each do |field, messages|
@@ -62,7 +62,7 @@ module CurrencyCloud
         },
         'errors' => messages.map(&:to_h)
       }
-      "#{class_name}#{$/}#{YAML.dump(error_details)}"
+      "#{class_name}#{$INPUT_RECORD_SEPARATOR}#{YAML.dump(error_details)}"
     end
   end
 

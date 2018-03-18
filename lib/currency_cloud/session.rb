@@ -10,8 +10,8 @@ module CurrencyCloud
     attr_accessor :token, :on_behalf_of
 
     def self.validate_environment(environment)
-      unless ENVIRONMENTS.keys.include?(environment)
-        raise CurrencyCloud::GeneralError, "'#{environment}' is not a valid environment, must be one of: #{ENVIRONMENTS.keys.join(', ')}"
+      unless ENVIRONMENTS.key?(environment)
+        raise "'#{environment}' is not a valid environment. Must be one of: #{ENVIRONMENTS.keys.join(', ')}"
       end
     end
 
