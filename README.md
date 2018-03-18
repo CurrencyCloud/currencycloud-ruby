@@ -2,8 +2,9 @@
 
 # Currencycloud
 
-This is the official Ruby SDK for v2 of Currencycloud's API. Additional documentation
-for each API endpoint can be found at [developer.currencycloud.com][developer]. If you have any queries or you require support, please contact our sales team at sales@currencycloud.com.
+This is the official Ruby SDK for the Currencycloud API. Additional documentation for each API endpoint can be found at [developer.currencycloud.com][docs].
+
+If you have any queries or you require support, please contact our development team at development@currencycloud.com Please quote your login id in any correspondence as this makes it easier for us to locate your account and give you the support you need.
 
 ## Installation
 
@@ -130,6 +131,7 @@ Test cases can be run with: `bundle exec rspec`. There is also a `Guardfile` tha
 is useful for continuously rerunning tests while you develop.
 
 ## Dependencies
+
 * [HTTParty][httparty]
 * [json][json]
 
