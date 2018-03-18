@@ -25,7 +25,7 @@ module CurrencyCloud
         },
         'inner_error' => inner_error.to_s
       }
-      "#{class_name}#{$/}#{YAML.dump(error_details)}"
+      "#{class_name}#{$INPUT_RECORD_SEPARATOR}#{YAML.dump(error_details)}"
     end
   end
 end

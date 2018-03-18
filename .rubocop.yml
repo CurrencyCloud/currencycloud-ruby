@@ -6,3 +6,6 @@ Style/Documentation:
 
 Style/SymbolArray:
   EnforcedStyle: brackets
+
+Style/NumericLiterals:
+  Enabled: false

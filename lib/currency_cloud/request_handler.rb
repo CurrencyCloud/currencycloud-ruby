@@ -42,7 +42,7 @@ module CurrencyCloud
       response_handler.process
     rescue ApiError, UnexpectedError
       raise
-    rescue => e
+    rescue StandardError => e
       raise UnexpectedError.new(verb, full_url, params, e)
     end
 
