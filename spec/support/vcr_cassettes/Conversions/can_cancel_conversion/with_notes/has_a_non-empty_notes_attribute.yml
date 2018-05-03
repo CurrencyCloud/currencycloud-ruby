@@ -1,0 +1,92 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/conversions/create
+    body:
+      encoding: UTF-8
+      string: buy_currency=USD&sell_currency=GBP&fixed_side=buy&amount=95000&reason=SDK%20conversion%20testing&term_agreement=true
+    headers:
+      X-Auth-Token:
+      - 515a4bedf64863b80170bae6c9d7c6a2
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 03 May 2018 13:39:40 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '919'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d8979727cba1a1dee3a06302e10607c5f1525354779; expires=Fri, 03-May-19
+        13:39:39 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      X-Request-Id:
+      - '3572231273169646317'
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4153228e8b8e6a73-LHR
+    body:
+      encoding: UTF-8
+      string: '{"id":"e65386d5-1f67-4b59-85cd-3a6da3aa2a25","settlement_date":"2018-05-08T15:30:00+00:00","conversion_date":"2018-05-08T00:00:00+00:00","short_reference":"20180503-QFDYWN","creator_contact_id":"04d0c252-7b78-4d72-b408-df78841e3ddc","account_id":"67e1b252-40a7-454d-a097-8f77d385889d","currency_pair":"GBPUSD","status":"awaiting_funds","buy_currency":"USD","sell_currency":"GBP","client_buy_amount":"95000.00","client_sell_amount":"67380.67","fixed_side":"buy","core_rate":"1.4099","partner_rate":"","partner_status":"funds_arrived","partner_buy_amount":"0.00","partner_sell_amount":"0.00","client_rate":"1.4099","deposit_required":false,"deposit_amount":"0.00","deposit_currency":"","deposit_status":"not_required","deposit_required_at":"","payment_ids":[],"unallocated_funds":"0.00","unique_request_id":null,"created_at":"2018-05-03T13:39:40+00:00","updated_at":"2018-05-03T13:39:40+00:00","mid_market_rate":"1.4100"}'
+    http_version: 
+  recorded_at: Thu, 03 May 2018 13:39:40 GMT
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/conversions/e65386d5-1f67-4b59-85cd-3a6da3aa2a25/cancel
+    body:
+      encoding: UTF-8
+      string: notes=Business%20Terminated%20Contract
+    headers:
+      X-Auth-Token:
+      - 515a4bedf64863b80170bae6c9d7c6a2
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 03 May 2018 13:39:41 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '436'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d2b05f9f205acc3772a4b818114f2aa751525354780; expires=Fri, 03-May-19
+        13:39:40 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      X-Request-Id:
+      - '3572231278756436719'
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 415322929f956a73-LHR
+    body:
+      encoding: UTF-8
+      string: '{"account_id":"67e1b252-40a7-454d-a097-8f77d385889d","contact_id":"04d0c252-7b78-4d72-b408-df78841e3ddc","event_account_id":"67e1b252-40a7-454d-a097-8f77d385889d","event_contact_id":"04d0c252-7b78-4d72-b408-df78841e3ddc","conversion_id":"e65386d5-1f67-4b59-85cd-3a6da3aa2a25","event_type":"self_service_cancellation","amount":"-9.56","currency":"GBP","notes":"Business
+        Terminated Contract","event_date_time":"2018-05-03T13:39:41+00:00"}'
+    http_version: 
+  recorded_at: Thu, 03 May 2018 13:39:41 GMT
+recorded_with: VCR 2.9.3

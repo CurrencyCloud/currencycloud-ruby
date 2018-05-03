@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/conversions/create
+    body:
+      encoding: UTF-8
+      string: buy_currency=USD&sell_currency=GBP&fixed_side=buy&amount=95000&reason=SDK%20conversion%20testing&term_agreement=true
+    headers:
+      X-Auth-Token:
+      - 72ab8fa2594ecb4f9a88efcfd565c6a3
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 03 May 2018 14:21:12 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '919'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d621b2aa1fa7a06f68c7fb0fc5552ef731525357271; expires=Fri, 03-May-19
+        14:21:11 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      X-Request-Id:
+      - '3572252175026099684'
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 41535f637dc46a31-LHR
+    body:
+      encoding: UTF-8
+      string: '{"id":"6680fe77-24f9-482f-8174-293169f85675","settlement_date":"2018-05-08T15:30:00+00:00","conversion_date":"2018-05-08T00:00:00+00:00","short_reference":"20180503-KCHPPG","creator_contact_id":"04d0c252-7b78-4d72-b408-df78841e3ddc","account_id":"67e1b252-40a7-454d-a097-8f77d385889d","currency_pair":"GBPUSD","status":"awaiting_funds","buy_currency":"USD","sell_currency":"GBP","client_buy_amount":"95000.00","client_sell_amount":"67380.67","fixed_side":"buy","core_rate":"1.4099","partner_rate":"","partner_status":"funds_arrived","partner_buy_amount":"0.00","partner_sell_amount":"0.00","client_rate":"1.4099","deposit_required":false,"deposit_amount":"0.00","deposit_currency":"","deposit_status":"not_required","deposit_required_at":"","payment_ids":[],"unallocated_funds":"0.00","unique_request_id":null,"created_at":"2018-05-03T14:21:11+00:00","updated_at":"2018-05-03T14:21:11+00:00","mid_market_rate":"1.4100"}'
+    http_version: 
+  recorded_at: Thu, 03 May 2018 14:21:12 GMT
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/conversions/6680fe77-24f9-482f-8174-293169f85675/split
+    body:
+      encoding: UTF-8
+      string: amount=45000
+    headers:
+      X-Auth-Token:
+      - 72ab8fa2594ecb4f9a88efcfd565c6a3
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 03 May 2018 14:23:09 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '624'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d05713a3bf481fa3ccbf0d656e4bc43b31525357387; expires=Fri, 03-May-19
+        14:23:07 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      X-Request-Id:
+      - '3572253145151928172'
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4153623679bf6a67-LHR
+    body:
+      encoding: UTF-8
+      string: '{"parent_conversion":{"id":"6680fe77-24f9-482f-8174-293169f85675","short_reference":"20180503-KCHPPG","sell_amount":"35463.51","sell_currency":"GBP","buy_amount":"50000.00","buy_currency":"USD","settlement_date":"2018-05-08T15:30:00+00:00","conversion_date":"2018-05-08T00:00:00+00:00","status":"awaiting_funds"},"child_conversion":{"id":"2ccefd27-f1f5-430a-ac91-3956e47fc814","short_reference":"20180503-LXPLPB","sell_amount":"31917.16","sell_currency":"GBP","buy_amount":"45000.00","buy_currency":"USD","settlement_date":"2018-05-08T15:30:00+00:00","conversion_date":"2018-05-08T00:00:00+00:00","status":"awaiting_funds"}}'
+    http_version: 
+  recorded_at: Thu, 03 May 2018 14:23:09 GMT
+recorded_with: VCR 2.9.3
