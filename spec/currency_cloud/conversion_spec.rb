@@ -4,8 +4,8 @@ describe 'Conversions', vcr: true do
   before(:all) do
     CurrencyCloud.reset_session
     CurrencyCloud.environment = :demonstration
-    CurrencyCloud.login_id = 'mark.sutton@currencycloud.com'
-    CurrencyCloud.api_key = '48a3d8694aeb1132588a27d1a7dbbc4ef92dbebd83e51194a67a02f9b81f67d8'
+    CurrencyCloud.login_id = 'development@currencycloud.com'
+    CurrencyCloud.api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
 
     @params = {
       buy_currency: 'USD',

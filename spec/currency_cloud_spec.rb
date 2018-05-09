@@ -17,23 +17,23 @@ describe CurrencyCloud do
 
   describe '#login_id' do
     it 'can set the login_id' do
-      CurrencyCloud.login_id = 'test@example.com'
-      expect(CurrencyCloud.login_id).to eq('test@example.com')
+      CurrencyCloud.login_id = 'development@currencycloud.com'
+      expect(CurrencyCloud.login_id).to eq('development@currencycloud.com')
     end
   end
 
   describe '#api_key' do
     it 'can set the api_key' do
-      CurrencyCloud.api_key = 'e3b0d6895f91f46d9eaf5c95aa0f64dca9007b7ab0778721b6cdc0a8bc7c563b'
-      expect(CurrencyCloud.api_key).to eq('e3b0d6895f91f46d9eaf5c95aa0f64dca9007b7ab0778721b6cdc0a8bc7c563b')
+      CurrencyCloud.api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
+      expect(CurrencyCloud.api_key).to eq('deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef')
     end
   end
 
   describe '#session' do
     it 'returns a session object' do
       CurrencyCloud.environment = :demonstration
-      CurrencyCloud.login_id = 'test@example.com'
-      CurrencyCloud.api_key = 'e3b0d6895f91f46d9eaf5c95aa0f64dca9007b7ab0778721b6cdc0a8bc7c563b'
+      CurrencyCloud.login_id = 'development@currencycloud.com'
+      CurrencyCloud.api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
 
       request_handler = double('RequestHandler')
       expect(request_handler).to receive(:post).and_return('auth_token' => '123')
@@ -62,7 +62,7 @@ describe CurrencyCloud do
 
     it 'raises an error if the api_key is not set' do
       CurrencyCloud.environment = :demonstration
-      CurrencyCloud.login_id = 'test@example.com'
+      CurrencyCloud.login_id = 'development@currencycloud.com'
       expect { CurrencyCloud.session }
         .to raise_error(CurrencyCloud::GeneralError, 'api_key must be set using CurrencyCloud.api_key=')
     end

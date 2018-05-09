@@ -92,7 +92,7 @@ platform: Ruby 1.9.3
 request:
   parameters:
     login_id: non-existent-login-id
-    api_key: ef0fd50fca1fb14c1fab3a8436b9ecb57528f0
+    api_key: deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
   verb: post
   url: https://devapi.currencycloud.com/v2/authenticate/api
 response:
