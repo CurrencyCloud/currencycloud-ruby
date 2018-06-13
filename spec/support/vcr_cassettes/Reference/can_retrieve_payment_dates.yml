@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://devapi.currencycloud.com/v2/reference/payment_dates?currency=USD
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - 1c9da5726314246acfb09ec5651307a5
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 29 Apr 2015 21:04:08 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '743'
+      Connection:
+      - keep-alive
+      X-Request-Id:
+      - '2775201681275056976'
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"invalid_payment_dates":{"2017-04-29":"No trading on Saturday","2017-04-30":"No trading on Sunday","2017-05-06":"No trading on Saturday","2017-05-07":"No trading on Sunday","2017-05-13":"No trading on Saturday","2017-05-14":"No trading on Sunday","2017-05-20":"No trading on Saturday","2017-05-21":"No trading on Sunday","2017-05-27":"No trading on Saturday","2017-05-28":"No trading on Sunday","2017-05-29":"","2017-06-03":"No trading on Saturday","2017-06-04":"No trading on Sunday","2017-06-10":"No trading on Saturday","2017-06-11":"No trading on Sunday","2017-06-17":"No trading on Saturday","2017-06-18":"No trading on Sunday","2017-06-24":"No trading on Saturday","2017-06-25":"No trading on Sunday"},"first_payment_date":"2017-04-28"}'
+    http_version:
+  recorded_at: Wed, 29 Apr 2015 21:04:08 GMT
+recorded_with: VCR 2.9.3

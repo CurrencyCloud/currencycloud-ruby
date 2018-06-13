@@ -18,6 +18,11 @@ module CurrencyCloud
       ConversionDates.new(dates)
     end
 
+    def self.payment_dates(params)
+      dates = client.get('payment_dates', params)
+      PaymentDates.new(dates)
+    end
+
     def self.settlement_accounts(params = {})
       response = client.get('settlement_accounts', params)
       response['settlement_accounts'].map { |s| SettlementAccount.new(s) }
