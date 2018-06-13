@@ -48,9 +48,7 @@ module CurrencyCloud
 
     def process_options(opts)
       options = { headers: headers }
-      # options[:debug_output] = $stdout
       options.merge(opts)
-      # options
     end
 
     def process_params(params)

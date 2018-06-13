@@ -9,3 +9,6 @@ Style/SymbolArray:
 
 Style/NumericLiterals:
   Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false

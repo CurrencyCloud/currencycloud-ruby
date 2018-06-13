@@ -28,7 +28,7 @@ module CurrencyCloud
                     when 404 then NotFoundError
                     when 429 then TooManyRequestsError
                     when 500 then InternalApplicationError
-      end
+                    end
       raise error_class.new(verb, route, params, response) if error_class
       raise UnexpectedError.new(verb, route, params, response)
     end

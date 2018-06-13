@@ -2,7 +2,7 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))
 
 require 'currency_cloud/version'
 
-spec = Gem::Specification.new do |s|
+Gem::Specification.new do |s|
   s.name = 'currency_cloud'
   s.version = CurrencyCloud::VERSION
   s.summary = 'Ruby SDK for the Currency Cloud API'
