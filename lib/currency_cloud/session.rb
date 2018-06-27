@@ -10,9 +10,8 @@ module CurrencyCloud
     attr_accessor :token, :on_behalf_of
 
     def self.validate_environment(environment)
-      unless ENVIRONMENTS.key?(environment)
-        raise "'#{environment}' is not a valid environment. Must be one of: #{ENVIRONMENTS.keys.join(', ')}"
-      end
+      return if ENVIRONMENTS.key?(environment)
+      raise "'#{environment}' is not a valid environment. Must be one of: #{ENVIRONMENTS.keys.join(', ')}"
     end
 
     def initialize(environment, login_id, api_key, token)

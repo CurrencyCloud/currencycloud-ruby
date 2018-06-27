@@ -4,9 +4,9 @@ module CurrencyCloud
       base = "ruby-#{RUBY_VERSION}"
       implementation = case RUBY_ENGINE
                        when 'ruby' then ''
-                       when 'jruby' then ' (jruby-#{JRUBY_VERSION})"'
-                       when 'rbx' then ' (rbx-#{Rubinius::VERSION})'
-                       else ' (other)'
+                       when 'jruby' then " (jruby-#{JRUBY_VERSION})"
+                       when 'rbx' then " (rbx-#{Rubinius::VERSION})"
+                       else " (#{RUBY_ENGINE})"
                        end
       "#{base}#{implementation}"
     end

@@ -4,8 +4,8 @@ describe 'Authentication', vcr: true do
   before do
     CurrencyCloud.reset_session
     CurrencyCloud.environment = :demonstration
-    CurrencyCloud.login_id = 'rjnienaber@gmail.com'
-    CurrencyCloud.api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0'
+    CurrencyCloud.login_id = 'development@currencycloud.com'
+    CurrencyCloud.api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
     CurrencyCloud.token = nil
   end
 

@@ -7,14 +7,14 @@ describe 'Error', vcr: true do
   before(:each) do
     CurrencyCloud.reset_session
     CurrencyCloud.environment = :demonstration
-    CurrencyCloud.login_id = 'rjnienaber@gmail.com'
-    CurrencyCloud.api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb65f02f129fd87eafa45ded8ae257528f0'
+    CurrencyCloud.login_id = 'development@currencycloud.com'
+    CurrencyCloud.api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
     CurrencyCloud.token = nil
   end
 
   it 'contains full details for api error' do
     CurrencyCloud.login_id = 'non-existent-login-id'
-    CurrencyCloud.api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb57528f0'
+    CurrencyCloud.api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
 
     expected_error = %{CurrencyCloud::BadRequestError
 ---
@@ -42,7 +42,7 @@ errors:
 
   it 'is raised on a bad request' do
     CurrencyCloud.login_id = 'non-existent-login-id'
-    CurrencyCloud.api_key = 'ef0fd50fca1fb14c1fab3a8436b9ecb57528f0'
+    CurrencyCloud.api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
 
     begin
       CurrencyCloud.session
@@ -63,7 +63,7 @@ errors:
 
   it 'is raised on incorrect authentication details' do
     CurrencyCloud.login_id = 'non-existent-login-id'
-    CurrencyCloud.api_key = 'efb5ae2af84978b7a37f18dd61c8bbe139b403009faea83484405a3dcb64c4d8'
+    CurrencyCloud.api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
 
     begin
       CurrencyCloud.session
@@ -163,7 +163,7 @@ inner_error: Timeout::Error
   end
 
   it 'is raised when too many requests have been issued' do
-    CurrencyCloud.login_id = 'rjnienaber@gmail.com2'
+    CurrencyCloud.login_id = 'development@currencycloud.com'
 
     begin
       CurrencyCloud.session

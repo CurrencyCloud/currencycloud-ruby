@@ -4,11 +4,11 @@ module CurrencyCloud
 
     attr_reader :inner_error
 
-    def initialize(verb, route, params, e)
+    def initialize(verb, route, params, inner)
       @verb = verb
       @route = route
       @params = redacted_params(params)
-      @inner_error = e
+      @inner_error = inner
     end
 
     def to_s
