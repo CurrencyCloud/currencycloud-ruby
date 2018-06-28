@@ -5,18 +5,18 @@ module CurrencyCloud
     resource :conversions
     actions :create, :retrieve, :find
 
-    def self.cancel(params)
-      attrs = client.post("#{params[:conversion_id]}/cancel", params.delete_if { |key, _value| key == :conversion_id })
+    def self.cancel(id, params)
+      attrs = client.post("#{id}/cancel", params)
       new(attrs)
     end
 
-    def self.date_change(params)
-      attrs = client.post("#{params[:conversion_id]}/date_change", params.delete_if { |key, _value| key == :conversion_id })
+    def self.date_change(id, params)
+      attrs = client.post("#{id}/date_change", params)
       new(attrs)
     end
 
-    def self.split(params)
-      attrs = client.post("#{params[:conversion_id]}/split", params.delete_if { |key, _value| key == :conversion_id })
+    def self.split(id, params)
+      attrs = client.post("#{id}/split", params)
       new(attrs)
     end
   end
