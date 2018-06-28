@@ -22,10 +22,8 @@ describe 'Conversions', vcr: true do
     context 'without notes' do
       it 'has a empty "notes" attribute' do
         conversion = CurrencyCloud::Conversion.create(@params)
-        cancel_without_notes_params = {
-          :conversion_id => conversion.id,
-        }
-        cancelled_conversion = CurrencyCloud::Conversion.cancel(cancel_without_notes_params)
+        cancel_without_notes_params = {}
+        cancelled_conversion = CurrencyCloud::Conversion.cancel(conversion.id, cancel_without_notes_params)
 
         expect(cancelled_conversion).to have_attributes(
                                           "account_id" => "67e1b252-40a7-454d-a097-8f77d385889d",
@@ -46,10 +44,9 @@ describe 'Conversions', vcr: true do
       it 'has a non-empty "notes" attribute' do
         conversion = CurrencyCloud::Conversion.create(@params)
         cancel_with_notes_params = {
-          :conversion_id => conversion.id,
           :notes => 'Business Terminated Contract'
         }
-        cancelled_conversion = CurrencyCloud::Conversion.cancel(cancel_with_notes_params)
+        cancelled_conversion = CurrencyCloud::Conversion.cancel(conversion.id, cancel_with_notes_params)
 
         expect(cancelled_conversion).to have_attributes(
                                           "account_id" => "67e1b252-40a7-454d-a097-8f77d385889d",
@@ -71,10 +68,9 @@ describe 'Conversions', vcr: true do
     new_settlement_date = "2018-05-14T15:30:00+00:00"
     conversion = CurrencyCloud::Conversion.create(@params)
     date_change_params = {
-      :conversion_id => conversion.id,
       :new_settlement_date => new_settlement_date
      }
-    conversion_with_date_changed = CurrencyCloud::Conversion.date_change(date_change_params)
+    conversion_with_date_changed = CurrencyCloud::Conversion.date_change(conversion.id, date_change_params)
 
     expect(conversion_with_date_changed).to have_attributes(
                                               "conversion_id" => "b34783db-e28c-478d-9967-6faa2431f2ed",
@@ -91,10 +87,9 @@ describe 'Conversions', vcr: true do
   it 'can #split conversion' do
     conversion = CurrencyCloud::Conversion.create(@params)
     split_params = {
-      :conversion_id => conversion.id,
       :amount => 45_000
     }
-    split_conversion = CurrencyCloud::Conversion.split(split_params)
+    split_conversion = CurrencyCloud::Conversion.split(conversion.id, split_params)
 
     expect(split_conversion.parent_conversion['id']).to eq("9f6a6bdc-bec2-4198-b311-e2e74c117c40")
     expect(split_conversion.parent_conversion['short_reference']).to eq("20180509-GWGQGB")
@@ -117,4 +112,3 @@ describe 'Conversions', vcr: true do
     expect(split_conversion.child_conversion['status']).to eq("awaiting_funds")
   end
 end
-
