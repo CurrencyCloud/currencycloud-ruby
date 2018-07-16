@@ -58,7 +58,7 @@ http_interactions:
       string: name=Employee%20Funds&bank_account_holder_name=John%20Doe&bank_country=GB&currency=GBP&email=john.doe%40acme.com&account_number=1204567890003466&routing_code_type_1=sort_code&routing_code_value_1=990901
     headers:
       X-Auth-Token:
-      - 5c94e0a08f44fc3c2f9c65c3935764f4
+      - deadbeefdeadbeefdeadbeefdeadbeef
       User-Agent:
       - CurrencyCloudSDK/2.0 Ruby/0.9.0
   response:
@@ -113,7 +113,7 @@ http_interactions:
       string: currency=GBP&beneficiary_id=85fa1f38-9813-4f1e-b93d-6cde70f78562&amount=1500&reason=SDK%20payment%20testing&reference=My%20reference%20code&payment_type=regular
     headers:
       X-Auth-Token:
-      - 5c94e0a08f44fc3c2f9c65c3935764f4
+      - deadbeefdeadbeefdeadbeefdeadbeef
       User-Agent:
       - CurrencyCloudSDK/2.0 Ruby/0.9.0
   response:
@@ -216,7 +216,7 @@ http_interactions:
       string: payment_ids[]=2d13f7af-8341-4685-9e30-a56034e4f803
     headers:
       X-Auth-Token:
-      - 7e996a99834aeec2aa4df550ca972426
+      - deadbeefdeadbeefdeadbeefdeadbeef
       User-Agent:
       - CurrencyCloudSDK/2.0 Ruby/0.9.0
   response:

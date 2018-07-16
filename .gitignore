@@ -13,6 +13,7 @@
 /tmp/
 
 .env
+.byebug_history
 
 ## Documentation cache and generated files:
 /.yardoc/

@@ -42,4 +42,26 @@ describe 'Payments', vcr: true do
     expect(submission).to_not be_nil
     expect(submission).to be_a(CurrencyCloud::PaymentSubmission)
   end
+
+  describe "can #authorise" do
+    before do
+      @payment = CurrencyCloud::Payment.create(payment_details)
+
+      CurrencyCloud.reset_session
+      CurrencyCloud.login_id = 'development+authorisations@currencycloud.com'
+      CurrencyCloud.api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
+    end
+
+    it 'when "payment_ids" are valid' do
+      authorisations = CurrencyCloud::Payment.authorise(@payment.id)
+      expect(authorisations).to_not be_empty
+
+      authorisation = authorisations.first
+      expect(authorisation).to be_a CurrencyCloud::PaymentAuthorisationResult
+
+      expect(authorisation.payment_id).to eq @payment.id
+      expect(authorisation.payment_status).to eq 'authorised'
+      expect(authorisation.updated).to eq true
+    end
+  end
 end
