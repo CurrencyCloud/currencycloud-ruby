@@ -5,19 +5,19 @@ module CurrencyCloud
     resource :conversions
     actions :create, :retrieve, :find
 
-    def self.cancel(id, params)
+    def cancel(params = {})
       attrs = client.post("#{id}/cancel", params)
-      new(attrs)
+      ConversionCancelResult.new(attrs)
     end
 
-    def self.date_change(id, params)
+    def date_change(params)
       attrs = client.post("#{id}/date_change", params)
-      new(attrs)
+      ConversionDateChangeResult.new(attrs)
     end
 
-    def self.split(id, params)
+    def split(params)
       attrs = client.post("#{id}/split", params)
-      new(attrs)
+      ConversionSplitResult.new(attrs)
     end
   end
 end

@@ -16,8 +16,7 @@ describe 'Conversions', vcr: true do
     context 'without notes' do
       it 'has a empty "notes" attribute' do
         conversion = CurrencyCloud::Conversion.create(conversion_params)
-        cancel_without_notes_params = {}
-        cancelled_conversion = CurrencyCloud::Conversion.cancel(conversion.id, cancel_without_notes_params)
+        cancelled_conversion = conversion.cancel
 
         expect(cancelled_conversion).to have_attributes(
           'account_id' => '67e1b252-40a7-454d-a097-8f77d385889d',
@@ -36,11 +35,7 @@ describe 'Conversions', vcr: true do
     context 'with notes' do
       it 'has a non-empty "notes" attribute' do
         conversion = CurrencyCloud::Conversion.create(conversion_params)
-        cancel_with_notes_params = {
-          notes: 'Business Terminated Contract'
-        }
-
-        cancelled_conversion = CurrencyCloud::Conversion.cancel(conversion.id, cancel_with_notes_params)
+        cancelled_conversion = conversion.cancel(notes: 'Business Terminated Contract')
 
         expect(cancelled_conversion).to have_attributes(
           'account_id' => '67e1b252-40a7-454d-a097-8f77d385889d',
@@ -62,7 +57,7 @@ describe 'Conversions', vcr: true do
 
     conversion = CurrencyCloud::Conversion.create(conversion_params)
 
-    conversion_with_date_changed = CurrencyCloud::Conversion.date_change(conversion.id, new_settlement_date: new_settlement_date)
+    conversion_with_date_changed = conversion.date_change(new_settlement_date: new_settlement_date)
 
     expect(conversion_with_date_changed).to have_attributes(
       'conversion_id' => conversion.id,
@@ -78,7 +73,7 @@ describe 'Conversions', vcr: true do
   it 'can #split conversion' do
     conversion = CurrencyCloud::Conversion.create(conversion_params)
 
-    split_conversion = CurrencyCloud::Conversion.split(conversion.id, amount: 45_000)
+    split_conversion = conversion.split(amount: 45_000)
 
     expect(split_conversion.parent_conversion['sell_amount']).to eq('35513.88')
     expect(split_conversion.parent_conversion['sell_currency']).to eq('GBP')
