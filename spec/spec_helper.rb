@@ -9,3 +9,12 @@ VCR.configure do |c|
 end
 
 require 'currency_cloud'
+
+RSpec.configure do |config|
+  config.before do
+    CurrencyCloud.login_id = 'development@currencycloud.com'
+    CurrencyCloud.api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
+    CurrencyCloud.environment = :demonstration
+    CurrencyCloud.reset_session
+  end
+end
