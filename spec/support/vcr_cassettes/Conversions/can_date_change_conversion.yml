@@ -2,13 +2,63 @@
 http_interactions:
 - request:
     method: post
+    uri: https://devapi.currencycloud.com/v2/authenticate/api
+    body:
+      encoding: UTF-8
+      string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+    headers:
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Jul 2018 10:41:01 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=vXPMrQHpw9Wnjy7+bmSmGNNZ0/LlqT8mF2e21JzFygFQO4iIzZlOdClYeZ9IA/s+b7zZ6N+VsW49FrRTU4gkfP3xbb+iJ2kXHT6x5EsGi9XbJS/lmW0kL8GrqyFF;
+        Expires=Mon, 23 Jul 2018 10:41:00 GMT; Path=/
+      - __cfduid=debc59aabd0047b5912c373deb5bcfe3c1531737659; expires=Tue, 16-Jul-19
+        10:40:59 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - bc65f138-1553-4335-a323-1324f365b3b2
+      Access-Control-Allow-Methods:
+      - POST
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 43b3da939b2206d0-LHR
+    body:
+      encoding: UTF-8
+      string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
+    http_version:
+  recorded_at: Mon, 16 Jul 2018 10:41:02 GMT
+- request:
+    method: post
     uri: https://devapi.currencycloud.com/v2/conversions/create
     body:
       encoding: UTF-8
       string: buy_currency=USD&sell_currency=GBP&fixed_side=buy&amount=95000&reason=SDK%20conversion%20testing&term_agreement=true
     headers:
       X-Auth-Token:
-      - 0cd4bbc28bd2030cc8d6eca7be9aa6b7
+      - deadbeefdeadbeefdeadbeefdeadbeef
       User-Agent:
       - CurrencyCloudSDK/2.0 Ruby/0.9.0
   response:
@@ -17,42 +67,50 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 09 May 2018 13:23:25 GMT
+      - Mon, 16 Jul 2018 10:41:03 GMT
       Content-Type:
       - application/json;charset=utf-8
-      Content-Length:
-      - '920'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d1aa8423df06bc3f33d3ed4ab7c858a611525872204; expires=Thu, 09-May-19
-        13:23:24 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      - AWSALB=9OdLaIhbko8Tr0PYqPvsLwvQLdE9f8JF/+dR1+NnHUXuxsB7t+9i06PQD7HegBKUNPRfukmamzapvXNSEhz4dE4SrXTsEaWKMflbF9W5KA+tSdTKT9if/pNjPxCu;
+        Expires=Mon, 23 Jul 2018 10:41:02 GMT; Path=/
+      - __cfduid=d137cc72d73a1e518744bfe12f26854491531737662; expires=Tue, 16-Jul-19
+        10:41:02 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
       X-Request-Id:
-      - '3576571745777552139'
+      - d6ac4c01-63c2-4154-9f2d-6097a11ffefb
+      Access-Control-Allow-Methods:
+      - POST
       X-Content-Type-Options:
       - nosniff
       Vary:
       - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
       - cloudflare
       Cf-Ray:
-      - 41847afd4c256b61-LHR
+      - 43b3daa3ec5d0a72-LHR
     body:
       encoding: UTF-8
-      string: "{\"id\":\"b34783db-e28c-478d-9967-6faa2431f2ed\",\"settlement_date\":\"2018-05-11T15:30:00+00:00\",\"conversion_date\":\"2018-05-11T00:00:00+00:00\",\"short_reference\":\"20180509-BKDGRT\",\"creator_contact_id\":\"04d0c252-7b78-4d72-b408-df78841e3ddc\",\"account_id\":\"67e1b252-40a7-454d-a097-8f77d385889d\",\"currency_pair\":\"GBPUSD\",\"status\":\"awaiting_funds\",\"buy_currency\":\"USD\",\"sell_currency\":\"GBP\",\"client_buy_amount\":\"95000.00\",\"client_sell_amount\":\"67476.38\",\"fixed_side\":\"buy\",\"core_rate\":\"1.4079\",\"partner_rate\":\"\",\"partner_status\":\"awaiting_funds\",\"partner_buy_amount\":\"0.00\",\"partner_sell_amount\":\"0.00\",\"client_rate\":\"1.4079\",\"deposit_required\":false,\"deposit_amount\":\"0.00\",\"deposit_currency\":\"\",\"deposit_status\":\"not_required\",\"deposit_required_at\":\"\",\"payment_ids\":[],\"unallocated_funds\":\"0.00\",\"unique_request_id\":null,\"created_at\":\"2018-05-09T13:23:24+00:00\",\"updated_at\":\"2018-05-09T13:23:24+00:00\",\"mid_market_rate\":\"1.4080\"}"
-    http_version: 
-  recorded_at: Wed, 09 May 2018 13:23:25 GMT
+      string: '{"id":"f2106374-2084-4827-ad6c-68c47720379e","settlement_date":"2018-07-18T15:30:00+00:00","conversion_date":"2018-07-18T00:00:00+00:00","short_reference":"20180716-LNLSYQ","creator_contact_id":"04d0c252-7b78-4d72-b408-df78841e3ddc","account_id":"67e1b252-40a7-454d-a097-8f77d385889d","currency_pair":"GBPUSD","status":"awaiting_funds","buy_currency":"USD","sell_currency":"GBP","client_buy_amount":"95000.00","client_sell_amount":"67476.38","fixed_side":"buy","core_rate":"1.4079","partner_rate":"","partner_status":"awaiting_funds","partner_buy_amount":"0.00","partner_sell_amount":"0.00","client_rate":"1.4079","deposit_required":false,"deposit_amount":"0.00","deposit_currency":"","deposit_status":"not_required","deposit_required_at":"","payment_ids":[],"unallocated_funds":"0.00","unique_request_id":null,"created_at":"2018-07-16T10:41:02+00:00","updated_at":"2018-07-16T10:41:02+00:00","mid_market_rate":"1.4080"}'
+    http_version:
+  recorded_at: Mon, 16 Jul 2018 10:41:03 GMT
 - request:
     method: post
-    uri: https://devapi.currencycloud.com/v2/conversions/b34783db-e28c-478d-9967-6faa2431f2ed/date_change
+    uri: https://devapi.currencycloud.com/v2/conversions/f2106374-2084-4827-ad6c-68c47720379e/date_change
     body:
       encoding: UTF-8
-      string: new_settlement_date=2018-05-14T15%3A30%3A00%2B00%3A00
+      string: new_settlement_date=2018-07-17%2011%3A40%3A59%20%2B0100
     headers:
       X-Auth-Token:
-      - 0cd4bbc28bd2030cc8d6eca7be9aa6b7
+      - deadbeefdeadbeefdeadbeefdeadbeef
       User-Agent:
       - CurrencyCloudSDK/2.0 Ruby/0.9.0
   response:
@@ -61,31 +119,39 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 09 May 2018 13:23:26 GMT
+      - Mon, 16 Jul 2018 10:41:04 GMT
       Content-Type:
       - application/json;charset=utf-8
-      Content-Length:
-      - '336'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=ddda127ee7a763956252ed0bd6d75c4631525872205; expires=Thu, 09-May-19
-        13:23:25 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      - AWSALB=3sl4GXqUtpmWb2PxJLFOGV4oYCdmgYxe1L/IpqzV5ljIEqOZFNVI+1/tj4c5cJWIm+vXhutYXzbLzXn2f9seJZKgWFJAtz2YxIYcw4fgk2Aog+msuX+9GxrwOqon;
+        Expires=Mon, 23 Jul 2018 10:41:03 GMT; Path=/
+      - __cfduid=d782665fde992c11651d7de322800e1cc1531737663; expires=Tue, 16-Jul-19
+        10:41:03 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
       X-Request-Id:
-      - '3576571753704788749'
+      - 1a23b179-1dc2-4e65-9523-94bb8a095ba2
+      Access-Control-Allow-Methods:
+      - POST
       X-Content-Type-Options:
       - nosniff
       Vary:
       - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
       - cloudflare
       Cf-Ray:
-      - 41847b048c103446-LHR
+      - 43b3daab0d2a0a8a-LHR
     body:
       encoding: UTF-8
-      string: "{\"conversion_id\":\"b34783db-e28c-478d-9967-6faa2431f2ed\",\"amount\":\"86.13\",\"currency\":\"GBP\",\"new_conversion_date\":\"2018-05-14T00:00:00+00:00\",\"new_settlement_date\":\"2018-05-14T15:30:00+00:00\",\"old_conversion_date\":\"2018-05-11T00:00:00+00:00\",\"old_settlement_date\":\"2018-05-11T15:30:00+00:00\",\"event_date_time\":\"2018-05-09T13:23:26+00:00\"}"
-    http_version: 
-  recorded_at: Wed, 09 May 2018 13:23:26 GMT
-recorded_with: VCR 2.9.3
+      string: '{"conversion_id":"f2106374-2084-4827-ad6c-68c47720379e","amount":"-14.38","currency":"GBP","new_conversion_date":"2018-07-17T00:00:00+00:00","new_settlement_date":"2018-07-17T15:30:00+00:00","old_conversion_date":"2018-07-18T00:00:00+00:00","old_settlement_date":"2018-07-18T15:30:00+00:00","event_date_time":"2018-07-16T10:41:03+00:00"}'
+    http_version:
+  recorded_at: Mon, 16 Jul 2018 10:41:04 GMT
+recorded_with: VCR 3.0.3
