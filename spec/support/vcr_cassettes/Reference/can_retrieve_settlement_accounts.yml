@@ -1,6 +1,54 @@
 ---
 http_interactions:
 - request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/authenticate/api
+    body:
+      encoding: US-ASCII
+      string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+    headers:
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Jul 2018 08:20:28 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=MqWBkqqalRVyiA3SLwg2ZVfI/RPODFvZdiAHgnaqMNO/G7f/N4HAMYUgO0uNNkTiWQTB7fD0YvxVJpXyTOPVjFmo6sepvoxxXa+d5zt4H1I4//LWQ8lfZI9cLvfz; Expires=Mon, 23 Jul 2018 08:20:26 GMT; Path=/
+      - __cfduid=d2c4fe40f90dd210cb5c74e07fa431acf1531729226; expires=Tue, 16-Jul-19 08:20:26 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - bd4d44e6-76ce-4ff5-82c8-1120c693c5dc
+      Access-Control-Allow-Methods:
+      - POST
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 43b30cb3deb60a66-LHR
+    body:
+      encoding: US-ASCII
+      string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
+    http_version:
+  recorded_at: Mon, 16 Jul 2018 08:20:28 GMT
+- request:
     method: get
     uri: https://devapi.currencycloud.com/v2/reference/settlement_accounts?currency=GBP
     body:
@@ -8,32 +56,49 @@ http_interactions:
       string: ''
     headers:
       X-Auth-Token:
-      - 1c9da5726314246acfb09ec5651307a5
+      - deadbeefdeadbeefdeadbeefdeadbeef
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
       Date:
-      - Wed, 29 Apr 2015 21:04:10 GMT
+      - Mon, 16 Jul 2018 08:20:29 GMT
       Content-Type:
       - application/json;charset=utf-8
-      Content-Length:
-      - '438'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
+      Set-Cookie:
+      - AWSALB=hMVXh0wCWtJ9Tw9Qm/QHOzSiknz4ftqOJdn7LUgywEoFn0LhnYcepsb7xoKMCbe7J7CaCP2T9Su05ot6DWayawXCvEFHlRdqkwhN+z5e7F3GC/HjlsQX81ORS5qB; Expires=Mon, 23 Jul 2018 08:20:28 GMT; Path=/
+      - __cfduid=d2d849517c981c03f7f073bc3c0fea4a31531729228; expires=Tue, 16-Jul-19 08:20:28 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
       X-Request-Id:
-      - '2775201697959995218'
+      - 299af103-bd38-4cc8-886a-60f8b1ba7ac3
+      Access-Control-Allow-Methods:
+      - GET
       X-Content-Type-Options:
       - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 43b30cbf2d6f0a72-LHR
     body:
-      encoding: UTF-8
+      encoding: US-ASCII
       string: '{"settlement_accounts":[{"bank_account_holder_name":"The Currency Cloud
         GBP - Client Seg A/C","beneficiary_address":"","beneficiary_country":"","bank_name":"Barclays
         Bank plc","bank_address":[],"bank_country":"","currency":"GBP","bic_swift":"BARCGB22","iban":"GB06
         BARC 2006 0513 0714 72","account_number":"13071472","routing_code_type_1":"sort_code","routing_code_value_1":"200605","routing_code_type_2":"","routing_code_value_2":""}]}'
-    http_version: 
-  recorded_at: Wed, 29 Apr 2015 21:04:10 GMT
-recorded_with: VCR 2.9.3
+    http_version:
+  recorded_at: Mon, 16 Jul 2018 08:20:29 GMT
+recorded_with: VCR 4.0.0

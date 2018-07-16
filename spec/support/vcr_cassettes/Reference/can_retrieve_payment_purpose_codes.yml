@@ -1,0 +1,128 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/authenticate/api
+    body:
+      encoding: US-ASCII
+      string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+    headers:
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Jul 2018 08:21:41 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '49'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Request-Id:
+      - 1c3aa2cb-bfc4-4cd3-a6dd-889681f69e0f
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+    body:
+      encoding: US-ASCII
+      string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
+    http_version:
+  recorded_at: Mon, 16 Jul 2018 08:21:41 GMT
+- request:
+    method: get
+    uri: https://devapi.currencycloud.com/v2/reference/payment_purpose_codes?currency=INR
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - deadbeefdeadbeefdeadbeefdeadbeef
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Jul 2018 08:21:41 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '6987'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Request-Id:
+      - 89eff13b-eddb-4b23-b459-561c81a84829
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+    body:
+      encoding: US-ASCII
+      string: '{"purpose_codes":[{"currency":"INR","entity_type":"company","purpose_code":"property_purchase","purpose_description":"Purchase
+        of residential property"},{"currency":"INR","entity_type":"company","purpose_code":"construction","purpose_description":"Construction
+        costs/expenses"},{"currency":"INR","entity_type":"company","purpose_code":"travel","purpose_description":"Travel"},{"currency":"INR","entity_type":"company","purpose_code":"office","purpose_description":"Representative
+        office expenses"},{"currency":"INR","entity_type":"company","purpose_code":"exports","purpose_description":"Payments
+        for exported goods"},{"currency":"INR","entity_type":"individual","purpose_code":"travel","purpose_description":"Travel"},{"currency":"INR","entity_type":"individual","purpose_code":"services","purpose_description":"Information
+        service charges"},{"currency":"INR","entity_type":"individual","purpose_code":"education","purpose_description":"Education-related
+        student expenses"},{"currency":"INR","entity_type":"company","purpose_code":"transfer","purpose_description":"Transfer
+        to own account"},{"currency":"INR","entity_type":"individual","purpose_code":"office","purpose_description":"Representative
+        office expenses"},{"currency":"INR","entity_type":"individual","purpose_code":"delivery","purpose_description":"Delivery
+        fees for goods"},{"currency":"INR","entity_type":"individual","purpose_code":"goods","purpose_description":"Trade
+        settlement for goods and general goods trades"},{"currency":"INR","entity_type":"company","purpose_code":"services","purpose_description":"Information
+        service charges"},{"currency":"INR","entity_type":"individual","purpose_code":"medical","purpose_description":"Medical
+        treatment and expenses"},{"currency":"INR","entity_type":"company","purpose_code":"royalties","purpose_description":"Royalty,
+        trademark, patent and copyright fees"},{"currency":"INR","entity_type":"individual","purpose_code":"advisor_fees","purpose_description":"Fees
+        for advisory, technical, academic or specialist asssitance"},{"currency":"INR","entity_type":"individual","purpose_code":"loan_repayment","purpose_description":"Repayment
+        of loans"},{"currency":"INR","entity_type":"company","purpose_code":"insurance_claims","purpose_description":"Insurance
+        claims payment"},{"currency":"INR","entity_type":"company","purpose_code":"advertising","purpose_description":"Advertising
+        and public relations-related expenses"},{"currency":"INR","entity_type":"individual","purpose_code":"insurance_claims","purpose_description":"Insurance
+        claims payment"},{"currency":"INR","entity_type":"individual","purpose_code":"construction","purpose_description":"Construction
+        costs/expenses"},{"currency":"INR","entity_type":"company","purpose_code":"other_fees","purpose_description":"Broker,
+        front end, commitment, guarantee and custodian fees"},{"currency":"INR","entity_type":"individual","purpose_code":"transfer","purpose_description":"Transfer
+        to own account"},{"currency":"INR","entity_type":"company","purpose_code":"family","purpose_description":"Family
+        maintenance"},{"currency":"INR","entity_type":"individual","purpose_code":"advertising","purpose_description":"Advertising
+        and public relations-related expenses"},{"currency":"INR","entity_type":"company","purpose_code":"business_insurance","purpose_description":"Product
+        indemnity insurance"},{"currency":"INR","entity_type":"individual","purpose_code":"property_purchase","purpose_description":"Purchase
+        of residential property"},{"currency":"INR","entity_type":"individual","purpose_code":"exports","purpose_description":"Payments
+        for exported goods"},{"currency":"INR","entity_type":"company","purpose_code":"goods","purpose_description":"Trade
+        settlement for goods and general goods trades"},{"currency":"INR","entity_type":"company","purpose_code":"advisor_fees","purpose_description":"Fees
+        for advisory, technical, academic or specialist asssitance"},{"currency":"INR","entity_type":"individual","purpose_code":"insurance_premium","purpose_description":"Insurance
+        premium"},{"currency":"INR","entity_type":"individual","purpose_code":"donations","purpose_description":"Donations
+        and charitable donations"},{"currency":"INR","entity_type":"individual","purpose_code":"share_investment","purpose_description":"Investment
+        in shares"},{"currency":"INR","entity_type":"individual","purpose_code":"hotel","purpose_description":"Hotel
+        accommodation"},{"currency":"INR","entity_type":"company","purpose_code":"insurance_premium","purpose_description":"Insurance
+        premium"},{"currency":"INR","entity_type":"company","purpose_code":"share_investment","purpose_description":"Investment
+        in shares"},{"currency":"INR","entity_type":"individual","purpose_code":"other_fees","purpose_description":"Broker,
+        front end, commitment, guarantee and custodian fees"},{"currency":"INR","entity_type":"company","purpose_code":"education","purpose_description":"Education-related
+        student expenses"},{"currency":"INR","entity_type":"individual","purpose_code":"utilities","purpose_description":"Utility
+        bills"},{"currency":"INR","entity_type":"company","purpose_code":"transportation","purpose_description":"Transportation
+        fees for goods"},{"currency":"INR","entity_type":"individual","purpose_code":"property_rental","purpose_description":"Property
+        rental payment"},{"currency":"INR","entity_type":"company","purpose_code":"delivery","purpose_description":"Delivery
+        fees for goods"},{"currency":"INR","entity_type":"individual","purpose_code":"family","purpose_description":"Family
+        maintenance"},{"currency":"INR","entity_type":"individual","purpose_code":"tax","purpose_description":"Tax
+        payment"},{"currency":"INR","entity_type":"company","purpose_code":"medical","purpose_description":"Medical
+        treatment and expenses"},{"currency":"INR","entity_type":"individual","purpose_code":"transportation","purpose_description":"Transportation
+        fees for goods"},{"currency":"INR","entity_type":"company","purpose_code":"property_rental","purpose_description":"Property
+        rental payment"},{"currency":"INR","entity_type":"individual","purpose_code":"fund_investment","purpose_description":"Mutual
+        fund investment"},{"currency":"INR","entity_type":"company","purpose_code":"utilities","purpose_description":"Utility
+        bills"},{"currency":"INR","entity_type":"company","purpose_code":"fund_investment","purpose_description":"Mutual
+        fund investment"},{"currency":"INR","entity_type":"individual","purpose_code":"business_insurance","purpose_description":"Product
+        indemnity insurance"},{"currency":"INR","entity_type":"company","purpose_code":"hotel","purpose_description":"Hotel
+        accommodation"},{"currency":"INR","entity_type":"individual","purpose_code":"royalties","purpose_description":"Royalty,
+        trademark, patent and copyright fees"},{"currency":"INR","entity_type":"company","purpose_code":"tax","purpose_description":"Tax
+        payment"},{"currency":"INR","entity_type":"company","purpose_code":"donations","purpose_description":"Donations
+        and charitable donations"}]}'
+    http_version:
+  recorded_at: Mon, 16 Jul 2018 08:21:41 GMT
+recorded_with: VCR 4.0.0
