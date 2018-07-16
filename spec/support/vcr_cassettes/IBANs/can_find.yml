@@ -1,0 +1,114 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/authenticate/api
+    body:
+      encoding: UTF-8
+      string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+    headers:
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Jul 2018 12:59:18 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=n31E+w4Fm+Vqb32QMAQzU1MPtIBRxf/Annr9MlpXhcBM0DNYuo+0k3+oFgkSuBT0kSYyT8o0i52z/Xe0F9hpIoxC6AhwiRLkz1K+QfwPfNWapWeYqsjfE/f1LYso;
+        Expires=Mon, 23 Jul 2018 12:59:17 GMT; Path=/
+      - __cfduid=d2202081327ae33f22280a1158c33283d1531745957; expires=Tue, 16-Jul-19
+        12:59:17 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - 1c5239cf-b3d3-42b7-b161-2512c9674632
+      Access-Control-Allow-Methods:
+      - POST
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 43b4a529dc330a66-LHR
+    body:
+      encoding: UTF-8
+      string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
+    http_version:
+  recorded_at: Mon, 16 Jul 2018 12:59:18 GMT
+- request:
+    method: get
+    uri: https://devapi.currencycloud.com/v2/ibans
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - deadbeefdeadbeefdeadbeefdeadbeef
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Jul 2018 12:59:19 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=ui0VxiRxMXV2DonQ3LSZiXkI6c8S+BPh9lJu7Lwsxix9OH5qwcYRbICmKp3ngzmJDsK4cCgHqaqefYidnbf71ykLxoFO2f2hfProm6Jk25uI6tI7oFuCSNAVzHGz;
+        Expires=Mon, 23 Jul 2018 12:59:19 GMT; Path=/
+      - __cfduid=d2bb3387907ae5b92f73932356ddfcd151531745959; expires=Tue, 16-Jul-19
+        12:59:19 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - 666d6010-1ad8-4da9-8e75-d1ee232fb43d
+      Access-Control-Allow-Methods:
+      - GET
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 43b4a5340f4a0a78-LHR
+    body:
+      encoding: UTF-8
+      string: '{"ibans":[{"id":"8242d1f4-4555-4155-a9bf-30feee785121","iban_code":"GB51TCCL00997961584807","account_id":"e277c9f9-679f-454f-8367-274b3ff977ff","currency":"EUR",
+    "account_holder_name":"Development CM","bank_institution_name":"The Currency Cloud","bank_institution_address":"12 Steward Street, The Steward Building, London, E1 6FQ, GB",
+    "bank_institution_country":"United Kingdom","bic_swift":"TCCLGB31","created_at":"2018-02-19T17:24:48+00:00","updated_at":"2018-02-19T17:24:48+00:00"},
+    {"id":"8242d1f4-4555-4155-a9bf-30feee785121","iban_code":"GB51TCCL00997961584808","account_id":"e277c9f9-679f-454f-8367-274b3ff977ff","currency":"GBP",
+    "account_holder_name":"Development CM","bank_institution_name":"The Currency Cloud","bank_institution_address":"12 Steward Street, The Steward Building, London, E1 6FQ, GB",
+    "bank_institution_country":"United Kingdom","bic_swift":"TCCLGB31","created_at":"2018-02-19T17:24:48+00:00","updated_at":"2018-02-19T17:24:48+00:00"},
+    {"id":"8242d1f4-4555-4155-a9bf-30feee785121","iban_code":"GB51TCCL00997961584809","account_id":"e277c9f9-679f-454f-8367-274b3ff977ff","currency":"USD",
+    "account_holder_name":"Development CM","bank_institution_name":"The Currency Cloud","bank_institution_address":"12 Steward Street, The Steward Building, London, E1 6FQ, GB",
+    "bank_institution_country":"United Kingdom","bic_swift":"TCCLGB31","created_at":"2018-02-19T17:24:48+00:00","updated_at":"2018-02-19T17:24:48+00:00"}],
+    "pagination":{"total_entries":3,"total_pages":1,"current_page":1,"per_page":25,"previous_page":-1,"next_page":2,"order":"created_at","order_asc_desc":"asc"}}'
+    http_version:
+  recorded_at: Mon, 16 Jul 2018 12:59:19 GMT
+recorded_with: VCR 3.0.3

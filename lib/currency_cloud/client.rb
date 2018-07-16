@@ -13,7 +13,11 @@ module CurrencyCloud
     end
 
     def build_url(url)
-      "#{resource}/#{url}"
+      if url && url != '' && url != '/'
+        "#{resource}/#{url}"
+      else
+        "#{resource}"
+      end
     end
 
     def request

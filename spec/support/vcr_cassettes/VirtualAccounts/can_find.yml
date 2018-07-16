@@ -1,0 +1,108 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/authenticate/api
+    body:
+      encoding: UTF-8
+      string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+    headers:
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Jul 2018 13:11:41 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=9hdKZ/xHNWniIJD+jGNgncvCvrutVpewPkysUs7oNKTsL9ZRq0xOMa8cc73Jo4DNT+kpwGEkozgYbEpMWSFWRZ3tkGFkAFv4LsuzeHkUxr9469MKgEiztqPc719c;
+        Expires=Mon, 23 Jul 2018 13:11:40 GMT; Path=/
+      - __cfduid=db1f85859d53c1c165f7f95c4d3aa9f9f1531746699; expires=Tue, 16-Jul-19
+        13:11:39 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - 8dbd8571-10c2-41a9-9cbd-fdc614387238
+      Access-Control-Allow-Methods:
+      - POST
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 43b4b74958950a6c-LHR
+    body:
+      encoding: UTF-8
+      string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
+    http_version:
+  recorded_at: Mon, 16 Jul 2018 13:11:41 GMT
+- request:
+    method: get
+    uri: https://devapi.currencycloud.com/v2/virtual_accounts
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - deadbeefdeadbeefdeadbeefdeadbeef
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Jul 2018 13:11:41 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=pSjepvwuPhnMzCxQSUpi6zCyJXodSMKoeZnSPN3zLEVYyllqmOM+a87QSav/BdDhulWHK+C3idjtdd7CE1RM6K6waAPpeKNhgfzUn0Rh+yVErglLe5mfSPfG/gjA;
+        Expires=Mon, 23 Jul 2018 13:11:41 GMT; Path=/
+      - __cfduid=d60058c3ac7b1f40c17befc6dbf9bc16c1531746701; expires=Tue, 16-Jul-19
+        13:11:41 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - 5757435d-1275-4257-945f-9c9ddd8fcffa
+      Access-Control-Allow-Methods:
+      - GET
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 43b4b7557e0906be-LHR
+    body:
+      encoding: UTF-8
+      string: '{"virtual_accounts":[{"id":"00d272ee-fae5-4f97-b425-993a2d6e3a46","account_id":"2090939e-b2f7-3f2b-1363-4d235b3f58af","virtual_account_number":"8303723297",
+    "account_holder_name":"Account-ZXOANNAMKPRQ","bank_institution_name":"Community Federal Savings Bank","bank_institution_address":"Seventh Avenue, New York, NY 10019, US",
+    "bank_institution_country":"United States","routing_code":"026073150","created_at":"2014-01-12T00:00:00+00:00","updated_at":"2014-01-12T00:00:00+00:00"}],
+    "pagination":{"total_entries":1,"total_pages":1,"current_page":1,"per_page":25,"previous_page":-1,"next_page":2,"order":"created_at","order_asc_desc":"asc"}}'
+    http_version:
+  recorded_at: Mon, 16 Jul 2018 13:11:41 GMT
+recorded_with: VCR 3.0.3

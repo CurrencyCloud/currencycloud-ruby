@@ -1,0 +1,109 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/authenticate/api
+    body:
+      encoding: UTF-8
+      string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+    headers:
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Jul 2018 12:59:23 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=aY/cF/JLSqjnBSnrHJIs2YLyeiVD6aX+RwCeupOy9YwhYXiFC78S2KW7MGMfN+/8rWi5UdRqN/LXxeyDpbZ8+4HLEVXw0J+rh6PBg1yjWDKaAr6MX0U8zLBliJcz;
+        Expires=Mon, 23 Jul 2018 12:59:21 GMT; Path=/
+      - __cfduid=d3b6f6bc0aa5bde9343ee2ba5c02980ad1531745961; expires=Tue, 16-Jul-19
+        12:59:21 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - 8965e034-c707-4368-be85-23b387614400
+      Access-Control-Allow-Methods:
+      - POST
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 43b4a5434d13bc50-LHR
+    body:
+      encoding: UTF-8
+      string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
+    http_version:
+  recorded_at: Mon, 16 Jul 2018 12:59:23 GMT
+- request:
+    method: get
+    uri: https://devapi.currencycloud.com/v2/ibans/subaccounts/87077161-91de-012f-e284-1e0030c7f353
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - deadbeefdeadbeefdeadbeefdeadbeef
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Jul 2018 12:59:23 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=v4Jv5NvynmaKotcxO2W6KQqdGdTM2Bg84NhMIHhACzmllUxXenZC81dxCqhWno6m7sfV+ALzmtWDEm7I5CT/1vtflhIlE5cBDuIMeZ6DCtFv1rMY18txyI9nzLpH;
+        Expires=Mon, 23 Jul 2018 12:59:23 GMT; Path=/
+      - __cfduid=ddd0541e56113ecc0cc6171bc82f6ff751531745963; expires=Tue, 16-Jul-19
+        12:59:23 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - 55824ce0-a4b4-4e71-ac2d-c2330549674c
+      Access-Control-Allow-Methods:
+      - GET
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 43b4a54d89700a78-LHR
+    body:
+      encoding: UTF-8
+      string: '{"ibans":[{"id":"01d8c0bc-7f0c-4cdd-bc7e-ef81f68500fe","iban_code":"GB51TCCL00997997989490","account_id":"87077161-91de-012f-e284-1e0030c7f353",
+        "currency":"JPY","account_holder_name":"Account-IGGLNHYTWFKI","bank_institution_name":"The
+        Currency Cloud","bank_institution_address":"12 Steward Street, The Steward
+        Building, London, E1 6FQ, GB", "bank_institution_country":"United Kingdom","bic_swift":"TCCLGB31","created_at":"2018-01-01T12:34:56+00:00","updated_at":"2018-01-01T12:34:56+00:00"}],
+        "pagination":{"total_entries":1,"total_pages":1,"current_page":1,"per_page":25,"previous_page":-1,"next_page":2,"order":"created_at","order_asc_desc":"asc"}}'
+    http_version:
+  recorded_at: Mon, 16 Jul 2018 12:59:23 GMT
+recorded_with: VCR 3.0.3
