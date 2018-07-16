@@ -6,8 +6,13 @@ module CurrencyCloud
     actions :create, :retrieve, :find, :delete, :update
 
     def submission(params = {})
-      attrs = client.get("#{id}/submission", params)
-      PaymentSubmission.new(attrs)
+      result = client.get("#{id}/submission", params)
+      PaymentSubmission.new(result)
+    end
+
+    def self.authorise(*ids)
+      result = client.post("authorise", payment_ids: ids)['authorisations']
+      result.map { |pa| PaymentAuthorisationResult.new(pa) }
     end
   end
 end

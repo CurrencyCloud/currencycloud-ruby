@@ -6,10 +6,10 @@ Gem::Specification.new do |s|
   s.name = 'currency_cloud'
   s.version = CurrencyCloud::VERSION
   s.summary = 'Ruby SDK for the Currency Cloud API'
-  s.description = 'Ruby SDK for the Currency Cloud API - https://connect.currencycloud.com/'
+  s.description = 'Ruby SDK for the Currency Cloud API - https://www.currencycloud.com/developers/overview/'
   s.authors = ['Liam McAndrew', 'Richard Nienaber']
   s.email = ['liam.mcandrew@currencycloud.com', 'richard.nienaber@currencycloud.com']
-  s.homepage = 'https://connect.currencycloud.com/documentation/getting-started/introduction'
+  s.homepage = 'https://github.com/Currencycloud/currencycloud-ruby/'
   s.licenses = ['MIT']
   s.required_ruby_version = '>= 1.9'
 
