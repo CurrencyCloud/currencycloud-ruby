@@ -4,11 +4,6 @@ module CurrencyCloud
 
     resource :reference
 
-    def self.currencies
-      response = client.get('currencies')
-      response['currencies'].map { |c| Currency.new(c) }
-    end
-
     def self.beneficiary_required_details(params = {})
       client.get('beneficiary_required_details', params)['details']
     end
@@ -16,6 +11,26 @@ module CurrencyCloud
     def self.conversion_dates(params)
       dates = client.get('conversion_dates', params)
       ConversionDates.new(dates)
+    end
+
+    def self.currencies
+      response = client.get('currencies')
+      response['currencies'].map { |c| Currency.new(c) }
+    end
+
+    def self.payer_required_details(params)
+      response = client.get('payer_required_details', params)
+      response['details'].map { |prd| PayerRequiredDetails.new(prd) }
+    end
+
+    def self.payment_dates(params)
+      dates = client.get('payment_dates', params)
+      PaymentDates.new(dates)
+    end
+
+    def self.payment_purpose_codes(params)
+      response = client.get('payment_purpose_codes', params)
+      response['purpose_codes'].map { |pc| PurposeCode.new(pc) }
     end
 
     def self.settlement_accounts(params = {})

@@ -1,6 +1,54 @@
 ---
 http_interactions:
 - request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/authenticate/api
+    body:
+      encoding: US-ASCII
+      string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+    headers:
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Jul 2018 08:20:19 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=7lDOezz4i2FsXydLDmHDsJJv6Qfuz+kDqogbQj7KzpAugp/XnxOouVvsT7cesHvNcoyjIuqH+3yDPW/4KuFA/2TWbw5UBJ1VIgNJhikRJIjlxZZ/RiFJxtPXNJ4F; Expires=Mon, 23 Jul 2018 08:20:18 GMT; Path=/
+      - __cfduid=dfc0c08f9f877c3a21982d2df03d0a42f1531729218; expires=Tue, 16-Jul-19 08:20:18 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - 50e5cdf8-6487-434c-b3e4-b2d79376d5f9
+      Access-Control-Allow-Methods:
+      - POST
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 43b30c7d9f7d06c4-LHR
+    body:
+      encoding: US-ASCII
+      string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
+    http_version:
+  recorded_at: Mon, 16 Jul 2018 08:20:19 GMT
+- request:
     method: get
     uri: https://devapi.currencycloud.com/v2/reference/currencies
     body:
@@ -8,40 +56,80 @@ http_interactions:
       string: ''
     headers:
       X-Auth-Token:
-      - 1c9da5726314246acfb09ec5651307a5
+      - deadbeefdeadbeefdeadbeefdeadbeef
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
       Date:
-      - Wed, 29 Apr 2015 21:04:08 GMT
+      - Mon, 16 Jul 2018 08:20:20 GMT
       Content-Type:
       - application/json;charset=utf-8
-      Content-Length:
-      - '1363'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
+      Set-Cookie:
+      - AWSALB=Lta69yW3gAYeshaCyhTA9CdIcLgQ33kA+Kl9JNNjik5ilwQH+rNP0OkBbFKZWPq1FMfSFuXF3Rb5g+O1oUPuNOS7RYb2JP6xkQMD5LOPNRE7wAJ5NLeHKPxnggvS; Expires=Mon, 23 Jul 2018 08:20:19 GMT; Path=/
+      - __cfduid=dba454b948f89441eede645d3da78bd961531729219; expires=Tue, 16-Jul-19 08:20:19 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
       X-Request-Id:
-      - '2775201683481262929'
+      - 96bb9b59-27e4-4eae-ab3b-909441e710c8
+      Access-Control-Allow-Methods:
+      - GET
       X-Content-Type-Options:
       - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 43b30c889ee20a90-LHR
     body:
-      encoding: UTF-8
+      encoding: US-ASCII
       string: '{"currencies":[{"code":"AED","decimal_places":2,"name":"United Arab
-        Emirates Dirham"},{"code":"AUD","decimal_places":2,"name":"Australian Dollar"},{"code":"CAD","decimal_places":2,"name":"Canadian
-        Dollar"},{"code":"CHF","decimal_places":2,"name":"Swiss Franc"},{"code":"CZK","decimal_places":2,"name":"Czech
-        Koruna"},{"code":"DKK","decimal_places":2,"name":"Danish Krone"},{"code":"EUR","decimal_places":2,"name":"Euro"},{"code":"GBP","decimal_places":2,"name":"Pound
-        Sterling"},{"code":"HKD","decimal_places":2,"name":"Hong Kong Dollar"},{"code":"HUF","decimal_places":2,"name":"Hungarian
-        Forint"},{"code":"ILS","decimal_places":2,"name":"Israeli New Sheqel"},{"code":"JPY","decimal_places":0,"name":"Japanese
-        Yen"},{"code":"MXN","decimal_places":2,"name":"Mexican Peso"},{"code":"NOK","decimal_places":2,"name":"Norwegian
-        Krone"},{"code":"NZD","decimal_places":2,"name":"New Zealand Dollar"},{"code":"PLN","decimal_places":2,"name":"Polish
-        Zloty"},{"code":"RON","decimal_places":2,"name":"Romanian New Leu"},{"code":"SEK","decimal_places":2,"name":"Swedish
-        Krona"},{"code":"SGD","decimal_places":2,"name":"Singapore Dollar"},{"code":"THB","decimal_places":2,"name":"Thai
-        Baht"},{"code":"TRY","decimal_places":2,"name":"Turkish Lira"},{"code":"USD","decimal_places":2,"name":"United
-        States Dollar"},{"code":"ZAR","decimal_places":2,"name":"South African Rand"}]}'
-    http_version: 
-  recorded_at: Wed, 29 Apr 2015 21:04:08 GMT
-recorded_with: VCR 2.9.3
+        Emirates Dirham","online_trading":true},{"code":"AUD","decimal_places":2,"name":"Australian
+        Dollar","online_trading":true},{"code":"BGN","decimal_places":2,"name":"Bulgarian
+        Lev","online_trading":true},{"code":"BHD","decimal_places":2,"name":"Bahraini
+        Dinar","online_trading":true},{"code":"CAD","decimal_places":2,"name":"Canadian
+        Dollar","online_trading":true},{"code":"CHF","decimal_places":2,"name":"Swiss
+        Franc","online_trading":true},{"code":"CNY","decimal_places":2,"name":"Chinese
+        Yuan","online_trading":true},{"code":"CZK","decimal_places":2,"name":"Czech
+        Koruna","online_trading":true},{"code":"DKK","decimal_places":2,"name":"Danish
+        Krone","online_trading":true},{"code":"EUR","decimal_places":2,"name":"Euro","online_trading":true},{"code":"GBP","decimal_places":2,"name":"British
+        Pound","online_trading":true},{"code":"HKD","decimal_places":2,"name":"Hong
+        Kong Dollar","online_trading":true},{"code":"HRK","decimal_places":2,"name":"Croatian
+        Kuna","online_trading":true},{"code":"HUF","decimal_places":2,"name":"Hungarian
+        Forint","online_trading":true},{"code":"ILS","decimal_places":2,"name":"Israeli
+        New Sheqel","online_trading":true},{"code":"INR","decimal_places":2,"name":"Indian
+        Rupee","online_trading":true},{"code":"JMD","decimal_places":2,"name":"Jamaican
+        Dollar","online_trading":false},{"code":"JPY","decimal_places":0,"name":"Japanese
+        Yen","online_trading":true},{"code":"KES","decimal_places":2,"name":"Kenyan
+        Shilling","online_trading":true},{"code":"KWD","decimal_places":2,"name":"Kuwaiti
+        Dinar","online_trading":true},{"code":"MXN","decimal_places":2,"name":"Mexican
+        Peso","online_trading":true},{"code":"NOK","decimal_places":2,"name":"Norwegian
+        Krone","online_trading":true},{"code":"NZD","decimal_places":2,"name":"New
+        Zealand Dollar","online_trading":true},{"code":"OMR","decimal_places":2,"name":"Omani
+        Rial","online_trading":true},{"code":"PLN","decimal_places":2,"name":"Polish
+        Zloty","online_trading":true},{"code":"QAR","decimal_places":2,"name":"Qatari
+        Rial","online_trading":true},{"code":"RON","decimal_places":2,"name":"Romanian
+        New Leu","online_trading":true},{"code":"SAR","decimal_places":2,"name":"Saudi
+        Riyal","online_trading":true},{"code":"SEK","decimal_places":2,"name":"Swedish
+        Krona","online_trading":true},{"code":"SGD","decimal_places":2,"name":"Singapore
+        Dollar","online_trading":true},{"code":"THB","decimal_places":2,"name":"Thai
+        Baht","online_trading":true},{"code":"TRY","decimal_places":2,"name":"Turkish
+        Lira","online_trading":true},{"code":"UGX","decimal_places":0,"name":"Ugandan
+        Shilling","online_trading":true},{"code":"USD","decimal_places":2,"name":"United
+        States Dollar","online_trading":true},{"code":"ZAR","decimal_places":2,"name":"South
+        African Rand","online_trading":true}]}'
+    http_version:
+  recorded_at: Mon, 16 Jul 2018 08:20:20 GMT
+recorded_with: VCR 4.0.0
