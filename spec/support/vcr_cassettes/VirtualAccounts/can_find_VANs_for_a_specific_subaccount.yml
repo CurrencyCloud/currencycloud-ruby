@@ -1,0 +1,108 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/authenticate/api
+    body:
+      encoding: UTF-8
+      string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+    headers:
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Jul 2018 13:10:58 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=7avFjeoBRFYj3qIwfOPvG5QeK8VsPw05xfgXAVN0SXcGVjdhRvqp57tp0GrL4yOE1bpDmtlveDUVcgqWZErH8oYtgMVZA9KZxxxKAsnWL1jzAthtupBd64Pbg+q2;
+        Expires=Mon, 23 Jul 2018 13:10:56 GMT; Path=/
+      - __cfduid=df2cb0cf3e3be6563ef3edd2b8666891b1531746656; expires=Tue, 16-Jul-19
+        13:10:56 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - 1fc8a8a3-8c66-467c-b93a-c73d41b7af7d
+      Access-Control-Allow-Methods:
+      - POST
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 43b4b63c8d6e0a6c-LHR
+    body:
+      encoding: UTF-8
+      string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
+    http_version:
+  recorded_at: Mon, 16 Jul 2018 13:10:58 GMT
+- request:
+    method: get
+    uri: https://devapi.currencycloud.com/v2/virtual_accounts/subaccounts/87077161-91de-012f-e284-1e0030c7f353
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - deadbeefdeadbeefdeadbeefdeadbeef
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Jul 2018 13:10:58 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=ZUeiwrT1tdDOlLq5vbgPCVSO4Q2vN/du257W9WpCElJ/s3dMhrCtfREiUJo92ygkx8eJRuRFZyRI/QB4CPEXdgSF1XOwXW+XbiB8gLmKKNofxB5wr7JIU2SnWxE9;
+        Expires=Mon, 23 Jul 2018 13:10:58 GMT; Path=/
+      - __cfduid=dd703b3d54d06288371dd8eda83802f3e1531746658; expires=Tue, 16-Jul-19
+        13:10:58 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - 9a0ccbee-3d01-4f08-b892-cab267743428
+      Access-Control-Allow-Methods:
+      - GET
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 43b4b6476dc10a7e-LHR
+    body:
+      encoding: UTF-8
+      string: '{"virtual_accounts":[{"id":"00d272ee-fae5-4f97-b425-993a2d6e3a46","account_id":"2090939e-b2f7-3f2b-1363-4d235b3f58af","virtual_account_number":"8303723297",
+    "account_holder_name":"Account-ZXOANNAMKPRQ","bank_institution_name":"Community Federal Savings Bank","bank_institution_address":"Seventh Avenue, New York, NY 10019, US",
+    "bank_institution_country":"United States","routing_code":"026073150","created_at":"2014-01-12T00:00:00+00:00","updated_at":"2014-01-12T00:00:00+00:00"}],
+    "pagination":{"total_entries":1,"total_pages":1,"current_page":1,"per_page":25,"previous_page":-1,"next_page":2,"order":"created_at","order_asc_desc":"asc"}}'
+    http_version:
+  recorded_at: Mon, 16 Jul 2018 13:10:58 GMT
+recorded_with: VCR 3.0.3
