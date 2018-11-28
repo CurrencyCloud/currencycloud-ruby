@@ -91,4 +91,26 @@ describe 'Conversions', vcr: true do
     expect(split_conversion.child_conversion['conversion_date']).to eq('2018-07-18T00:00:00+00:00')
     expect(split_conversion.child_conversion['status']).to eq('awaiting_funds')
   end
+
+  it 'can #retrieve_profit_and_loss' do
+    profit_and_loss = CurrencyCloud::Conversion.retrieve_profit_and_loss()
+
+    expect(profit_and_loss.conversion_profit_and_losses[0]['account_id']).to eq('72970a7c-7921-431c-b95f-3438724ba16f')
+    expect(profit_and_loss.conversion_profit_and_losses[0]['contact_id']).to eq('a66ca63f-e668-47af-8bb9-74363240d781')
+    expect(profit_and_loss.conversion_profit_and_losses[0]['event_account_id']).to eq(nil)
+    expect(profit_and_loss.conversion_profit_and_losses[0]['event_contact_id']).to eq(nil)
+    expect(profit_and_loss.conversion_profit_and_losses[0]['conversion_id']).to eq('515eaa18-0756-42b9-9899-49bfea5d3e8a')
+    expect(profit_and_loss.conversion_profit_and_losses[0]['event_type']).to eq('self_service_cancellation')
+    expect(profit_and_loss.conversion_profit_and_losses[0]['amount']).to eq('-0.01')
+    expect(profit_and_loss.conversion_profit_and_losses[0]['currency']).to eq('GBP')
+
+    expect(profit_and_loss.conversion_profit_and_losses[1]['account_id']).to eq('72970a7c-7921-431c-b95f-3438724ba16f')
+    expect(profit_and_loss.conversion_profit_and_losses[1]['contact_id']).to eq('a66ca63f-e668-47af-8bb9-74363240d781')
+    expect(profit_and_loss.conversion_profit_and_losses[1]['event_account_id']).to eq(nil)
+    expect(profit_and_loss.conversion_profit_and_losses[1]['event_contact_id']).to eq(nil)
+    expect(profit_and_loss.conversion_profit_and_losses[1]['conversion_id']).to eq('10c79aba-a9ee-41c2-b0ce-89a0941a8599')
+    expect(profit_and_loss.conversion_profit_and_losses[1]['event_type']).to eq('self_service_cancellation')
+    expect(profit_and_loss.conversion_profit_and_losses[1]['amount']).to eq('-0.01')
+    expect(profit_and_loss.conversion_profit_and_losses[1]['currency']).to eq('GBP')
+  end
 end

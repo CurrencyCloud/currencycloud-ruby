@@ -19,5 +19,10 @@ module CurrencyCloud
       attrs = client.post("#{id}/split", params)
       ConversionSplitResult.new(attrs)
     end
+
+    def self.retrieve_profit_and_loss(params = {})
+      attrs = client.get("profit_and_loss", params)
+      ConversionProfitAndLoss.new(attrs)
+    end
   end
 end
