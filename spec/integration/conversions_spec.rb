@@ -112,5 +112,24 @@ describe 'Conversions', vcr: true do
     expect(profit_and_loss.conversion_profit_and_losses[1]['event_type']).to eq('self_service_cancellation')
     expect(profit_and_loss.conversion_profit_and_losses[1]['amount']).to eq('-0.01')
     expect(profit_and_loss.conversion_profit_and_losses[1]['currency']).to eq('GBP')
+    end
+
+  it 'can retrieve #date_change_quote' do
+    new_settlement_date = Time.now + 86400
+    new_settlement_date = new_settlement_date.strftime('%F')
+    conversion = CurrencyCloud::Conversion.create(conversion_params)
+
+    date_change_quote = conversion.date_change_quote(new_settlement_date: new_settlement_date)
+
+    #date_change_quote = CurrencyCloud::Conversion.date_change_quote('d391e0a1-2643-44ff-b063-bbe39c98a2b5')
+
+    expect(date_change_quote.conversion_id).to eq('d391e0a1-2643-44ff-b063-bbe39c98a2b5')
+    expect(date_change_quote.amount).to eq('-0.01')
+    expect(date_change_quote.currency).to eq('GBP')
+    expect(date_change_quote.new_conversion_date).to eq('2018-11-20T00:00:00+00:00')
+    expect(date_change_quote.new_settlement_date).to eq('2018-11-20T16:30:00+00:00')
+    expect(date_change_quote.old_conversion_date).to eq('2018-11-19T00:00:00+00:00')
+    expect(date_change_quote.old_settlement_date).to eq('2018-11-19T16:30:00+00:00')
+    expect(date_change_quote.event_date_time).to eq('2018-11-15T14:08:01+00:00')
   end
 end

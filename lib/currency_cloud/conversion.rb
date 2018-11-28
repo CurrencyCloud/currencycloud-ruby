@@ -24,5 +24,10 @@ module CurrencyCloud
       attrs = client.get("profit_and_loss", params)
       ConversionProfitAndLoss.new(attrs)
     end
+
+    def date_change_quote(params)
+      attrs = client.get("#{id}/date_change_quote", params)
+      ConversionDateChangeQuoteResult.new(attrs)
+    end
   end
 end
