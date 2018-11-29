@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/authenticate/api
+    body:
+      encoding: UTF-8
+      string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+    headers:
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Thu, 29 Nov 2018 12:23:10 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d3a660ca11772c0463a2180d3b6550f051543494179; expires=Fri, 29-Nov-19
+        12:22:59 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      Access-Control-Allow-Origin:
+      - '*'
+      X-Request-Id:
+      - 72958021-79fd-40c4-903e-84299d4cabbe
+      Access-Control-Allow-Methods:
+      - POST
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 48150affafc2b6f2-LHR
+    body:
+      encoding: UTF-8
+      string: '{"error_code":"auth_failed","error_messages":{"username":[{"code":"invalid_supplied_credentials","message":"Authentication
+        failed with the supplied credentials","params":{}}]}}'
+    http_version: 
+  recorded_at: Thu, 29 Nov 2018 12:22:28 GMT
+recorded_with: VCR 3.0.3

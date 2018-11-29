@@ -118,7 +118,7 @@ describe 'Conversions', vcr: true do
     new_settlement_date = '2018-11-29'
     conversion = CurrencyCloud::Conversion.create(conversion_params)
 
-    date_change_quote = conversion.date_change_quote(new_settlement_date: new_settlement_date)
+    date_change_quote = conversion.cancellation_quote(new_settlement_date: new_settlement_date)
 
     expect(date_change_quote.conversion_id).to eq('d391e0a1-2643-44ff-b063-bbe39c98a2b5')
     expect(date_change_quote.amount).to eq('-0.01')
@@ -200,5 +200,15 @@ describe 'Conversions', vcr: true do
     expect(split_history.child_conversions[1]['settlement_date']).to eq('2018-06-28T13:00:00+00:00')
     expect(split_history.child_conversions[1]['conversion_date']).to eq('2018-06-28T00:00:00+00:00')
     expect(split_history.child_conversions[1]['status']).to eq('awaiting_funds')
+  end
+
+  it 'can retrieve #cancellation_quote' do
+    conversion = CurrencyCloud::Conversion.create(conversion_params)
+
+    cancellation_quote = conversion.cancellation_quote
+
+    expect(cancellation_quote.amount).to eq('-0.01')
+    expect(cancellation_quote.currency).to eq('GBP')
+    expect(cancellation_quote.event_date_time).to eq('2018-11-15T14:08:07+00:00')
   end
 end

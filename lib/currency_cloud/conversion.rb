@@ -39,5 +39,10 @@ module CurrencyCloud
       attrs = client.get("#{id}/split_history")
       ConversionSplitHistoryResult.new(attrs)
     end
+
+    def cancellation_quote
+      attrs = client.get("#{id}/cancellation_quote")
+      ConversionCancellationQuoteResult.new(attrs)
+    end
   end
 end
