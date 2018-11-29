@@ -29,5 +29,10 @@ module CurrencyCloud
       attrs = client.get("#{id}/date_change_quote", params)
       ConversionDateChangeQuoteResult.new(attrs)
     end
+
+    def split_preview(params)
+      attrs = client.get("#{id}/split_preview", params)
+      ConversionSplitPreviewResult.new(attrs)
+    end
   end
 end

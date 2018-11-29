@@ -120,8 +120,6 @@ describe 'Conversions', vcr: true do
 
     date_change_quote = conversion.date_change_quote(new_settlement_date: new_settlement_date)
 
-    #date_change_quote = CurrencyCloud::Conversion.date_change_quote('d391e0a1-2643-44ff-b063-bbe39c98a2b5')
-
     expect(date_change_quote.conversion_id).to eq('d391e0a1-2643-44ff-b063-bbe39c98a2b5')
     expect(date_change_quote.amount).to eq('-0.01')
     expect(date_change_quote.currency).to eq('GBP')
@@ -130,5 +128,31 @@ describe 'Conversions', vcr: true do
     expect(date_change_quote.old_conversion_date).to eq('2018-11-19T00:00:00+00:00')
     expect(date_change_quote.old_settlement_date).to eq('2018-11-19T16:30:00+00:00')
     expect(date_change_quote.event_date_time).to eq('2018-11-15T14:08:01+00:00')
+  end
+
+  it 'can #split_preview' do
+    conversion = CurrencyCloud::Conversion.create(conversion_params)
+
+    split_preview = conversion.split_preview(amount: 100)
+
+    expect(split_preview.parent_conversion['id']).to eq('b401a1bc-ba02-4bd6-920e-8bf6fd97282b')
+    expect(split_preview.parent_conversion['short_reference']).to eq('20180622-XCRNWB')
+    expect(split_preview.parent_conversion['sell_amount']).to eq('70.93')
+    expect(split_preview.parent_conversion['sell_currency']).to eq('GBP')
+    expect(split_preview.parent_conversion['buy_amount']).to eq('100.00')
+    expect(split_preview.parent_conversion['buy_currency']).to eq('USD')
+    expect(split_preview.parent_conversion['settlement_date']).to eq('2018-07-02T15:30:00+00:00')
+    expect(split_preview.parent_conversion['conversion_date']).to eq('2018-07-02T00:00:00+00:00')
+    expect(split_preview.parent_conversion['status']).to eq('awaiting_funds')
+
+    expect(split_preview.child_conversion['id']).to eq('13575890-f1a3-466d-81ce-f9444d2816a7')
+    expect(split_preview.child_conversion['short_reference']).to eq('20180622-GXWQPV')
+    expect(split_preview.child_conversion['sell_amount']).to eq('35.46')
+    expect(split_preview.child_conversion['sell_currency']).to eq('GBP')
+    expect(split_preview.child_conversion['buy_amount']).to eq('50.00')
+    expect(split_preview.child_conversion['buy_currency']).to eq('USD')
+    expect(split_preview.child_conversion['settlement_date']).to eq('2018-07-02T15:30:00+00:00')
+    expect(split_preview.child_conversion['conversion_date']).to eq('2018-07-02T00:00:00+00:00')
+    expect(split_preview.child_conversion['status']).to eq('awaiting_funds')
   end
 end
