@@ -22,27 +22,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Set-Cookie:
-      - __cfduid=d851b90b699937dafa8eb1e13aa0701a41543483248; expires=Fri, 29-Nov-19
-        09:20:48 GMT; path=/; domain=.currencycloud.com; HttpOnly
-      Access-Control-Allow-Origin:
-      - '*'
-      X-Request-Id:
-      - d6fa2319-aefb-45bf-bdb6-e0698f1de5d1
-      Access-Control-Allow-Methods:
-      - POST
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Origin
-      Access-Control-Allow-Headers:
-      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 4814001e6ae6b6ce-LHR
     body:
       encoding: UTF-8
       string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
@@ -72,21 +51,6 @@ http_interactions:
       - '176'
       Connection:
       - keep-alive
-      Set-Cookie:
-      - __cfduid=d2c823694250189fcdf9007608088530a1543413187; expires=Thu, 28-Nov-19
-        13:53:07 GMT; path=/; domain=.currencycloud.com; HttpOnly
-      X-Request-Id:
-      - e4d20626-3044-4dd9-9c25-3dc3e2879393
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Origin
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 480d51a338b1b6d4-LHR
     body:
       encoding: UTF-8
       string: '{"id":"d391e0a1-2643-44ff-b063-bbe39c98a2b5","settlement_date":"2018-11-19T16:30:00+00:00","conversion_date":"2018-11-19T00:00:00+00:00","short_reference":"20181115-GHXVKW","creator_contact_id":"a66ca63f-e668-47af-8bb9-74363240d781","account_id":"72970a7c-7921-431c-b95f-3438724ba16f","currency_pair":"GBPUSD","status":"awaiting_funds","buy_currency":"USD","sell_currency":"GBP","client_buy_amount":"150.00","client_sell_amount":"106.39","fixed_side":"buy","core_rate":"1.4099","partner_rate":"","partner_status":"funds_arrived","partner_buy_amount":"0.00","partner_sell_amount":"0.00","client_rate":"1.4099","deposit_required":false,"deposit_amount":"0.00","deposit_currency":"","deposit_status":"not_required","deposit_required_at":"","payment_ids":[],"unallocated_funds":"150.00","unique_request_id":null,"created_at":"2018-11-15T14:07:58+00:00","updated_at":"2018-11-15T14:07:59+00:00","mid_market_rate":"1.4100"}'
@@ -116,27 +80,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Set-Cookie:
-      - __cfduid=d90debd59f0768b6102dc3cd3d48e12851543491130; expires=Fri, 29-Nov-19
-        11:32:10 GMT; path=/; domain=.currencycloud.com; HttpOnly
-      Access-Control-Allow-Origin:
-      - '*'
-      X-Request-Id:
-      - 8ef30622-a6aa-47bc-b30d-846cf516a4bf
-      Access-Control-Allow-Methods:
-      - GET
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Origin
-      Access-Control-Allow-Headers:
-      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 4814c08be971b6d4-LHR
     body:
       encoding: UTF-8
       string: '{"parent_conversion":{"id":"24d2ee7f-c7a3-4181-979e-9c58dbace992","short_reference":"20180716-XMXMMS","sell_amount":"2417.10","sell_currency":"GBP","buy_amount":"3000.00","buy_currency":"EUR","settlement_date":"2018-06-28T13:00:00+00:00","conversion_date":"2018-06-28T00:00:00+00:00","status":"awaiting_funds"},"origin_conversion":{"id":"9d7919b5-c72d-41e1-9745-d2d5dc35e338","short_reference":"20180626-YVRVTT","sell_amount":"3222.80","sell_currency":"GBP","buy_amount":"4000.00","buy_currency":"EUR","settlement_date":"2018-06-28T13:00:00+00:00","conversion_date":"2018-06-28T00:00:00+00:00","status":"awaiting_funds"},"child_conversions":[{"id":"c8a323d8-7366-4bf3-b7c5-a6590e07eda3","short_reference":"20180716-KWQYDK","sell_amount":"1208.55","sell_currency":"GBP","buy_amount":"1500.00","buy_currency":"EUR","settlement_date":"2018-06-28T13:00:00+00:00","conversion_date":"2018-06-28T00:00:00+00:00","status":"awaiting_funds"},{"id":"615227c4-a955-4a6c-a415-68accc3ae47f","short_reference":"20180716-EARWAY","sell_amount":"1208.55","sell_currency":"GBP","buy_amount":"1500.00","buy_currency":"EUR","settlement_date":"2018-06-28T13:00:00+00:00","conversion_date":"2018-06-28T00:00:00+00:00","status":"awaiting_funds"}]}'

@@ -118,7 +118,7 @@ describe 'Conversions', vcr: true do
     new_settlement_date = '2018-11-29'
     conversion = CurrencyCloud::Conversion.create(conversion_params)
 
-    date_change_quote = conversion.cancellation_quote(new_settlement_date: new_settlement_date)
+    date_change_quote = conversion.date_change_quote(new_settlement_date: new_settlement_date)
 
     expect(date_change_quote.conversion_id).to eq('d391e0a1-2643-44ff-b063-bbe39c98a2b5')
     expect(date_change_quote.amount).to eq('-0.01')

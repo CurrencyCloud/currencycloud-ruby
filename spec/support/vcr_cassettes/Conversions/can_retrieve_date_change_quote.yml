@@ -22,29 +22,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Set-Cookie:
-      - AWSALB=6PC1HmZrhiw12mGtDeNAe6MKMxwkrh6lMdcIO6O/fJrHgV5/hYjkSE478DnzR2XFgxRU5U5b3EyblXtDLaSc4iYGSciicl4k9En+TFqTabJH+7BuSdeoNkeuHxAh;
-        Expires=Mon, 23 Jul 2018 10:41:04 GMT; Path=/
-      - __cfduid=d2428f818dd606d71ef49c356f6a624b31531737664; expires=Tue, 16-Jul-19
-        10:41:04 GMT; path=/; domain=.currencycloud.com; HttpOnly
-      Access-Control-Allow-Origin:
-      - '*'
-      X-Request-Id:
-      - 2c1f89c4-7394-4b57-93ef-efdd79befbef
-      Access-Control-Allow-Methods:
-      - POST
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Origin
-      Access-Control-Allow-Headers:
-      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 43b3dab0883a0a84-LHR
     body:
       encoding: UTF-8
       string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
@@ -74,29 +51,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Set-Cookie:
-      - AWSALB=L3g6+O+jRcfOxoLTYV/ET4TK5xsBI+T2LGFbTc+2LUXDSHk+pFWWXREzy5pcM+fFBzxfEj9/tf0lL8dyMfy2uXuveLWvPuAZb6T9rEy41EIzRRvJKKY/nAQd9bMM;
-        Expires=Mon, 23 Jul 2018 10:41:05 GMT; Path=/
-      - __cfduid=df250c693a60f31295b2bb1dab1bac6981531737665; expires=Tue, 16-Jul-19
-        10:41:05 GMT; path=/; domain=.currencycloud.com; HttpOnly
-      Access-Control-Allow-Origin:
-      - '*'
-      X-Request-Id:
-      - 42c1e621-9604-4915-bf00-480aeb2dd62e
-      Access-Control-Allow-Methods:
-      - POST
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Origin
-      Access-Control-Allow-Headers:
-      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 43b3dabb0b1e06c4-LHR
     body:
       encoding: UTF-8
       string: '{"conversion_id":"d391e0a1-2643-44ff-b063-bbe39c98a2b5","amount":"-0.01","currency":"GBP","new_conversion_date":"2018-11-20T00:00:00+00:00","new_settlement_date":"2018-11-20T16:30:00+00:00","old_conversion_date":"2018-11-19T00:00:00+00:00","old_settlement_date":"2018-11-19T16:30:00+00:00","event_date_time":"2018-11-15T14:08:01+00:00"}'
@@ -126,21 +80,6 @@ http_interactions:
       - '176'
       Connection:
       - keep-alive
-      Set-Cookie:
-      - __cfduid=d2c823694250189fcdf9007608088530a1543413187; expires=Thu, 28-Nov-19
-        13:53:07 GMT; path=/; domain=.currencycloud.com; HttpOnly
-      X-Request-Id:
-      - e4d20626-3044-4dd9-9c25-3dc3e2879393
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Origin
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 480d51a338b1b6d4-LHR
     body:
       encoding: UTF-8
       string: '{"id":"d391e0a1-2643-44ff-b063-bbe39c98a2b5","settlement_date":"2018-11-19T16:30:00+00:00","conversion_date":"2018-11-19T00:00:00+00:00","short_reference":"20181115-GHXVKW","creator_contact_id":"a66ca63f-e668-47af-8bb9-74363240d781","account_id":"72970a7c-7921-431c-b95f-3438724ba16f","currency_pair":"GBPUSD","status":"awaiting_funds","buy_currency":"USD","sell_currency":"GBP","client_buy_amount":"150.00","client_sell_amount":"106.39","fixed_side":"buy","core_rate":"1.4099","partner_rate":"","partner_status":"funds_arrived","partner_buy_amount":"0.00","partner_sell_amount":"0.00","client_rate":"1.4099","deposit_required":false,"deposit_amount":"0.00","deposit_currency":"","deposit_status":"not_required","deposit_required_at":"","payment_ids":[],"unallocated_funds":"150.00","unique_request_id":null,"created_at":"2018-11-15T14:07:58+00:00","updated_at":"2018-11-15T14:07:59+00:00","mid_market_rate":"1.4100"}'
