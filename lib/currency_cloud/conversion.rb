@@ -34,5 +34,10 @@ module CurrencyCloud
       attrs = client.get("#{id}/split_preview", params)
       ConversionSplitPreviewResult.new(attrs)
     end
+
+    def split_history
+      attrs = client.get("#{id}/split_history")
+      ConversionSplitHistoryResult.new(attrs)
+    end
   end
 end

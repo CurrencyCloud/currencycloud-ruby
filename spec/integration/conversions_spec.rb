@@ -155,4 +155,50 @@ describe 'Conversions', vcr: true do
     expect(split_preview.child_conversion['conversion_date']).to eq('2018-07-02T00:00:00+00:00')
     expect(split_preview.child_conversion['status']).to eq('awaiting_funds')
   end
+
+  it 'can #split_history' do
+    conversion = CurrencyCloud::Conversion.create(conversion_params)
+
+    split_history = conversion.split_history
+
+    expect(split_history.parent_conversion['id']).to eq('24d2ee7f-c7a3-4181-979e-9c58dbace992')
+    expect(split_history.parent_conversion['short_reference']).to eq('20180716-XMXMMS')
+    expect(split_history.parent_conversion['sell_amount']).to eq('2417.10')
+    expect(split_history.parent_conversion['sell_currency']).to eq('GBP')
+    expect(split_history.parent_conversion['buy_amount']).to eq('3000.00')
+    expect(split_history.parent_conversion['buy_currency']).to eq('EUR')
+    expect(split_history.parent_conversion['settlement_date']).to eq('2018-06-28T13:00:00+00:00')
+    expect(split_history.parent_conversion['conversion_date']).to eq('2018-06-28T00:00:00+00:00')
+    expect(split_history.parent_conversion['status']).to eq('awaiting_funds')
+
+    expect(split_history.origin_conversion['id']).to eq('9d7919b5-c72d-41e1-9745-d2d5dc35e338')
+    expect(split_history.origin_conversion['short_reference']).to eq('20180626-YVRVTT')
+    expect(split_history.origin_conversion['sell_amount']).to eq('3222.80')
+    expect(split_history.origin_conversion['sell_currency']).to eq('GBP')
+    expect(split_history.origin_conversion['buy_amount']).to eq('4000.00')
+    expect(split_history.origin_conversion['buy_currency']).to eq('EUR')
+    expect(split_history.origin_conversion['settlement_date']).to eq('2018-06-28T13:00:00+00:00')
+    expect(split_history.origin_conversion['conversion_date']).to eq('2018-06-28T00:00:00+00:00')
+    expect(split_history.origin_conversion['status']).to eq('awaiting_funds')
+
+    expect(split_history.child_conversions[0]['id']).to eq('c8a323d8-7366-4bf3-b7c5-a6590e07eda3')
+    expect(split_history.child_conversions[0]['short_reference']).to eq('20180716-KWQYDK')
+    expect(split_history.child_conversions[0]['sell_amount']).to eq('1208.55')
+    expect(split_history.child_conversions[0]['sell_currency']).to eq('GBP')
+    expect(split_history.child_conversions[0]['buy_amount']).to eq('1500.00')
+    expect(split_history.child_conversions[0]['buy_currency']).to eq('EUR')
+    expect(split_history.child_conversions[0]['settlement_date']).to eq('2018-06-28T13:00:00+00:00')
+    expect(split_history.child_conversions[0]['conversion_date']).to eq('2018-06-28T00:00:00+00:00')
+    expect(split_history.child_conversions[0]['status']).to eq('awaiting_funds')
+
+    expect(split_history.child_conversions[1]['id']).to eq('615227c4-a955-4a6c-a415-68accc3ae47f')
+    expect(split_history.child_conversions[1]['short_reference']).to eq('20180716-EARWAY')
+    expect(split_history.child_conversions[1]['sell_amount']).to eq('1208.55')
+    expect(split_history.child_conversions[1]['sell_currency']).to eq('GBP')
+    expect(split_history.child_conversions[1]['buy_amount']).to eq('1500.00')
+    expect(split_history.child_conversions[1]['buy_currency']).to eq('EUR')
+    expect(split_history.child_conversions[1]['settlement_date']).to eq('2018-06-28T13:00:00+00:00')
+    expect(split_history.child_conversions[1]['conversion_date']).to eq('2018-06-28T00:00:00+00:00')
+    expect(split_history.child_conversions[1]['status']).to eq('awaiting_funds')
+  end
 end
