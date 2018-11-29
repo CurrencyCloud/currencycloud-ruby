@@ -115,8 +115,7 @@ describe 'Conversions', vcr: true do
     end
 
   it 'can retrieve #date_change_quote' do
-    new_settlement_date = Time.now + 86400
-    new_settlement_date = new_settlement_date.strftime('%F')
+    new_settlement_date = '2018-11-29'
     conversion = CurrencyCloud::Conversion.create(conversion_params)
 
     date_change_quote = conversion.date_change_quote(new_settlement_date: new_settlement_date)
