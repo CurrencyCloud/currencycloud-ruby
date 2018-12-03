@@ -8,7 +8,6 @@ describe 'Reports', vcr: true do
 
     expect(conversions_report.id).to eql('2f06edb7-7ff7-4370-9c32-0512ed1825ae')
     expect(conversions_report.short_reference).to eql('RP-8675452-YNXMLJ')
-    expect(conversions_report.short_reference).to eql('RP-8675452-YNXMLJ')
     expect(conversions_report.description).to eql(nil)
     expect(conversions_report.search_params['scope']).to eql('own')
     expect(conversions_report.report_type).to eql('conversion')
@@ -20,5 +19,23 @@ describe 'Reports', vcr: true do
     expect(conversions_report.contact_id).to eql('a66ca63f-e668-47af-8bb9-74363240d781')
     expect(conversions_report.created_at).to eql('2018-11-15T14:08:19+00:00')
     expect(conversions_report.updated_at).to eql('2018-11-15T14:08:19+00:00')
+  end
+
+  it "can #create_payments_report" do
+    payments_report = CurrencyCloud::Reports.create_payments_report
+
+    expect(payments_report.id).to eql('6e3b3230-5cd8-420e-ae52-c6052d55e6fb')
+    expect(payments_report.short_reference).to eql('RP-3199188-JPZZXS')
+    expect(payments_report.description).to eql(nil)
+    expect(payments_report.search_params['scope']).to eql('own')
+    expect(payments_report.report_type).to eql('payment')
+    expect(payments_report.status).to eql('processing')
+    expect(payments_report.failure_reason).to eql(nil)
+    expect(payments_report.expiration_date).to eql(nil)
+    expect(payments_report.report_url).to eql('')
+    expect(payments_report.account_id).to eql('72970a7c-7921-431c-b95f-3438724ba16f')
+    expect(payments_report.contact_id).to eql('a66ca63f-e668-47af-8bb9-74363240d781')
+    expect(payments_report.created_at).to eql('2018-11-15T14:08:20+00:00')
+    expect(payments_report.updated_at).to eql('2018-11-15T14:08:20+00:00')
   end
 end
