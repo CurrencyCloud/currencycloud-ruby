@@ -1,5 +1,5 @@
 module CurrencyCloud
-  class ReportRequestsResult
+  class FindReportRequestsResult
     include CurrencyCloud::Resource
   end
 end

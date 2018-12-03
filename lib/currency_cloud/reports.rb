@@ -17,7 +17,7 @@ module CurrencyCloud
 
     def self.find_report_requests(params = {})
       response = client.get('report_requests/find', params)
-      ReportRequestsResult.new(response)
+      FindReportRequestsResult.new(response)
     end
   end
 end
