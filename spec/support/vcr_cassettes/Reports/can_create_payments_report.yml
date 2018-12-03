@@ -22,27 +22,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Set-Cookie:
-      - __cfduid=somelonguidhere8a3f; expires=Tue, 03-Dec-19
-        07:44:01 GMT; path=/; domain=.currencycloud.com; HttpOnly
-      Access-Control-Allow-Origin:
-      - '*'
-      X-Request-Id:
-      - 3fee123e-eddd-46c1-b4c0-2fdc96a6811c
-      Access-Control-Allow-Methods:
-      - POST
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Origin
-      Access-Control-Allow-Headers:
-      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 483467d62f8fb6da-LHR
     body:
       encoding: UTF-8
       string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
@@ -72,27 +51,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Set-Cookie:
-      - __cfduid=somelonguidhere8a3f; expires=Tue, 03-Dec-19
-        07:45:37 GMT; path=/; domain=.currencycloud.com; HttpOnly
-      Access-Control-Allow-Origin:
-      - '*'
-      X-Request-Id:
-      - cb891ebb-c8e5-4a29-b29e-1a0be1b71901
-      Access-Control-Allow-Methods:
-      - POST
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Origin
-      Access-Control-Allow-Headers:
-      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 48346a2e58a4b6e0-LHR
     body:
       encoding: UTF-8
       string: '{"id":"6e3b3230-5cd8-420e-ae52-c6052d55e6fb","short_reference":"RP-3199188-JPZZXS","description":null,"search_params":{"scope":"own"},"report_type":"payment","status":"processing","failure_reason":null,"expiration_date":null,"report_url":"","account_id":"72970a7c-7921-431c-b95f-3438724ba16f","contact_id":"a66ca63f-e668-47af-8bb9-74363240d781","created_at":"2018-11-15T14:08:20+00:00","updated_at":"2018-11-15T14:08:20+00:00"}'
