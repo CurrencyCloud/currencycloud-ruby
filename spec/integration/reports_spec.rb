@@ -38,4 +38,39 @@ describe 'Reports', vcr: true do
     expect(payments_report.created_at).to eql('2018-11-15T14:08:20+00:00')
     expect(payments_report.updated_at).to eql('2018-11-15T14:08:20+00:00')
   end
+
+  it "can #find_report_requests" do
+    report_requests_result = CurrencyCloud::Reports.find_report_requests
+
+    expect(report_requests_result.report_requests[0]['id']).to eql('075ce584-b977-4538-a524-16b759277d66')
+    expect(report_requests_result.report_requests[0]['short_reference']).to eql('RP-5279826-KZJHNX')
+    expect(report_requests_result.report_requests[0]['description']).to eql(nil)
+    expect(report_requests_result.report_requests[0]['search_params']['buy_currency']).to eql('EUR')
+    expect(report_requests_result.report_requests[0]['search_params']['sell_currency']).to eql('GBP')
+    expect(report_requests_result.report_requests[0]['search_params']['scope']).to eql('own')
+    expect(report_requests_result.report_requests[0]['report_type']).to eql('conversion')
+    expect(report_requests_result.report_requests[0]['status']).to eql('completed')
+    expect(report_requests_result.report_requests[0]['failure_reason']).to eql(nil)
+    expect(report_requests_result.report_requests[0]['expiration_date']).to eql('2018-10-18T00:00:00+00:00')
+    expect(report_requests_result.report_requests[0]['report_url']).to eql('https://ccycloud-reports-prod-demo1-customer-reporting.s3.eu-west-1.amazonaws.com/customer_reporting/075ce584-b977-4538-a524-16b759277d66/conversion_report_1610201808101539677748.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=Acredentialsabc&X-Amz-Date=20181203T081009Z&X-Amz-Expires=172800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=tokenabc&X-Amz-Signature=signatureabc')
+    expect(report_requests_result.report_requests[0]['account_id']).to eql('bf5b1007-b364-43cc-b3d6-9f2d1be75297')
+    expect(report_requests_result.report_requests[0]['contact_id']).to eql('ba33d76a-4a7f-4cb3-afa8-5678d5bc712a')
+    expect(report_requests_result.report_requests[0]['created_at']).to eql('2018-10-16T08:15:46+00:00')
+    expect(report_requests_result.report_requests[0]['updated_at']).to eql('2018-10-16T08:15:48+00:00')
+
+    expect(report_requests_result.report_requests[1]['id']).to eql('f196bff2-d757-48b1-8ff9-91d7f4a6722b')
+    expect(report_requests_result.report_requests[1]['short_reference']).to eql('RP-6268341-YWPLYH')
+    expect(report_requests_result.report_requests[1]['description']).to eql('Test Report for Payment')
+    expect(report_requests_result.report_requests[1]['search_params']['currency']).to eql('EUR')
+    expect(report_requests_result.report_requests[1]['search_params']['scope']).to eql('own')
+    expect(report_requests_result.report_requests[1]['report_type']).to eql('payment')
+    expect(report_requests_result.report_requests[1]['status']).to eql('completed')
+    expect(report_requests_result.report_requests[1]['failure_reason']).to eql(nil)
+    expect(report_requests_result.report_requests[1]['expiration_date']).to eql('2018-10-28T00:00:00+00:00')
+    expect(report_requests_result.report_requests[1]['report_url']).to eql('https://ccycloud-reports-prod-demo1-customer-reporting.s3.eu-west-1.amazonaws.com/customer_reporting/f196bff2-d757-48b1-8ff9-91d7f4a6722b/payment_report_2610201807101540538496.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=credentialsabc&X-Amz-Date=20181203T081010Z&X-Amz-Expires=172800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=tokenabc&X-Amz-Signature=signatureabc')
+    expect(report_requests_result.report_requests[1]['account_id']).to eql('bf5b1007-b364-43cc-b3d6-9f2d1be75297')
+    expect(report_requests_result.report_requests[1]['contact_id']).to eql('ba33d76a-4a7f-4cb3-afa8-5678d5bc712a')
+    expect(report_requests_result.report_requests[1]['created_at']).to eql('2018-10-26T07:21:32+00:00')
+    expect(report_requests_result.report_requests[1]['updated_at']).to eql('2018-10-26T07:21:36+00:00')
+  end
 end

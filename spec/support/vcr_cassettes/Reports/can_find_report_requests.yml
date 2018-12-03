@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/authenticate/api
+    body:
+      encoding: UTF-8
+      string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+    headers:
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Dec 2018 09:52:09 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=somelonguidabc; expires=Tue, 03-Dec-19 09:51:22 GMT; path=/; domain=.currencycloud.com;
+        HttpOnly
+      Access-Control-Allow-Origin:
+      - '*'
+      X-Request-Id:
+      - 47faf8eb-aa0a-4a4b-8f8b-60e615f200c7
+      Access-Control-Allow-Methods:
+      - POST
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 483522672c25b6ce-LHR
+    body:
+      encoding: UTF-8
+      string: '{"auth_token":"deadbeefdeadbeefdeadbeef"}'
+    http_version: 
+  recorded_at: Mon, 03 Dec 2018 09:52:09 GMT
+- request:
+    method: get
+    uri: https://devapi.currencycloud.com/v2/reports/report_requests/find
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - deadbeefdeadbeefdeadbeef
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Dec 2018 09:53:24 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=somelonguidabc; expires=Tue, 03-Dec-19
+        09:53:23 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      Access-Control-Allow-Origin:
+      - '*'
+      X-Request-Id:
+      - a6e8fc0b-80fc-498f-af13-36f600e70fa7
+      Access-Control-Allow-Methods:
+      - GET
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4835255bebd9b6ec-LHR
+    body:
+      encoding: UTF-8
+      string: '{"report_requests":[{"id":"075ce584-b977-4538-a524-16b759277d66","short_reference":"RP-5279826-KZJHNX","description":null,"search_params":{"buy_currency":"EUR","sell_currency":"GBP","scope":"own"},"report_type":"conversion","status":"completed","failure_reason":null,"expiration_date":"2018-10-18T00:00:00+00:00","report_url":"https://ccycloud-reports-prod-demo1-customer-reporting.s3.eu-west-1.amazonaws.com/customer_reporting/075ce584-b977-4538-a524-16b759277d66/conversion_report_1610201808101539677748.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=Acredentialsabc&X-Amz-Date=20181203T081009Z&X-Amz-Expires=172800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=tokenabc&X-Amz-Signature=signatureabc","account_id":"bf5b1007-b364-43cc-b3d6-9f2d1be75297","contact_id":"ba33d76a-4a7f-4cb3-afa8-5678d5bc712a","created_at":"2018-10-16T08:15:46+00:00","updated_at":"2018-10-16T08:15:48+00:00"},{"id":"f196bff2-d757-48b1-8ff9-91d7f4a6722b","short_reference":"RP-6268341-YWPLYH","description":"Test Report for Payment","search_params":{"currency":"EUR","scope":"own"},"report_type":"payment","status":"completed","failure_reason":null,"expiration_date":"2018-10-28T00:00:00+00:00","report_url":"https://ccycloud-reports-prod-demo1-customer-reporting.s3.eu-west-1.amazonaws.com/customer_reporting/f196bff2-d757-48b1-8ff9-91d7f4a6722b/payment_report_2610201807101540538496.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=credentialsabc&X-Amz-Date=20181203T081010Z&X-Amz-Expires=172800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=tokenabc&X-Amz-Signature=signatureabc","account_id":"bf5b1007-b364-43cc-b3d6-9f2d1be75297","contact_id":"ba33d76a-4a7f-4cb3-afa8-5678d5bc712a","created_at":"2018-10-26T07:21:32+00:00","updated_at":"2018-10-26T07:21:36+00:00"}]}'
+    http_version: 
+  recorded_at: Mon, 03 Dec 2018 09:53:24 GMT
+recorded_with: VCR 3.0.3

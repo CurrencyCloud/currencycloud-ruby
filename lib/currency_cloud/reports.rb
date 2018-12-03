@@ -14,5 +14,10 @@ module CurrencyCloud
       response = client.post('payments/create', params)
       PaymentReportResult.new(response)
     end
+
+    def self.find_report_requests(params = {})
+      response = client.get('report_requests/find', params)
+      ReportRequestsResult.new(response)
+    end
   end
 end
