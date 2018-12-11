@@ -3,7 +3,7 @@ module CurrencyCloud
     include CurrencyCloud::Resource
 
     resource :reports
-    actions :retrieve
+    actions :create, :retrieve
 
     def self.create_conversions_report(params = {})
       response = client.post('conversions/create', params)
