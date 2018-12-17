@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/authenticate/api
+    body:
+      encoding: UTF-8
+      string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+    headers:
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Jul 2018 10:41:05 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
+    http_version: 
+  recorded_at: Mon, 16 Jul 2018 10:41:05 GMT
+- request:
+    method: get
+    uri: https://devapi.currencycloud.com/v2/conversions/profit_and_loss
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      X-Auth-Token:
+      - deadbeefdeadbeefdeadbeefdeadbeef
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Jul 2018 10:41:06 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"conversion_profit_and_losses":[{"account_id":"72970a7c-7921-431c-b95f-3438724ba16f","contact_id":"a66ca63f-e668-47af-8bb9-74363240d781","event_account_id":null,"event_contact_id":null,"conversion_id":"515eaa18-0756-42b9-9899-49bfea5d3e8a","event_type":"self_service_cancellation","amount":"-0.01","currency":"GBP","notes":"","event_date_time":"2018-06-19T15:55:15+00:00"},{"account_id":"72970a7c-7921-431c-b95f-3438724ba16f","contact_id":"a66ca63f-e668-47af-8bb9-74363240d781","event_account_id":null,"event_contact_id":null,"conversion_id":"10c79aba-a9ee-41c2-b0ce-89a0941a8599","event_type":"self_service_cancellation","amount":"-0.01","currency":"GBP","notes":"","event_date_time":"2018-06-19T16:20:45+00:00"}]}'
+    http_version: 
+  recorded_at: Mon, 16 Jul 2018 10:41:06 GMT
+recorded_with: VCR 3.0.3
