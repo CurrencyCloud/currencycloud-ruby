@@ -14,5 +14,10 @@ module CurrencyCloud
       result = client.post("authorise", payment_ids: ids)['authorisations']
       result.map { |pa| PaymentAuthorisationResult.new(pa) }
     end
+
+    def confirmation(params = {})
+      result = client.get("#{id}/confirmation", params)
+      PaymentConfirmationResult.new(result)
+    end
   end
 end
