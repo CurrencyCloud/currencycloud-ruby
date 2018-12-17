@@ -130,6 +130,11 @@ error in any correspondence can be very helpful.
 Test cases can be run with: `bundle exec rspec`. There is also a `Guardfile` that
 is useful for continuously rerunning tests while you develop.
 
+## Contributing
+**We welcome pull requests from everyone!** Please see [CONTRIBUTING][contr]
+
+Our sincere thanks for [helping us][hof] create the best API for moving money anywhere around the world!
+
 ## Dependencies
 
 * [HTTParty][httparty]
@@ -141,9 +146,28 @@ This project uses [semantic versioning][semver]. You can safely
 express a dependency on a major version and expect all minor and patch versions
 to be backwards compatible.
 
+## Deprecation Policy
+Technology evolves quickly and we are always looking for better ways to serve our customers. From time to time we need to make room for innovation by removing sections of code that are no longer necessary. We understand this can be disruptive and consequently we have designed a Deprecation Policy that protects our customers' investment and that allows us to take advantage of modern tools, frameworks and practices in developing software.
+
+Deprecation means that we discourage the use of a feature, design or practice because it has been superseded or is no longer considered efficient or safe but instead of removing it immediately, we mark it as **@deprecated** to provide backwards compatibility and time for you to update your projects. While the deprecated feature remains in the SDK for a period of time, we advise that you replace it with the recommended alternative which is explained in the relevant section of the code.
+
+We remove deprecated features after **six months** from the time of announcement.
+
+The security of our customers' assets is of paramount importance to us and sometimes we have to deprecate features because they may pose a security threat or because new, more secure, ways are available. On such occasions we reserve the right to set a different deprecation period which may range from **immediate removal** to the standard **six months**. 
+
+Once a feature has been marked as deprecated, we no longer develop the code or implement bug fixes. We only do security fixes.
+
+### List of features being deprecated
+```
+(No features are currently being deprecated)
+```
+
+# Support
+We actively support the latest version of the SDK. We support the immediate previous version on best-efforts basis. All other versions are no longer supported nor maintained.
+
 # Copyright
 
-Copyright (c) 2016 Currencycloud. See [LICENSE][license] for details.
+Copyright (c) 2016-2018 Currencycloud. See [LICENSE][license] for details.
 
 [developer]: https://developer.currencycloud.com/documentation/getting-started/introduction/
 [travis]:    https://travis-ci.org/CurrencyCloud/currencycloud-ruby
@@ -153,3 +177,5 @@ Copyright (c) 2016 Currencycloud. See [LICENSE][license] for details.
 [json]:      https://github.com/intridea/multi_json
 [semver]:    http://semver.org/
 [license]:   LICENSE.md
+[contr]:     CONTRIBUTING.md
+[hof]:       HALL_OF_FAME.md
