@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/authenticate/api
+    body:
+      encoding: UTF-8
+      string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+    headers:
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Dec 2018 07:08:36 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
+    http_version: 
+  recorded_at: Mon, 03 Dec 2018 07:08:36 GMT
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/reports/conversions/create
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - deadbeefdeadbeefdeadbeefdeadbeef
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Dec 2018 07:18:33 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":"2f06edb7-7ff7-4370-9c32-0512ed1825ae","short_reference":"RP-8675452-YNXMLJ","description":null,"search_params":{"scope":"own"},"report_type":"conversion","status":"processing","failure_reason":null,"expiration_date":null,"report_url":"","account_id":"72970a7c-7921-431c-b95f-3438724ba16f","contact_id":"a66ca63f-e668-47af-8bb9-74363240d781","created_at":"2018-11-15T14:08:19+00:00","updated_at":"2018-11-15T14:08:19+00:00"}'
+    http_version: 
+  recorded_at: Mon, 03 Dec 2018 07:18:33 GMT
+recorded_with: VCR 3.0.3
