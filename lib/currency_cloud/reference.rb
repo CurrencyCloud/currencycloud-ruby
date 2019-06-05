@@ -37,5 +37,11 @@ module CurrencyCloud
       response = client.get('settlement_accounts', params)
       response['settlement_accounts'].map { |s| SettlementAccount.new(s) }
     end
+
+    def self.bank_details(params = {})
+      bank_details = client.get('bank_details', params)
+      BankDetails.new(bank_details)
+    end
+
   end
 end

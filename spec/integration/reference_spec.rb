@@ -77,4 +77,22 @@ describe 'Reference', vcr: true do
     expect(settlement_account.bank_account_holder_name).to eq('The Currency Cloud GBP - Client Seg A/C')
     expect(settlement_account.bank_address).to be_empty
   end
+
+  it 'can retrieve #bank_details' do
+    details = CurrencyCloud::Reference.bank_details(identifier_type: 'iban', identifier_value: 'GB19TCCL00997901654515')
+    expect(details).to_not be_nil
+    expect(details.identifier_value).to eq('GB19TCCL00997901654515')
+    expect(details.identifier_type).to eq('iban')
+    expect(details.account_number).to eq('GB19TCCL00997901654515')
+    expect(details.bic_swift).to eq('TCCLGB22XXX')
+    expect(details.bank_name).to eq('THE CURRENCY CLOUD LIMITED')
+    expect(details.bank_branch).to eq('')
+    expect(details.bank_address).to eq('12 STEWARD STREET  THE STEWARD BUILDING FLOOR 0')
+    expect(details.bank_city).to eq('LONDON')
+    expect(details.bank_state).to eq('LONDON')
+    expect(details.bank_post_code).to eq('E1 6FQ')
+    expect(details.bank_country).to eq('UNITED KINGDOM')
+    expect(details.bank_country_ISO).to eq('GB')
+    expect(details.currency).to be_nil
+  end
 end
