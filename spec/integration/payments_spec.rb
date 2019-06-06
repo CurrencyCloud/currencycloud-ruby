@@ -81,4 +81,18 @@ describe 'Payments', vcr: true do
     expect(payment_confirmation_result.updated_at).to eq('2018-11-30T07:57:24+00:00')
     expect(payment_confirmation_result.expires_at).to eq('2018-12-02T00:00:00+00:00')
   end
+
+
+  it "can retrieve #payment_delivery_date" do
+    result = CurrencyCloud::Payment.payment_delivery_date(payment_date: '2019-06-07', payment_type: 'regular', currency: 'GBP', bank_country: 'GB')
+
+    expect(result).to_not be_nil
+    expect(result.payment_date).to eq('2019-06-07')
+    expect(result.payment_delivery_date).to eq('2019-06-07T00:00:00+00:00')
+    expect(result.payment_cutoff_time).to eq('2019-06-07T14:30:00+00:00')
+    expect(result.payment_type).to eq('regular')
+    expect(result.currency).to eq('GBP')
+    expect(result.bank_country).to eq('GB')
+  end
+
 end
