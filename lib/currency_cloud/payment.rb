@@ -24,6 +24,5 @@ module CurrencyCloud
       result = client.get("payment_delivery_date", params)
       PaymentDeliveryDateResult.new(result)
     end
-
   end
 end

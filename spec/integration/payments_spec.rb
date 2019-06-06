@@ -94,5 +94,4 @@ describe 'Payments', vcr: true do
     expect(result.currency).to eq('GBP')
     expect(result.bank_country).to eq('GB')
   end
-
 end
