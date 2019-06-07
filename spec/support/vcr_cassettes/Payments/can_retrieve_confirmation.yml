@@ -25,7 +25,7 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 16 Jul 2018 09:18:06 GMT
 - request:
     method: get
@@ -54,7 +54,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"id":"fda8cf13-ccf6-4423-8b0f-1443e3459ce0","amount":"50.00","beneficiary_id":"cd847275-5261-46b7-9fc7-d72823f782e0","currency":"EUR","reference":"ref002","reason":"reason","status":"completed","creator_contact_id":"ba33d76a-4a7f-4cb3-afa8-5678d5bc712a","payment_type":"regular","payment_date":"2018-11-08","transferred_at":"2018-11-08T00:10:01Z","authorisation_steps_required":"0","last_updater_contact_id":"ba33d76a-4a7f-4cb3-afa8-5678d5bc712a","short_reference":"181107-VTCWNQ001","conversion_id":null,"failure_reason":"","payer_id":"c228437e-8c8e-4c28-b0cb-db36825db21e","payer_details_source":"account","created_at":"2018-11-07T11:33:10+00:00","updated_at":"2018-11-08T00:10:01+00:00","payment_group_id":null,"unique_request_id":"ZXOua1Upvb7zaoMX46R4JQ","failure_returned_amount":"0.00","ultimate_beneficiary_name":null,"purpose_code":null}'
-    http_version: 
+    http_version:
   recorded_at: Fri, 30 Nov 2018 09:22:38 GMT
 - request:
     method: get
@@ -83,6 +83,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"id":"5d9c99a7-1522-48b1-9221-69e929eb3807","payment_id":"fda8cf13-ccf6-4423-8b0f-1443e3459ce0","account_id":"bf5b1007-b364-43cc-b3d6-9f2d1be75297","short_reference":"PC-9727672-HCPLFC","status":"completed","confirmation_url":"https://ccycloud-payment-confirmations-prod-demo1.s3.eu-west-1.amazonaws.com/payment_confirmations/5d9c99a7-1522-48b1-9221-69e929eb3807/181107-VTCWNQ001.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=cred123abc&X-Amz-Date=20181130T080707Z&X-Amz-Expires=172800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=token123abc&X-Amz-Signature=signature123abc","created_at":"2018-11-30T07:57:24+00:00","updated_at":"2018-11-30T07:57:24+00:00","expires_at":"2018-12-02T00:00:00+00:00"}'
-    http_version: 
+    http_version:
   recorded_at: Fri, 30 Nov 2018 09:28:26 GMT
 recorded_with: VCR 3.0.3
