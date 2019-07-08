@@ -1,0 +1,108 @@
+---
+http_interactions:
+  - request:
+      method: post
+      uri: https://devapi.currencycloud.com/v2/authenticate/api
+      body:
+        encoding: US-ASCII
+        string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+      headers:
+        User-Agent:
+          - CurrencyCloudSDK/2.0 Ruby/0.9.0
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Mon, 16 Jul 2018 08:20:14 GMT
+        Content-Type:
+          - application/json;charset=utf-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        Set-Cookie:
+          - AWSALB=JpWe8cJzRhv4y6vw/IU+s5GhiuDyGrTi6vtz6co+S0h3gIbGe216G4tO/ShPFipDpVbIyjW2adc1dWbedPE6KtLb6Zd8EkruEcNHxASHm2VPkAp32QK3biCRFUkv; Expires=Mon, 23 Jul 2018 08:20:13 GMT; Path=/
+          - __cfduid=d0c32af71ff0925dd045630165ce66c121531729213; expires=Tue, 16-Jul-19 08:20:13 GMT; path=/; domain=.currencycloud.com; HttpOnly
+        Access-Control-Allow-Origin:
+          - "*"
+        X-Request-Id:
+          - e8908fc1-4f80-4c60-9c44-363928bed983
+        Access-Control-Allow-Methods:
+          - POST
+        X-Content-Type-Options:
+          - nosniff
+        Vary:
+          - Origin
+        Access-Control-Allow-Headers:
+          - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+        Expect-Ct:
+          - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 43b30c5d1b930a8a-LHR
+      body:
+        encoding: US-ASCII
+        string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
+      http_version:
+    recorded_at: Mon, 16 Jul 2018 08:20:14 GMT
+  - request:
+      method: post
+      uri: https://devapi.currencycloud.com/v2/accounts/3e12053j-ae22-40b1-cc4e-cc0230c009a5/payment_charges_settings/090baf7e-5chh-4bfd-9b7l-ad3f8a310123
+      body:
+        encoding: US-ASCII
+        string: ''
+      headers:
+        X-Auth-Token:
+          - deadbeefdeadbeefdeadbeefdeadbeef
+        User-Agent:
+          - CurrencyCloudSDK/2.0 Ruby/0.9.0
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Mon, 16 Jul 2018 08:20:15 GMT
+        Content-Type:
+          - application/json;charset=utf-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        Set-Cookie:
+          - AWSALB=f61uJIdQJ62af6qzIvrUyJ/GuWAfhANu0wtDcexsHBbOaAWvC7AoyaVAebCjVgxZ3oyt3y7xdvr8TmJhcmtxkFE3YVOtliw8PJm2Nb66/OMzp5C0zgAnUn+FagXL; Expires=Mon, 23 Jul 2018 08:20:14 GMT; Path=/
+          - __cfduid=db268a59c300ca9cb4728d291492bb4cd1531729214; expires=Tue, 16-Jul-19 08:20:14 GMT; path=/; domain=.currencycloud.com; HttpOnly
+        Access-Control-Allow-Origin:
+          - "*"
+        X-Request-Id:
+          - 54f7d95c-dd88-4cf4-bf3c-35b21bd66a63
+        Access-Control-Allow-Methods:
+          - POST
+        X-Content-Type-Options:
+          - nosniff
+        Vary:
+          - Origin
+        Access-Control-Allow-Headers:
+          - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+        Expect-Ct:
+          - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 43b30c692e8606d0-LHR
+      body:
+        encoding: US-ASCII
+        string: >-
+             {
+                "charge_settings_id": "090baf7e-5chh-4bfd-9b7l-ad3f8a310123",
+                "account_id": "3e12053j-ae22-40b1-cc4e-cc0230c009a5",
+                "charge_type": "ours",
+                "enabled": true,
+                "default": true
+              }
+      http_version:
+    recorded_at: Mon, 16 Jul 2018 08:20:15 GMT
+recorded_with: VCR 4.0.0
