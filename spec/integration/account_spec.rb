@@ -2,8 +2,8 @@ require "spec_helper"
 
 describe "Accounts", vcr: true do
   before do
-    CurrencyCloud.login_id = 'development@currencycloud.com'
-    CurrencyCloud.api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
+    CurrencyCloud.login_id = "development@currencycloud.com"
+    CurrencyCloud.api_key = "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
     CurrencyCloud.environment = :demonstration
     CurrencyCloud.reset_session
   end
@@ -45,3 +45,4 @@ describe "Accounts", vcr: true do
     expect(updated.default).to eq(true)
   end
 end
+
