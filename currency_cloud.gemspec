@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.9'
 
   s.add_dependency('httparty', '0.14.0')
-  s.add_dependency('json', '~> 1.8')
+  s.add_dependency('json', '>= 1.8')
 
   s.add_development_dependency('addressable', '<= 2.4.0')
   s.add_development_dependency('rake', '~> 10.3')
