@@ -8,6 +8,7 @@ Many people have helped us along the way and we are sincerely grateful to all of
 
 |Name|Link/e-mail|
 |--|--|
+|Sergei Zinin|https://github.com/einzige|
 
  In our book, they have reached [**honorificabilitudinitatibus**][sesqui] :-)
 
