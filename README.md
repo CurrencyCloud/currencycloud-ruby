@@ -26,6 +26,10 @@ implementations:
 * MRI 2.0.0
 * MRI 2.1.0
 * MRI 2.2.0
+* MRI 2.3.4
+* MRI 2.4.1
+* MRI 2.5.3
+* MRI 2.6.3
 * [JRuby][jruby]
 * [Rubinius][rubinius]
 
@@ -153,7 +157,7 @@ Deprecation means that we discourage the use of a feature, design or practice be
 
 We remove deprecated features after **three months** from the time of announcement.
 
-The security of our customers' assets is of paramount importance to us and sometimes we have to deprecate features because they may pose a security threat or because new, more secure, ways are available. On such occasions we reserve the right to set a different deprecation period which may range from **immediate removal** to the standard **three months**. 
+The security of our customers' assets is of paramount importance to us and sometimes we have to deprecate features because they may pose a security threat or because new, more secure, ways are available. On such occasions we reserve the right to set a different deprecation period which may range from **immediate removal** to the standard **three months**.
 
 Once a feature has been marked as deprecated, we no longer develop the code or implement bug fixes. We only do security fixes.
 
