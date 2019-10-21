@@ -24,5 +24,11 @@ module CurrencyCloud
       result = client.get("payment_delivery_date", params)
       PaymentDeliveryDateResult.new(result)
     end
+
+    def self.quote_payment_fee(params)
+      result = client.get("quote_payment_fee", params)
+      QuotePaymentFee.new(result)
+    end
+
   end
 end

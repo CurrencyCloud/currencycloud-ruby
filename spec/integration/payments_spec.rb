@@ -94,4 +94,17 @@ describe 'Payments', vcr: true do
     expect(result.currency).to eq('GBP')
     expect(result.bank_country).to eq('GB')
   end
+
+  it "can retrieve #quote_payment_fee" do
+    quote_payment_fee = CurrencyCloud::Payment.quote_payment_fee(payment_date: "2019-06-07", payment_type: "regular", currency: "GBP", bank_country: "GB")
+
+    expect(quote_payment_fee).to_not be_nil
+    expect(quote_payment_fee.account_id).to eq("0534aaf2-2egg-0134-2f36-10b11cd33cfb")
+    expect(quote_payment_fee.fee_amount).to eq("10.00")
+    expect(quote_payment_fee.fee_currency).to eq("EUR")
+    expect(quote_payment_fee.payment_currency).to eq("USD")
+    expect(quote_payment_fee.payment_destination_country).to eq("US")
+    expect(quote_payment_fee.payment_type).to eq("regular")
+    expect(quote_payment_fee.charge_type).to be_nil
+  end
 end
