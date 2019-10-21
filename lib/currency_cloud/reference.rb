@@ -43,5 +43,10 @@ module CurrencyCloud
       BankDetails.new(bank_details)
     end
 
+    def self.payment_fee_rules(params = {})
+      response = client.get('payment_fee_rules', params)
+      response['payment_fee_rules'].map { |s| PaymentFeeRule.new(s) }
+    end
+
   end
 end

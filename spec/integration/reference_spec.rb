@@ -95,4 +95,51 @@ describe 'Reference', vcr: true do
     expect(details.bank_country_ISO).to eq('GB')
     expect(details.currency).to be_nil
   end
+
+  it 'can retrieve #payment_fee_rules' do
+    payment_fee_rules1 = CurrencyCloud::Reference.payment_fee_rules()
+    expect(payment_fee_rules1.size).to eq(3)
+
+    fee_rule1_1 = payment_fee_rules1[0]
+    expect(fee_rule1_1).to be_a(CurrencyCloud::PaymentFeeRule)
+    expect(fee_rule1_1.charge_type).to eq('shared')
+    expect(fee_rule1_1.fee_amount).to eq('2.00')
+    expect(fee_rule1_1.fee_currency).to eq('AED')
+    expect(fee_rule1_1.payment_type).to eq('priority')
+
+    fee_rule1_2 = payment_fee_rules1[1]
+    expect(fee_rule1_2).to be_a(CurrencyCloud::PaymentFeeRule)
+    expect(fee_rule1_2.charge_type).to eq('shared')
+    expect(fee_rule1_2.fee_amount).to eq('12.00')
+    expect(fee_rule1_2.fee_currency).to eq('USD')
+    expect(fee_rule1_2.payment_type).to eq('regular')
+
+    fee_rule1_3 = payment_fee_rules1[2]
+    expect(fee_rule1_3).to be_a(CurrencyCloud::PaymentFeeRule)
+    expect(fee_rule1_3.charge_type).to eq('ours')
+    expect(fee_rule1_3.fee_amount).to eq('5.25')
+    expect(fee_rule1_3.fee_currency).to eq('GBP')
+    expect(fee_rule1_3.payment_type).to eq('priority')
+
+    payment_fee_rules2 = CurrencyCloud::Reference.payment_fee_rules(payment_type: 'regular')
+    expect(payment_fee_rules2.size).to eq(1)
+
+    fee_rule2_1 = payment_fee_rules2[0]
+    expect(fee_rule2_1).to be_a(CurrencyCloud::PaymentFeeRule)
+    expect(fee_rule2_1.charge_type).to eq('shared')
+    expect(fee_rule2_1.fee_amount).to eq('12.00')
+    expect(fee_rule2_1.fee_currency).to eq('USD')
+    expect(fee_rule2_1.payment_type).to eq('regular')
+
+    payment_fee_rules3 = CurrencyCloud::Reference.payment_fee_rules(charge_type: 'ours')
+    expect(payment_fee_rules3.size).to eq(1)
+
+    fee_rule3_1 = payment_fee_rules3[0]
+    expect(fee_rule3_1).to be_a(CurrencyCloud::PaymentFeeRule)
+    expect(fee_rule3_1.charge_type).to eq('ours')
+    expect(fee_rule3_1.fee_amount).to eq('5.25')
+    expect(fee_rule3_1.fee_currency).to eq('GBP')
+    expect(fee_rule3_1.payment_type).to eq('priority')
+  end
+
 end
