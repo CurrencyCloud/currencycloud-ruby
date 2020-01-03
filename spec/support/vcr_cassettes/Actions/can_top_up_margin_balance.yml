@@ -17,7 +17,7 @@ http_interactions:
         Server:
           - nginx
         Date:
-          - Fri, 3 Jan 2020 11:01:36 GMT
+          - Fri, 03 Jan 2020 11:01:36 GMT
         Content-Type:
           - application/json;charset=utf-8
         Content-Length:
@@ -35,5 +35,5 @@ http_interactions:
                   "transferred_amount": "450.0",
                   "transfer_completed_at": "2007-11-19T08:37:48-06:00"}'
       http_version:
-    recorded_at: Fri, 3 Jan 2020 11:01:36 GMT
+    recorded_at: Fri, 03 Jan 2020 11:01:36 GMT
 recorded_with: VCR 2.9.3
