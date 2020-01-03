@@ -132,9 +132,9 @@ describe 'Actions', vcr: true do
 
     expect(top_up).to be_a_kind_of(CurrencyCloud::MarginBalanceTopUp)
 
-    expect(top_up.accpunt_id).to eq('6c046c51-2387-4004-8e87-4bf97102e36')
-    expect(top_up.amount).to eq('450.0')
+    expect(top_up.account_id).to eq('6c046c51-2387-4004-8e87-4bf97102e36d')
+    expect(top_up.transferred_amount).to eq('450.0')
     expect(top_up.currency).to eq('GBP')
-    expect(top_up.transfer_completed_at).to eq('2007-11-19 14:37:48')
+    expect(top_up.transfer_completed_at).to eq('2007-11-19T08:37:48-06:00')
   end
 end
