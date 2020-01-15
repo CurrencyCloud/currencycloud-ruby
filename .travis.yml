@@ -13,3 +13,7 @@ rvm:
   - jruby-19mode
   - jruby-9.1.17.0
   - jruby-9.2.0.0
+
+jobs:
+  allow_failures:
+    - rvm: 1.9.3
