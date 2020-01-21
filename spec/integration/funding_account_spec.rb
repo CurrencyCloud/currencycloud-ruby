@@ -24,10 +24,8 @@ describe "FundingAccounts", vcr: true do
     expect(account.bank_country).to eq "UK"
     expect(account.currency).to eq "GBP"
     expect(account.payment_type).to eq "regular"
-    expect(account.regular_routing_code).to eq "010203"
-    expect(account.regular_routing_code_type).to eq "sort_code"
-    expect(account.priority_routing_code).to eq ""
-    expect(account.priority_routing_code_type).to eq ""
+    expect(account.routing_code).to eq "010203"
+    expect(account.routing_code_type).to eq "sort_code"
     expect(account.created_at).to eq "2018-05-14T14:18:30+00:00"
     expect(account.updated_at).to eq "2018-05-14T14:19:30+00:00"
   end
