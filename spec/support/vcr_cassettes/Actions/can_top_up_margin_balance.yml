@@ -1,0 +1,39 @@
+---
+http_interactions:
+  - request:
+      method: post
+      uri: https://devapi.currencycloud.com/v2/balances/top_up_margin
+      body:
+        encoding: UTF-8
+        string: currency=GBP&amount=450
+      headers:
+        X-Auth-Token:
+          - 4df5b3e5882a412f148dcd08fa4e5b73
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Server:
+          - nginx
+        Date:
+          - Fri, 03 Jan 2020 11:01:36 GMT
+        Content-Type:
+          - application/json;charset=utf-8
+        Content-Length:
+          - '1021'
+        Connection:
+          - keep-alive
+        X-Request-Id:
+          - '2771999306691376475'
+        X-Content-Type-Options:
+          - nosniff
+      body:
+        encoding: UTF-8
+        string: '{"account_id": "6c046c51-2387-4004-8e87-4bf97102e36d",
+                  "currency": "GBP",
+                  "transferred_amount": "450.0",
+                  "transfer_completed_at": "2007-11-19T08:37:48-06:00"}'
+      http_version:
+    recorded_at: Fri, 03 Jan 2020 11:01:36 GMT
+recorded_with: VCR 2.9.3

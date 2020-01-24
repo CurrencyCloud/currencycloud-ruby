@@ -126,4 +126,15 @@ describe 'Actions', vcr: true do
     expect(balance.created_at).to eq('2014-12-04T09:50:35+00:00')
     expect(balance.updated_at).to eq('2015-03-23T14:33:37+00:00')
   end
+
+  it 'can top up margin balance' do
+    top_up = CurrencyCloud::Balance.top_up_margin(currency: 'GBP', amount: 450)
+
+    expect(top_up).to be_a_kind_of(CurrencyCloud::MarginBalanceTopUp)
+
+    expect(top_up.account_id).to eq('6c046c51-2387-4004-8e87-4bf97102e36d')
+    expect(top_up.transferred_amount).to eq('450.0')
+    expect(top_up.currency).to eq('GBP')
+    expect(top_up.transfer_completed_at).to eq('2007-11-19T08:37:48-06:00')
+  end
 end
