@@ -38,7 +38,7 @@ describe 'Rates', vcr: true do
   end
 
   it 'can provided #detailed rate with conversion date preference' do
-    detailed_rate = CurrencyCloud::Rate.detailed(buy_currency: 'EUR', sell_currency: 'GBP', fixed_side: 'buy', amount: '10000')
+    detailed_rate = CurrencyCloud::Rate.detailed(buy_currency: 'GBP', sell_currency: 'USD', fixed_side: 'buy', amount: '10000', conversion_date_preference: 'optimize_liquidity')
 
     expect(detailed_rate).to be_a_kind_of(CurrencyCloud::Rate)
     expect(detailed_rate.client_sell_amount).to eq('14081.00')
