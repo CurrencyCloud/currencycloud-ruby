@@ -36,4 +36,12 @@ describe 'Rates', vcr: true do
     expect(detailed_rate.client_sell_amount).to eq('15234.00')
     expect(detailed_rate.settlement_cut_off_time).to eq('2015-04-29T14:00:00Z')
   end
+
+  it 'can provided #detailed rate with conversion date preference' do
+    detailed_rate = CurrencyCloud::Rate.detailed(buy_currency: 'EUR', sell_currency: 'GBP', fixed_side: 'buy', amount: '10000')
+
+    expect(detailed_rate).to be_a_kind_of(CurrencyCloud::Rate)
+    expect(detailed_rate.client_sell_amount).to eq('14081.00')
+    expect(detailed_rate.settlement_cut_off_time).to eq('2020-05-21T14:00:00Z')
+  end
 end
