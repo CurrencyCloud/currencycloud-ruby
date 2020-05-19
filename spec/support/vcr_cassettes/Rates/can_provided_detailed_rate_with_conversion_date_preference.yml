@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://devapi.currencycloud.com/v2/rates/detailed?amount=10000&buy_currency=GBP&conversion_date_preference=optimize_liquidity&fixed_side=buy&sell_currency=USD
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - bbdd421bdda373ea69670c9101fa9197
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.16.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 19 May 2020 13:12:46 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=na8AqRHeMkOqX/+eQlx8IwRDM2SCnWVr/7LaiYIHeMRkavfvcBIqPF0Z67d3hdu5iJUL+YSdmtclVBz5iNUMqvXINyDL31qLgoqAtHGz79YOGeZyONq+HcKG53ll;
+        Expires=Tue, 26 May 2020 13:12:46 GMT; Path=/
+      - AWSALBCORS=na8AqRHeMkOqX/+eQlx8IwRDM2SCnWVr/7LaiYIHeMRkavfvcBIqPF0Z67d3hdu5iJUL+YSdmtclVBz5iNUMqvXINyDL31qLgoqAtHGz79YOGeZyONq+HcKG53ll;
+        Expires=Tue, 26 May 2020 13:12:46 GMT; Path=/; SameSite=None; Secure
+      - __cfduid=d8ad6e9301e9e13448582f01d29b087961589893966; expires=Thu, 18-Jun-20
+        13:12:46 GMT; path=/; domain=.currencycloud.com; HttpOnly; SameSite=Lax
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - 0670d62c-e918-4caf-b70f-c2e8e9bd283f
+      Access-Control-Allow-Methods:
+      - GET
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 595e1247ac52ce8b-LHR
+      Cf-Request-Id:
+      - 02cea9c0cc0000ce8b1b3f2200000001
+    body:
+      encoding: UTF-8
+      string: '{ "settlement_cut_off_time": "2020-05-21T14:00:00Z", "currency_pair":
+        "GBPUSD", "client_buy_currency": "GBP", "client_sell_currency": "USD", "client_buy_amount":
+        "10000.00", "client_sell_amount": "14081.00", "fixed_side": "buy", "client_rate":
+        "1.4081", "partner_rate": null, "core_rate": "1.4081", "deposit_required":
+        false, "deposit_amount": "0.0", "deposit_currency": "USD", "mid_market_rate":
+        "1.4080" }'
+    http_version: 
+  recorded_at: Tue, 19 May 2020 13:12:46 GMT
+recorded_with: VCR 5.0.0
