@@ -60,7 +60,7 @@ http_interactions:
   recorded_at: Tue, 06 Oct 2020 14:57:04 GMT
 - request:
     method: post
-    uri: https://devapi.currencycloud.com/v2/withdrawal_accounts/pull_funds/0886ac00-6ab6-41a6-b0e1-8d3faf2e0de2
+    uri: https://devapi.currencycloud.com/v2/withdrawal_accounts/0886ac00-6ab6-41a6-b0e1-8d3faf2e0de2/pull_funds
     body:
       encoding: UTF-8
       string: reference=PullFunds1&amount=100.0

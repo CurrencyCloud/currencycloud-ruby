@@ -10,7 +10,7 @@ module CurrencyCloud
     end
 
     def self.pull_funds(withdrawal_account_id, params = {})
-      result = client.post("pull_funds/#{withdrawal_account_id}", params)
+      result = client.post("#{withdrawal_account_id}/pull_funds", params)
       WithdrawalAccountFunds.new(result)
     end
   end
