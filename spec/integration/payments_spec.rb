@@ -107,4 +107,19 @@ describe 'Payments', vcr: true do
     expect(quote_payment_fee.payment_type).to eq("regular")
     expect(quote_payment_fee.charge_type).to be_nil
   end
+
+  it "can retrieve #payment_tracking_info" do
+    payment_tracking_info = CurrencyCloud::Payment.tracking_info("46ed4827-7b6f-4491-a06f-b548d5a7512d")
+
+    expect(payment_tracking_info).to be_a(CurrencyCloud::PaymentTrackingInfo)
+    expect(payment_tracking_info.uetr).to eq("46ed4827-7b6f-4491-a06f-b548d5a7512d")
+    expect(payment_tracking_info.transaction_status["status"]).to eq("processing")
+    expect(payment_tracking_info.transaction_status["reason"]).to eq("transferred_and_tracked")
+    expect(payment_tracking_info.initiation_time).to eq("2019-07-09T13:20:30+00:00")
+    expect(payment_tracking_info.completion_time).to be_nil
+    expect(payment_tracking_info.last_update_time).to eq("2019-07-10T15:39:08+00:00")
+    expect(payment_tracking_info.payment_events.length).to eq(7)
+    expect(payment_tracking_info.payment_events[6]["tracker_event_type"]).to eq("customer_credit_transfer_payment")
+    expect(payment_tracking_info.payment_events[6]["instructed_amount"]["amount"]).to eq("745437.57")
+  end
 end

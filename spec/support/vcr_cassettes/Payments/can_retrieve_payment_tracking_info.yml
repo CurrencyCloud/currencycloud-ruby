@@ -1,0 +1,291 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/authenticate/api
+    body:
+      encoding: UTF-8
+      string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+    headers:
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.16.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 07 Oct 2020 13:21:53 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=ACelxgLIobgXnjf+plaVmr6LWO/5RFajaEn73GMne58wAMd3cKGZym4r0sL6DKwCTqxumsmcLUDaV1q5ZYPB8HWnMYmxVx4V4VE8/aKiEhHhRf46mW5VHR1hUyMW;
+        Expires=Wed, 14 Oct 2020 13:21:51 GMT; Path=/
+      - AWSALBCORS=ACelxgLIobgXnjf+plaVmr6LWO/5RFajaEn73GMne58wAMd3cKGZym4r0sL6DKwCTqxumsmcLUDaV1q5ZYPB8HWnMYmxVx4V4VE8/aKiEhHhRf46mW5VHR1hUyMW;
+        Expires=Wed, 14 Oct 2020 13:21:51 GMT; Path=/; SameSite=None; Secure
+      - __cfduid=d534110969083fee4b7b02858e5d1d4151602076911; expires=Fri, 06-Nov-20
+        13:21:51 GMT; path=/; domain=.currencycloud.com; HttpOnly; SameSite=Lax
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - 3a919a4b-3934-41bf-96da-7f4108c0b00b
+      Access-Control-Allow-Methods:
+      - POST
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority,User-Agent
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 05a4d2c0d90000076abcb0f200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5de7ed7af914076a-LHR
+    body:
+      encoding: UTF-8
+      string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
+    http_version: 
+  recorded_at: Wed, 07 Oct 2020 13:21:53 GMT
+- request:
+    method: get
+    uri: https://devapi.currencycloud.com/v2/payments/46ed4827-7b6f-4491-a06f-b548d5a7512d/tracking_info
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - deadbeefdeadbeefdeadbeefdeadbeef
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.16.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 07 Oct 2020 13:26:10 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=N8AduFiNXRcnfEiiTwJHxOLANIIUFhjdawJkX0dv5pjm1sOI0U6eGFa+3mxF08elJR7bys1q323j+dF1l90XLSAU8koTLbh6HMFyz7WRggzWYJeRX17Q7Xim4FoB;
+        Expires=Wed, 14 Oct 2020 13:26:10 GMT; Path=/
+      - AWSALBCORS=N8AduFiNXRcnfEiiTwJHxOLANIIUFhjdawJkX0dv5pjm1sOI0U6eGFa+3mxF08elJR7bys1q323j+dF1l90XLSAU8koTLbh6HMFyz7WRggzWYJeRX17Q7Xim4FoB;
+        Expires=Wed, 14 Oct 2020 13:26:10 GMT; Path=/; SameSite=None; Secure
+      - __cfduid=dfc3b8282add111fd84ed5ae9ec955b761602077170; expires=Fri, 06-Nov-20
+        13:26:10 GMT; path=/; domain=.currencycloud.com; HttpOnly; SameSite=Lax
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - a1c7409b-c24a-41ef-985c-9b6f4085e429
+      Access-Control-Allow-Methods:
+      - GET
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority,User-Agent
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 05a4d6b3ff0000ce4ffbb93200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5de7f3ccca1cce4f-LHR
+    body:
+      encoding: UTF-8
+      string: '{
+                           "uetr": "46ed4827-7b6f-4491-a06f-b548d5a7512d",
+                           "transaction_status": {
+                             "status": "processing",
+                             "reason": "transferred_and_tracked"
+                           },
+                           "initiation_time": "2019-07-09T13:20:30+00:00",
+                           "completion_time": null,
+                           "last_update_time": "2019-07-10T15:39:08+00:00",
+                           "payment_events": [
+                             {
+                               "tracker_event_type": "customer_credit_transfer_payment_cancellation_request",
+                               "valid": true,
+                               "transaction_status": null,
+                               "funds_available": null,
+                               "forwarded_to_agent": null,
+                               "from": "BANABEBBXXX",
+                               "to": "BANAUS33XXX",
+                               "originator": null,
+                               "serial_parties": null,
+                               "sender_acknowledgement_receipt": "2019-07-10T15:39:08+00:00",
+                               "instructed_amount": null,
+                               "confirmed_amount": null,
+                               "interbank_settlement_amount": null,
+                               "interbank_settlement_date": null,
+                               "charge_amount": null,
+                               "charge_type": null,
+                               "foreign_exchange_details": null,
+                               "last_update_time": "2019-07-10T15:39:08+00:00"
+                             },
+                             {
+                               "tracker_event_type": "customer_credit_transfer_payment_cancellation_request",
+                               "valid": true,
+                               "transaction_status": null,
+                               "funds_available": null,
+                               "forwarded_to_agent": null,
+                               "from": "BANABEBBXXX",
+                               "to": "BANAUS33XXX",
+                               "originator": null,
+                               "serial_parties": null,
+                               "sender_acknowledgement_receipt": "2019-07-10T14:22:41+00:00",
+                               "instructed_amount": null,
+                               "confirmed_amount": null,
+                               "interbank_settlement_amount": null,
+                               "interbank_settlement_date": null,
+                               "charge_amount": null,
+                               "charge_type": null,
+                               "foreign_exchange_details": null,
+                               "last_update_time": "2019-07-10T14:22:41+00:00"
+                             },
+                             {
+                               "tracker_event_type": "credit_transfer_payment_cancellation_request",
+                               "valid": true,
+                               "transaction_status": null,
+                               "funds_available": null,
+                               "forwarded_to_agent": null,
+                               "from": "BANABEBBXXX",
+                               "to": "BANAUS33XXX",
+                               "originator": "BANABEBBXXX",
+                               "serial_parties": null,
+                               "sender_acknowledgement_receipt": "2019-07-10T14:22:41+00:00",
+                               "instructed_amount": null,
+                               "confirmed_amount": null,
+                               "interbank_settlement_amount": {
+                                 "currency": "USD",
+                                 "amount": "745437.57"
+                               },
+                               "interbank_settlement_date": "2019-07-09T00:00:00+00:00",
+                               "charge_amount": null,
+                               "charge_type": null,
+                               "foreign_exchange_details": null,
+                               "last_update_time": "2019-07-10T14:22:41+00:00"
+                             },
+                             {
+                               "tracker_event_type": "customer_credit_transfer_payment_cancellation_request",
+                               "valid": true,
+                               "transaction_status": null,
+                               "funds_available": null,
+                               "forwarded_to_agent": null,
+                               "from": "BANABEBBXXX",
+                               "to": "BANAUS33XXX",
+                               "originator": null,
+                               "serial_parties": null,
+                               "sender_acknowledgement_receipt": "2019-07-10T14:22:41+00:00",
+                               "instructed_amount": null,
+                               "confirmed_amount": null,
+                               "interbank_settlement_amount": null,
+                               "interbank_settlement_date": null,
+                               "charge_amount": null,
+                               "charge_type": null,
+                               "foreign_exchange_details": null,
+                               "last_update_time": "2019-07-10T14:22:41+00:00"
+                             },
+                             {
+                               "tracker_event_type": "customer_credit_transfer_payment_cancellation_request",
+                               "valid": true,
+                               "transaction_status": null,
+                               "funds_available": null,
+                               "forwarded_to_agent": null,
+                               "from": "BANABEBBXXX",
+                               "to": "BANAUS33XXX",
+                               "originator": null,
+                               "serial_parties": null,
+                               "sender_acknowledgement_receipt": "2019-07-10T14:22:41+00:00",
+                               "instructed_amount": null,
+                               "confirmed_amount": null,
+                               "interbank_settlement_amount": null,
+                               "interbank_settlement_date": null,
+                               "charge_amount": null,
+                               "charge_type": null,
+                               "foreign_exchange_details": null,
+                               "last_update_time": "2019-07-10T14:22:41+00:00"
+                             },
+                             {
+                               "tracker_event_type": "credit_transfer_payment_cancellation_request",
+                               "valid": true,
+                               "transaction_status": null,
+                               "funds_available": null,
+                               "forwarded_to_agent": null,
+                               "from": "BANABEBBXXX",
+                               "to": "BANAUS33XXX",
+                               "originator": null,
+                               "serial_parties": null,
+                               "sender_acknowledgement_receipt": "2019-07-10T14:17:39+00:00",
+                               "instructed_amount": null,
+                               "confirmed_amount": null,
+                               "interbank_settlement_amount": null,
+                               "interbank_settlement_date": null,
+                               "charge_amount": null,
+                               "charge_type": null,
+                               "foreign_exchange_details": null,
+                               "last_update_time": "2019-07-10T14:22:41+00:00"
+                             },
+                             {
+                               "tracker_event_type": "customer_credit_transfer_payment",
+                               "valid": true,
+                               "transaction_status": {
+                                 "status": "processing",
+                                 "reason": "transferred_and_tracked"
+                               },
+                               "funds_available": null,
+                               "forwarded_to_agent": null,
+                               "from": "BANABEBBXXX",
+                               "to": "BANAUS33XXX",
+                               "originator": "BANABEBBXXX",
+                               "serial_parties": {
+                                 "debtor": null,
+                                 "debtor_agent": "GPMRCH30",
+                                 "intermediary_agent1": null,
+                                 "instructing_reimbursement_agent": null,
+                                 "creditor_agent": "GPMRQAJ0",
+                                 "creditor": null
+                               },
+                               "sender_acknowledgement_receipt": "2019-07-09T13:20:30+00:00",
+                               "instructed_amount": {
+                                 "currency": "USD",
+                                 "amount": "745437.57"
+                               },
+                               "confirmed_amount": null,
+                               "interbank_settlement_amount": {
+                                 "currency": "USD",
+                                 "amount": "745437.57"
+                               },
+                               "interbank_settlement_date": "2019-07-09T00:00:00+00:00",
+                               "charge_amount": null,
+                               "charge_type": "shared",
+                               "foreign_exchange_details": null,
+                               "last_update_time": "2019-07-09T13:20:50+00:00"
+                             }
+                           ]
+                         }'
+    http_version: 
+  recorded_at: Wed, 07 Oct 2020 13:26:10 GMT
+recorded_with: VCR 5.0.0
