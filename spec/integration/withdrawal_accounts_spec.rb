@@ -8,7 +8,6 @@ describe "WithdrawalAccounts", vcr: true do
     CurrencyCloud.reset_session
   end
 
-
   it "can find #withdrawal_accounts" do
     withdrawal_accounts = CurrencyCloud::WithdrawalAccount.find(
         account_id: "72970a7c-7921-431c-b95f-3438724ba16f"
