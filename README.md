@@ -16,13 +16,18 @@ you just want to use the library in your application, you should run:
 If you want to build the gem from source:
 
   `gem build currency_cloud.gemspec`
+  
+## Deprecation Announcement
+
+October 2020: Please be aware that __Ruby 1.9__ is now deprecated, it will not be supported from January 2021.  
+Please upgrade to a supported, secure version of Ruby, listed below.  
+
 
 ## Supported Ruby versions
 
 This library aims to support and is [tested against][travis] the following Ruby
 implementations:
 
-* MRI 1.9.3
 * MRI 2.0.0
 * MRI 2.1.0
 * MRI 2.2.0
