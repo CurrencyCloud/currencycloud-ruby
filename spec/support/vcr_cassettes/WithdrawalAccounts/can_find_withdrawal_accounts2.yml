@@ -1,0 +1,140 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/authenticate/api
+    body:
+      encoding: UTF-8
+      string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+    headers:
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.16.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 06 Oct 2020 14:48:15 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=5O47+8dqvoJfamrxKr6frSzyioGFSG6tm6Z+lRmus+9t3hrjjdqUlHSns7ZYz7itxNZ2823ITwE04Y8/tmFqZiVURj5UMT1y1I+GTlqBS8mPph4RfjjnJY4mPPRw;
+        Expires=Tue, 13 Oct 2020 14:48:13 GMT; Path=/
+      - AWSALBCORS=5O47+8dqvoJfamrxKr6frSzyioGFSG6tm6Z+lRmus+9t3hrjjdqUlHSns7ZYz7itxNZ2823ITwE04Y8/tmFqZiVURj5UMT1y1I+GTlqBS8mPph4RfjjnJY4mPPRw;
+        Expires=Tue, 13 Oct 2020 14:48:13 GMT; Path=/; SameSite=None; Secure
+      - __cfduid=d391f18598cc56eb498281ccb9b0c532f1601995693; expires=Thu, 05-Nov-20
+        14:48:13 GMT; path=/; domain=.currencycloud.com; HttpOnly; SameSite=Lax
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - cf3f6e3a-6b09-4deb-ba00-6131c5ed9d30
+      Access-Control-Allow-Methods:
+      - POST
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority,User-Agent
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '059ffb773f00000782478a6200000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5de02e9ecdd10782-LHR
+    body:
+      encoding: UTF-8
+      string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
+    http_version: 
+  recorded_at: Tue, 06 Oct 2020 14:48:15 GMT
+- request:
+    method: get
+    uri: https://devapi.currencycloud.com/v2/withdrawal_accounts
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - deadbeefdeadbeefdeadbeefdeadbeef
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.16.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 06 Oct 2020 14:50:22 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=vjh/y0Xw6suzFZ28da7srEAzPW7uJ1ddQ/j1Eoqk+7xhpfz28o7z+N/BWYBairGgf/tb5o5Gwlhb7z63hhrtIyqV1RfVBux4sk51O5ZMwFZRSHhYezbAf0tKDXBt;
+        Expires=Tue, 13 Oct 2020 14:50:22 GMT; Path=/
+      - AWSALBCORS=vjh/y0Xw6suzFZ28da7srEAzPW7uJ1ddQ/j1Eoqk+7xhpfz28o7z+N/BWYBairGgf/tb5o5Gwlhb7z63hhrtIyqV1RfVBux4sk51O5ZMwFZRSHhYezbAf0tKDXBt;
+        Expires=Tue, 13 Oct 2020 14:50:22 GMT; Path=/; SameSite=None; Secure
+      - __cfduid=d29aa8831ac605f9fee37d241e760bf831601995822; expires=Thu, 05-Nov-20
+        14:50:22 GMT; path=/; domain=.currencycloud.com; HttpOnly; SameSite=Lax
+      Cf-Ipcountry:
+      - GB
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - DELETE,POST,GET,OPTIONS,PATCH,PUT
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.16.2
+      X-Forwarded-Proto:
+      - https
+      Cdn-Loop:
+      - cloudflare
+      Cf-Visitor:
+      - '{"scheme":"https"}'
+      Accept-Encoding:
+      - gzip
+      Cf-Connecting-Ip:
+      - 217.168.17.4
+      X-Forwarded-Port:
+      - '443'
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority,User-Agent
+      X-Amzn-Trace-Id:
+      - Root=1-5f7c842e-79f66afc471d6a76395402fb
+      Wso2-Am-Api-Default-Version:
+      - 'true'
+      X-Auth-Token:
+      - deadbeefdeadbeefdeadbeefdeadbeef
+      X-Forwarded-For:
+      - 217.168.17.4, 141.101.98.82
+      Cf-Request-Id:
+      - '059ffd6ed20000e618c2125200000001'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5de031c48c19e618-LHR
+    body:
+      encoding: UTF-8
+      string: |-
+        {"withdrawal_accounts": [  {    "id": "0886ac00-6ab6-41a6-b0e1-8d3faf2e0de2",    "account_name": "currencycloud",    "account_holder_name": "The Currency Cloud",    "account_holder_dob": null,    "routing_code": "123456789",    "account_number": "01234567890",    "currency": "USD",    "account_id": "72970a7c-7921-431c-b95f-3438724ba16f"  }, {   "id": "0886ac00-6ab6-41a6-b0e1-8d3faf2e0de3",   "account_name": "currencycloud2",   "account_holder_name": "The Currency Cloud 2",   "account_holder_dob": "1990-07-20",   "routing_code": "223456789",   "account_number": "01234567892",   "currency": "GBP",   "account_id": "72970a7c-7921-431c-b95f-3438724ba16e" }],"pagination": {  "total_entries": 2,  "total_pages": 1,  "current_page": 1,  "per_page": 25,  "previous_page": -1,  "next_page": -1,  "order": "created_at",  "order_asc_desc": "asc"}}
+    http_version: 
+  recorded_at: Tue, 06 Oct 2020 14:50:22 GMT
+recorded_with: VCR 5.0.0

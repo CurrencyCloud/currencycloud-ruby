@@ -1,0 +1,133 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/authenticate/api
+    body:
+      encoding: US-ASCII
+      string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+    headers:
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.16.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Jul 2018 08:20:14 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=JpWe8cJzRhv4y6vw/IU+s5GhiuDyGrTi6vtz6co+S0h3gIbGe216G4tO/ShPFipDpVbIyjW2adc1dWbedPE6KtLb6Zd8EkruEcNHxASHm2VPkAp32QK3biCRFUkv;
+        Expires=Mon, 23 Jul 2018 08:20:13 GMT; Path=/
+      - __cfduid=d0c32af71ff0925dd045630165ce66c121531729213; expires=Tue, 16-Jul-19
+        08:20:13 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - e8908fc1-4f80-4c60-9c44-363928bed983
+      Access-Control-Allow-Methods:
+      - POST
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 43b30c5d1b930a8a-LHR
+    body:
+      encoding: US-ASCII
+      string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
+    http_version: 
+  recorded_at: Mon, 16 Jul 2018 08:20:14 GMT
+- request:
+    method: get
+    uri: https://devapi.currencycloud.com/v2/withdrawal_accounts?account_id=72970a7c-7921-431c-b95f-3438724ba16f
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - deadbeefdeadbeefdeadbeefdeadbeef
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.16.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 06 Oct 2020 14:29:35 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=Uw7rGXT9budZtv/Nz1rvs5rg6PQlr5bo/1f4oNQoISYtu0FYbA/PUooVYWp6ujV/dOZg2SKc1pZ7Es5UBRD7GwRsIBf7ysw0daahw+7Slf7OSDk0MJjjHNkrbfGe;
+        Expires=Tue, 13 Oct 2020 14:29:35 GMT; Path=/
+      - AWSALBCORS=Uw7rGXT9budZtv/Nz1rvs5rg6PQlr5bo/1f4oNQoISYtu0FYbA/PUooVYWp6ujV/dOZg2SKc1pZ7Es5UBRD7GwRsIBf7ysw0daahw+7Slf7OSDk0MJjjHNkrbfGe;
+        Expires=Tue, 13 Oct 2020 14:29:35 GMT; Path=/; SameSite=None; Secure
+      - __cfduid=d3e9dd326c2925385a6bcdb7bdd50d6391601994575; expires=Thu, 05-Nov-20
+        14:29:35 GMT; path=/; domain=.currencycloud.com; HttpOnly; SameSite=Lax
+      Cf-Ipcountry:
+      - GB
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - DELETE,POST,GET,OPTIONS,PATCH,PUT
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.16.2
+      X-Forwarded-Proto:
+      - https
+      Cdn-Loop:
+      - cloudflare
+      Cf-Visitor:
+      - '{"scheme":"https"}'
+      Accept-Encoding:
+      - gzip
+      Cf-Connecting-Ip:
+      - 217.168.17.4
+      X-Forwarded-Port:
+      - '443'
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority,User-Agent
+      X-Amzn-Trace-Id:
+      - Root=1-5f7c7f4f-22b1933840c46c3d06388e7a
+      Wso2-Am-Api-Default-Version:
+      - 'true'
+      X-Auth-Token:
+      - deadbeefdeadbeefdeadbeefdeadbeef
+      X-Forwarded-For:
+      - 217.168.17.4, 141.101.98.82
+      Cf-Request-Id:
+      - '059fea658a00000762b78c1200000001'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5de0134f4bc40762-LHR
+    body:
+      encoding: UTF-8
+      string: |-
+        {"withdrawal_accounts": [  {    "id": "0886ac00-6ab6-41a6-b0e1-8d3faf2e0de2",    "account_name": "currencycloud",    "account_holder_name": "The Currency Cloud",    "account_holder_dob": null,    "routing_code": "123456789",    "account_number": "01234567890",    "currency": "USD",    "account_id": "72970a7c-7921-431c-b95f-3438724ba16f"  }],"pagination": {  "total_entries": 1,  "total_pages": 1,  "current_page": 1,  "per_page": 25,  "previous_page": -1,  "next_page": -1,  "order": "created_at",  "order_asc_desc": "asc"}}
+    http_version: 
+  recorded_at: Tue, 06 Oct 2020 14:29:35 GMT
+recorded_with: VCR 5.0.0
+
