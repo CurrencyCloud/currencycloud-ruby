@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
     s.add_dependency('json', '>= 1.8', '<= 2.2')
     s.add_development_dependency('rake', '~> 10.3')
   else
-    s.add_dependency('json', '">= 2.3.0')
+    s.add_dependency('json', '>= 2.3.0')
     s.add_development_dependency('rake', '~> 12.3.3')
   end
 
