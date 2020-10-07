@@ -31,8 +31,8 @@ module CurrencyCloud
     end
 
     def self.tracking_info(id)
-        result = client.get("#{id}/tracking_info")
-        PaymentTrackingInfo.new(result)
+      result = client.get("#{id}/tracking_info")
+      PaymentTrackingInfo.new(result)
     end
   end
 end
