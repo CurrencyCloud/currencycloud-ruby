@@ -107,4 +107,11 @@ describe 'Payments', vcr: true do
     expect(quote_payment_fee.payment_type).to eq("regular")
     expect(quote_payment_fee.charge_type).to be_nil
   end
+
+  it "can retrieve #payment_tracking_info" do
+    payment_tracking_info = CurrencyCloud::Payment.tracking_info("46ed4827-7b6f-4491-a06f-b548d5a7512d")
+
+    expect(payment_tracking_info).to be_a(CurrencyCloud::PaymentTrackingInfo)
+    expect(payment_tracking_info.uetr).to eq("46ed4827-7b6f-4491-a06f-b548d5a7512d");
+  end
 end

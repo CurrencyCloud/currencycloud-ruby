@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/authenticate/api
+    body:
+      encoding: UTF-8
+      string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+    headers:
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/0.16.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 07 Oct 2020 13:21:53 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=ACelxgLIobgXnjf+plaVmr6LWO/5RFajaEn73GMne58wAMd3cKGZym4r0sL6DKwCTqxumsmcLUDaV1q5ZYPB8HWnMYmxVx4V4VE8/aKiEhHhRf46mW5VHR1hUyMW;
+        Expires=Wed, 14 Oct 2020 13:21:51 GMT; Path=/
+      - AWSALBCORS=ACelxgLIobgXnjf+plaVmr6LWO/5RFajaEn73GMne58wAMd3cKGZym4r0sL6DKwCTqxumsmcLUDaV1q5ZYPB8HWnMYmxVx4V4VE8/aKiEhHhRf46mW5VHR1hUyMW;
+        Expires=Wed, 14 Oct 2020 13:21:51 GMT; Path=/; SameSite=None; Secure
+      - __cfduid=d534110969083fee4b7b02858e5d1d4151602076911; expires=Fri, 06-Nov-20
+        13:21:51 GMT; path=/; domain=.currencycloud.com; HttpOnly; SameSite=Lax
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - 3a919a4b-3934-41bf-96da-7f4108c0b00b
+      Access-Control-Allow-Methods:
+      - POST
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority,User-Agent
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 05a4d2c0d90000076abcb0f200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5de7ed7af914076a-LHR
+    body:
+      encoding: UTF-8
+      string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
+    http_version: 
+  recorded_at: Wed, 07 Oct 2020 13:21:53 GMT
+recorded_with: VCR 5.0.0
