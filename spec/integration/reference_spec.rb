@@ -24,9 +24,11 @@ describe 'Reference', vcr: true do
 
     expect(dates.invalid_conversion_dates).to_not be_empty
     invalid_conversion_date = dates.invalid_conversion_dates.first
-    expect(invalid_conversion_date).to eq(['2018-07-21', 'No trading on Saturday'])
-    expect(dates.first_conversion_date).to eq('2018-07-16')
-    expect(dates.default_conversion_date).to eq('2018-07-18')
+    expect(invalid_conversion_date).to eq(["2020-11-11", "Veterans' Day"])
+    expect(dates.first_conversion_date).to eq("2020-11-10")
+    expect(dates.default_conversion_date).to eq("2020-11-12")
+    expect(dates.first_conversion_cutoff_datetime).to eq("2020-11-10T15:30:00+00:00")
+    expect(dates.optimize_liquidity_conversion_date).to eq("2020-11-12")
   end
 
   it 'can retrieve #currencies' do
