@@ -17,11 +17,6 @@ If you want to build the gem from source:
 
   `gem build currency_cloud.gemspec`
   
-## Deprecation Announcement
-
-October 2020: Please be aware that __Ruby 1.9__ is now deprecated, it will not be supported from January 2021.  
-Please upgrade to a supported, secure version of Ruby, listed below.  
-
 
 ## Supported Ruby versions
 
