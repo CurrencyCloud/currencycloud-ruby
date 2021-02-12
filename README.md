@@ -28,9 +28,9 @@ Please upgrade to a supported, secure version of Ruby, listed below.
 This library aims to support and is [tested against][travis] the following Ruby
 implementations:
 
-* MRI 2.5.8
-* MRI 2.6.6
-* MRI 2.7.2
+* MRI 2.5
+* MRI 2.6
+* MRI 2.7
 * [JRuby][jruby]
 * [Rubinius][rubinius]
 
