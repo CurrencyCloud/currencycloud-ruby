@@ -33,8 +33,9 @@ implementations:
 * MRI 2.2.0
 * MRI 2.3.4
 * MRI 2.4.1
-* MRI 2.5.3
-* MRI 2.6.3
+* MRI 2.5.8
+* MRI 2.6.6
+* MRI 2.7.2
 * [JRuby][jruby]
 * [Rubinius][rubinius]
 
