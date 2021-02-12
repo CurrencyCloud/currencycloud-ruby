@@ -122,4 +122,18 @@ describe 'Payments', vcr: true do
     expect(payment_tracking_info.payment_events[6]["tracker_event_type"]).to eq("customer_credit_transfer_payment")
     expect(payment_tracking_info.payment_events[6]["instructed_amount"]["amount"]).to eq("745437.57")
   end
+
+  it 'can create #bad_request' do
+    begin
+      payment = CurrencyCloud::Payment.create()
+    rescue CurrencyCloud::BadRequestError => error
+      #All Good. Expected
+      expect(error.messages.length).to eq 10
+      expect(error.messages[0].field).to eq "currency"
+      expect(error.messages[0].code).to eq "currency_is_required"
+      expect(error.messages[2].field).to eq "beneficiary_id"
+      expect(error.messages[2].code).to eq "beneficiary_id_is_required"
+    end
+  end
+
 end

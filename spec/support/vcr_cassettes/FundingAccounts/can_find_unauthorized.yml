@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/authenticate/api
+    body:
+      encoding: UTF-8
+      string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+    headers:
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/1.0.3
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Fri, 12 Feb 2021 12:40:26 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=oXky7W9dgrecZw1OI2+x2a4vXY8dgrNtzVeCvDCIb3vjIrbQtNIEKN1MEWPLqWonU9fLo18QwaIpAY8OzproLisaNeP1PytHUMDDJ6+dO74wvGZj4xxPMjL+T4Ld;
+        Expires=Fri, 19 Feb 2021 12:40:24 GMT; Path=/
+      - AWSALBCORS=oXky7W9dgrecZw1OI2+x2a4vXY8dgrNtzVeCvDCIb3vjIrbQtNIEKN1MEWPLqWonU9fLo18QwaIpAY8OzproLisaNeP1PytHUMDDJ6+dO74wvGZj4xxPMjL+T4Ld;
+        Expires=Fri, 19 Feb 2021 12:40:24 GMT; Path=/; SameSite=None; Secure
+      - __cfduid=db39af3e67f2d8855f9bb0659352f67dc1613133624; expires=Sun, 14-Mar-21
+        12:40:24 GMT; path=/; domain=.currencycloud.com; HttpOnly; SameSite=Lax
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - 6c92002d-e243-4028-970e-e77106bd9fbf
+      Access-Control-Allow-Methods:
+      - POST
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority,User-Agent
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '0837dace85000006825b10f000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 620660c40ea70682-LHR
+    body:
+      encoding: UTF-8
+      string: '{"error_code":"auth_failed","error_messages":{"username":[{"code":"invalid_supplied_credentials","message":"Authentication
+        failed with the supplied credentials","params":{}}]}}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2021 12:40:26 GMT
+recorded_with: VCR 5.0.0

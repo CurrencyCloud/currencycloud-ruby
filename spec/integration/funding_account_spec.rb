@@ -30,4 +30,43 @@ describe "FundingAccounts", vcr: true do
     expect(account.updated_at).to eq "2018-05-14T14:19:30+00:00"
   end
 
+
+  it "can find #missing_currency" do
+    begin
+      accounts = CurrencyCloud::FundingAccount.find()
+    rescue CurrencyCloud::BadRequestError => error
+      #All Good. Expected
+      expect(error.messages.length).to eq 1
+      expect(error.messages[0].code).to eq "currency_is_required"
+    end
+  end
+
+  it "can find #bad_request" do
+    begin
+      accounts = CurrencyCloud::FundingAccount.find(currency: 'a', payment_type: 'x', account_id: 'x')
+    rescue CurrencyCloud::BadRequestError => error
+      #All Good. Expected
+      expect(error.messages.length).to eq 3
+    end
+  end
+
+  it "can find #unauthorized" do
+    begin
+      accounts = CurrencyCloud::FundingAccount.find(currency: 'GBP')
+    rescue CurrencyCloud::AuthenticationError => error
+      #All Good. Expected
+      expect(error.messages.length).to eq 1
+      expect(error.messages[0].code).to eq "invalid_supplied_credentials"
+    end
+  end
+
+#  it "can find #bad_request" do
+#    begin
+#      accounts = CurrencyCloud::FundingAccount.find(payment_type: 'x', currency: 'a', account_id: 'x',)
+#    rescue CurrencyCloud::BadRequestError => error
+#      #All Good. Expected
+#      expect(error.messages.length).to eq 1
+#      expect(error.messages[0].code).to eq "currency_is_required"
+#    end
+#  end
 end
