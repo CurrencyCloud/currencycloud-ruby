@@ -19,7 +19,7 @@ If you want to build the gem from source:
   
 ## Deprecation Announcement
 
-October 2020: Please be aware that __Ruby 1.9__ is now deprecated, it will not be supported from January 2021.  
+February 2021: Please be aware that __Ruby 2.0, 2.1, 2,2, 2.3 and 2.4__ are now deprecated, it will not be supported from May 2021.  
 Please upgrade to a supported, secure version of Ruby, listed below.  
 
 
@@ -28,13 +28,9 @@ Please upgrade to a supported, secure version of Ruby, listed below.
 This library aims to support and is [tested against][travis] the following Ruby
 implementations:
 
-* MRI 2.0.0
-* MRI 2.1.0
-* MRI 2.2.0
-* MRI 2.3.4
-* MRI 2.4.1
-* MRI 2.5.3
-* MRI 2.6.3
+* MRI 2.5
+* MRI 2.6
+* MRI 2.7
 * [JRuby][jruby]
 * [Rubinius][rubinius]
 
