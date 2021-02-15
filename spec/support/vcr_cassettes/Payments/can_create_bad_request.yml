@@ -1,0 +1,191 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/authenticate/api
+    body:
+      encoding: UTF-8
+      string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+    headers:
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/1.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 12 Feb 2021 12:51:23 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=86rYbj/z9ObB565oYNoiGZI8ae9hLaCKd0EMSmCQAn29ZVUTbdgrb65Tm9wyAADlPLOYivSCfi0cWBN2ckblmzP1n2F3gTGVRmqHO2ccP5oDCfM+jrjnciOUvh7U;
+        Expires=Fri, 19 Feb 2021 12:51:22 GMT; Path=/
+      - AWSALBCORS=86rYbj/z9ObB565oYNoiGZI8ae9hLaCKd0EMSmCQAn29ZVUTbdgrb65Tm9wyAADlPLOYivSCfi0cWBN2ckblmzP1n2F3gTGVRmqHO2ccP5oDCfM+jrjnciOUvh7U;
+        Expires=Fri, 19 Feb 2021 12:51:22 GMT; Path=/; SameSite=None; Secure
+      - __cfduid=d42d92d2a8ebda2ea7f6e21fc4956c4ab1613134282; expires=Sun, 14-Mar-21
+        12:51:22 GMT; path=/; domain=.currencycloud.com; HttpOnly; SameSite=Lax
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - 04744bbc-b77c-40c2-9034-ecee8d8b5b8f
+      Access-Control-Allow-Methods:
+      - POST
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority,User-Agent
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '0837e4d5d00000f3e78e35f000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 620670cfb906f3e7-LHR
+    body:
+      encoding: US-ASCII
+      string: '{"auth_token":"a897e685e3a6483a50151431a2593a57"}'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2021 12:51:23 GMT
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/payments/create
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - a897e685e3a6483a50151431a2593a57
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/1.0.3
+  response:
+    status:
+      code: 400
+      message: OK
+    headers:
+      Date:
+      - Fri, 12 Feb 2021 12:52:23 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=b08+8e/GP8t2mUsGQ3ZoGr6ejQfJBR2lhlLgjjTil7Q6ErZLaa9YLRiLuOYcwBxcqPgMaBrwwF2jz5Qd75XmC7thF1P+HGnvaSwdQtOEA/gT/wM0NhFA0y2dZs2n;
+        Expires=Fri, 19 Feb 2021 12:52:23 GMT; Path=/
+      - AWSALBCORS=b08+8e/GP8t2mUsGQ3ZoGr6ejQfJBR2lhlLgjjTil7Q6ErZLaa9YLRiLuOYcwBxcqPgMaBrwwF2jz5Qd75XmC7thF1P+HGnvaSwdQtOEA/gT/wM0NhFA0y2dZs2n;
+        Expires=Fri, 19 Feb 2021 12:52:23 GMT; Path=/; SameSite=None; Secure
+      - __cfduid=d5d7ab4f659e52b71fbbf11dca0427bf51613134343; expires=Sun, 14-Mar-21
+        12:52:23 GMT; path=/; domain=.currencycloud.com; HttpOnly; SameSite=Lax
+      X-Envoy-Upstream-Service-Time:
+      - '1'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST
+      X-Envoy-Decorator-Operation:
+      - service-sca.demo.svc.cluster.local:8080/*
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority,User-Agent
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '0837e5c54e000006cd3c251000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6206724eeb0c06cd-LHR
+    body:
+      encoding: UTF-8
+      string: '{
+                   "error_code": "payment_create_failed",
+                   "error_messages": {
+                       "currency": [
+                           {
+                               "code": "currency_is_required",
+                               "message": "currency is required",
+                               "params": {}
+                           },
+                           {
+                               "code": "currency_is_in_invalid_format",
+                               "message": "currency is not a valid ISO 4217 currency code",
+                               "params": {
+                                   "type": "currency"
+                               }
+                           }
+                       ],
+                       "beneficiary_id": [
+                           {
+                               "code": "beneficiary_id_is_required",
+                               "message": "beneficiary_id is required",
+                               "params": {}
+                           },
+                           {
+                               "code": "beneficiary_id_is_not_valid_uuid",
+                               "message": "beneficiary_id should be in UUID format",
+                               "params": {}
+                           }
+                       ],
+                       "amount": [
+                           {
+                               "code": "amount_is_required",
+                               "message": "amount is required",
+                               "params": {}
+                           },
+                           {
+                               "code": "amount_type_is_wrong",
+                               "message": "amount should be of numeric type",
+                               "params": {
+                                   "type": "numeric"
+                               }
+                           }
+                       ],
+                       "reason": [
+                           {
+                               "code": "reason_is_required",
+                               "message": "reason is required",
+                               "params": {}
+                           },
+                           {
+                               "code": "reason_is_too_short",
+                               "message": "reason can not be shorter than 1 character(s)",
+                               "params": {
+                                   "minlength": 1
+                               }
+                           }
+                       ],
+                       "reference": [
+                           {
+                               "code": "reference_is_required",
+                               "message": "reference is required",
+                               "params": {}
+                           },
+                           {
+                               "code": "reference_is_too_short",
+                               "message": "reference can not be shorter than 1 character(s)",
+                               "params": {
+                                   "minlength": 1
+                               }
+                           }
+                       ]
+                   }
+               }'
+    http_version: 
+  recorded_at: Fri, 12 Feb 2021 12:52:23 GMT
+recorded_with: VCR 5.0.0
