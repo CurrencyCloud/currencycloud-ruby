@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
     s.add_development_dependency('rake', '~> 12.3.3')
   end
 
-  s.add_development_dependency('addressable', '<= 2.4.0')
+  s.add_development_dependency('addressable', '<= 2.8.0')
   s.add_development_dependency('rspec', '~> 3.1')
   s.add_development_dependency('vcr', '~> 3.0.3')
   s.add_development_dependency('webmock', '~> 2.3.2')
