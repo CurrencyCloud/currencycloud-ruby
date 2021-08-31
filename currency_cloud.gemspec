@@ -11,17 +11,12 @@ Gem::Specification.new do |s|
   s.email = ['liam.mcandrew@currencycloud.com', 'richard.nienaber@currencycloud.com']
   s.homepage = 'https://github.com/Currencycloud/currencycloud-ruby/'
   s.licenses = ['MIT']
-  s.required_ruby_version = '>= 1.9'
+  s.required_ruby_version = '>= 2.5'
 
   s.add_dependency('httparty', '~> 0.14')
 
-  if RUBY_VERSION == '1.9.3'
-    s.add_dependency('json', '>= 1.8', '<= 2.2')
-    s.add_development_dependency('rake', '~> 10.3')
-  else
-    s.add_dependency('json', '~> 2.3')
-    s.add_development_dependency('rake', '~> 12.3.3')
-  end
+  s.add_dependency('json', '~> 2.3.0')
+  s.add_development_dependency('rake', '~> 12.3.3')
 
   s.add_development_dependency('addressable', '<= 2.8.0')
   s.add_development_dependency('rspec', '~> 3.1')
