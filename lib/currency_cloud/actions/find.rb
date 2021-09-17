@@ -14,10 +14,10 @@ module CurrencyCloud
       private
 
       def mixin_class
-        unless CurrencyCloud.const_defined?(resource.capitalize)
+        unless CurrencyCloud.const_defined?(resource.capitalize, false)
           CurrencyCloud.const_set(resource.capitalize, Class.new(CurrencyCloud::ResourcefulCollection))
         end
-        CurrencyCloud.const_get(resource.capitalize)
+        CurrencyCloud.const_get(resource.capitalize, false)
       end
     end
   end

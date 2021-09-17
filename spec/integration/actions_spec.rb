@@ -72,6 +72,18 @@ describe 'Actions', vcr: true do
     expect(pagination.order_asc_desc).to eq('asc')
   end
 
+  it 'can #find when a top-level module that matches a CurrencyCloud resourceful collection already exists' do
+    # Unset the CurrencyCloud::Beneficiaries method to get it to a state
+    # before any other test attempted to call #find
+    CurrencyCloud.send(:remove_const, :Beneficiaries)
+
+    # Define a Beneficiaries method anywhere above
+    # CurrencyCloud in the resolution chain.
+    Object.const_set(:Beneficiaries, Module.new)
+
+    expect { CurrencyCloud::Beneficiary.find }.not_to raise_exception
+  end
+
   it 'can #update' do
     beneficiary = CurrencyCloud::Beneficiary.update('081596c9-02de-483e-9f2a-4cf55dcdf98c', bank_account_holder_name: 'Test User 2')
     expect(beneficiary).to be_a_kind_of(CurrencyCloud::Beneficiary)
