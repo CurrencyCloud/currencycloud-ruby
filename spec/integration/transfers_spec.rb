@@ -37,12 +37,12 @@ describe 'Transfers', vcr: true do
     expect(transfer).to be_a(CurrencyCloud::Transfer)
   end
 
-    it 'can #cancel' do
-      transfer_id = CurrencyCloud::Transfer.create(transfer_details).id
+  it "can #cancel" do
+    transfer_id = CurrencyCloud::Transfer.create(transfer_details).id
 
-      transfer = CurrencyCloud::Transfer.cancel(transfer_id)
-      expect(transfer).to_not be_nil
-      expect(transfer).to be_a(CurrencyCloud::Transfer)
-      expect(transfer.status).to eq 'cancelled'
-    end
+    transfer = CurrencyCloud::Transfer.cancel(transfer_id)
+    expect(transfer).to_not be_nil
+    expect(transfer).to be_a(CurrencyCloud::Transfer)
+    expect(transfer.status).to eq "cancelled"
+  end
 end
