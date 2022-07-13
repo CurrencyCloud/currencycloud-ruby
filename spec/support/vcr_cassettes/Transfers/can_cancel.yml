@@ -1,0 +1,199 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/authenticate/api
+    body:
+      encoding: UTF-8
+      string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+    headers:
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/1.2.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 13 Jul 2022 08:42:22 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=7RnLlbWzlC2aEXO3SwvjQjbijHXQbDvozCW9lZAxs1NMcbd1wyCBUTb8u2f4XST77VteZIorfHYD9TCzIwEGOYGG/bwRlAfPXcSAoCysKjeH+GdviIi8moEN7GI4;
+        Expires=Wed, 20 Jul 2022 08:42:21 GMT; Path=/
+      - AWSALBCORS=7RnLlbWzlC2aEXO3SwvjQjbijHXQbDvozCW9lZAxs1NMcbd1wyCBUTb8u2f4XST77VteZIorfHYD9TCzIwEGOYGG/bwRlAfPXcSAoCysKjeH+GdviIi8moEN7GI4;
+        Expires=Wed, 20 Jul 2022 08:42:21 GMT; Path=/; SameSite=None; Secure
+      X-Request-Id:
+      - 3a4c9f89-e126-4953-a2ca-86461785d25e
+      Activityid:
+      - a75caef5-12cf-422c-aa8e-b4ae9f5a343c
+      X-Envoy-Upstream-Service-Time:
+      - '1082'
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Vary:
+      - Origin
+      Access-Control-Allow-Methods:
+      - POST
+      X-Envoy-Decorator-Operation:
+      - api-v2.demo.svc.cluster.local:8080/*
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority,User-Agent
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 72a0b98d8d7674dd-LHR
+    body:
+      encoding: UTF-8
+      string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
+    http_version:
+  recorded_at: Wed, 13 Jul 2022 08:42:22 GMT
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/transfers/create
+    body:
+      encoding: UTF-8
+      string: source_account_id=d0ad035e-b699-4fcd-a73c-13fb0910a884&destination_account_id=e54a5e86-80ad-4434-90fe-0c8c751666de&currency=GBP&amount=1000
+    headers:
+      X-Auth-Token:
+      - deadbeefdeadbeefdeadbeefdeadbeef
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/1.2.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 13 Jul 2022 08:43:32 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=xzYxBQihW/88IOp3AJjweLCp2C/j1QDt07EHDoA24y2KxC8yBAGRQFcoSpNoiS3+sVoqh2fs4W3lEPrONMVBEvMkYaehR9J7xcSKlo+/Txoc0CltmyAcXwIS0ZF5;
+        Expires=Wed, 20 Jul 2022 08:43:32 GMT; Path=/
+      - AWSALBCORS=xzYxBQihW/88IOp3AJjweLCp2C/j1QDt07EHDoA24y2KxC8yBAGRQFcoSpNoiS3+sVoqh2fs4W3lEPrONMVBEvMkYaehR9J7xcSKlo+/Txoc0CltmyAcXwIS0ZF5;
+        Expires=Wed, 20 Jul 2022 08:43:32 GMT; Path=/; SameSite=None; Secure
+      X-Request-Id:
+      - b1ff7589-1ccb-4218-aef4-29e918e3d7c8
+      Activityid:
+      - 66eed348-6c2d-41be-a81c-dc6d58d92e4a
+      X-Envoy-Upstream-Service-Time:
+      - '5'
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Vary:
+      - Origin
+      Access-Control-Allow-Methods:
+      - POST
+      X-Envoy-Decorator-Operation:
+      - api-v2.demo.svc.cluster.local:8080/*
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority,User-Agent
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 72a0bb471838068a-LHR
+    body:
+      encoding: UTF-8
+      string: '{"id":"f4bf00d7-1672-463d-96b0-9e9643793978","short_reference":"BT-20170515-ZPRQVQ","source_account_id":"d0ad035e-b699-4fcd-a73c-13fb0910a884","destination_account_id":"e54a5e86-80ad-4434-90fe-0c8c751666de","currency":"GBP","amount":"1000.00","status":"pending","reason":null,"created_at":"2017-05-15T13:02:23+00:00","updated_at":"2017-05-15T13:02:24+00:00","completed_at":"2017-05-15T13:02:24+00:00","creator_account_id":"d0ad035e-b699-4fcd-a73c-13fb0910a884","creator_contact_id":"16565245-1b65-464e-affa-58313192b54f"}'
+    http_version:
+  recorded_at: Wed, 13 Jul 2022 08:43:32 GMT
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/transfers/f4bf00d7-1672-463d-96b0-9e9643793978/cancel
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - deadbeefdeadbeefdeadbeefdeadbeef
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/1.2.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 13 Jul 2022 08:44:28 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=KO17KvvsLAUTRyPjkg9nqs6kHd8QTV287T3GQY0w0YJ9Q6wfKFSHvRGt7w79R5EAQ/wzOeVfO5b7LeyYnW8ITkgiBIpqTB+Q5bsOsxPOFHJT4bxZeNvC+4DuAHTR;
+        Expires=Wed, 20 Jul 2022 08:44:28 GMT; Path=/
+      - AWSALBCORS=KO17KvvsLAUTRyPjkg9nqs6kHd8QTV287T3GQY0w0YJ9Q6wfKFSHvRGt7w79R5EAQ/wzOeVfO5b7LeyYnW8ITkgiBIpqTB+Q5bsOsxPOFHJT4bxZeNvC+4DuAHTR;
+        Expires=Wed, 20 Jul 2022 08:44:28 GMT; Path=/; SameSite=None; Secure
+      X-Request-Id:
+      - 4b5fa28c-e125-4733-8b81-5773dd10d78d
+      Activityid:
+      - 18e48ab8-d33c-4c10-9f71-5dcfdc5394f5
+      X-Envoy-Upstream-Service-Time:
+      - '5'
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Vary:
+      - Origin
+      Access-Control-Allow-Methods:
+      - POST
+      X-Envoy-Decorator-Operation:
+      - api-v2.demo.svc.cluster.local:8080/*
+      Access-Control-Allow-Headers:
+      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority,User-Agent
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 72a0bca7c82d74c5-LHR
+    body:
+      encoding: UTF-8
+      string: '{"id":"f4bf00d7-1672-463d-96b0-9e9643793978","short_reference":"BT-20170515-ZPRQVQ","source_account_id":"d0ad035e-b699-4fcd-a73c-13fb0910a884","destination_account_id":"e54a5e86-80ad-4434-90fe-0c8c751666de","currency":"GBP","amount":"1000.00","status":"cancelled","reason":"","created_at":"2017-05-15T13:02:23+00:00","updated_at":"2017-05-15T13:02:24+00:00","completed_at":"2017-05-15T13:02:24+00:00","creator_account_id":"d0ad035e-b699-4fcd-a73c-13fb0910a884","creator_contact_id":"16565245-1b65-464e-affa-58313192b54f"}'
+    http_version:
+  recorded_at: Wed, 13 Jul 2022 08:44:28 GMT
+recorded_with: VCR 5.0.0
