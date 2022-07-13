@@ -6,6 +6,7 @@ require_relative 'actions/instance_delete'
 require_relative 'actions/retrieve'
 require_relative 'actions/save'
 require_relative 'actions/update'
+require_relative 'actions/cancel'
 
 module CurrencyCloud
   module Actions
