@@ -72,7 +72,7 @@ describe 'Actions', vcr: true do
     expect(pagination.order_asc_desc).to eq('asc')
   end
 
-  it 'can #find when a top-level module that matches a CurrencyCloud resourceful collection already exists' do
+  it 'can #find when a top-level module that matches a CC resourceful collection already exists' do
     # Unset the CurrencyCloud::Beneficiaries method to get it to a state
     # before any other test attempted to call #find
     CurrencyCloud.send(:remove_const, :Beneficiaries)
