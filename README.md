@@ -2,7 +2,7 @@
 
 # Currencycloud
 
-This is the official Ruby SDK for the Currencycloud API. Additional documentation for each API endpoint can be found at [developer.currencycloud.com][docs].
+This is the official Ruby SDK for the Currencycloud API. Additional documentation for each API endpoint can be found at [developer.currencycloud.com][developer].
 
 If you have any queries or you require support, please contact our development team at development@currencycloud.com Please quote your login id in any correspondence as this makes it easier for us to locate your account and give you the support you need.
 
