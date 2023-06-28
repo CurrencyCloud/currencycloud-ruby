@@ -49,8 +49,8 @@ http_interactions:
       http_version:
     recorded_at: Mon, 16 Jul 2018 08:20:14 GMT
   - request:
-      method: get
-      uri: https://devapi.currencycloud.com/v2/reference/bank_details?identifier_type=iban&identifier_value=GB19TCCL00997901654515
+      method: post
+      uri: https://devapi.currencycloud.com/v2/reference/bank_details/find?identifier_type=iban&identifier_value=GB19TCCL00997901654515
       body:
         encoding: US-ASCII
         string: ''

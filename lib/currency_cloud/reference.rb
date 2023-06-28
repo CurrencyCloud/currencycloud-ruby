@@ -39,7 +39,7 @@ module CurrencyCloud
     end
 
     def self.bank_details(params = {})
-      bank_details = client.get('bank_details', params)
+      bank_details = client.post('bank_details/find', params)
       BankDetails.new(bank_details)
     end
 

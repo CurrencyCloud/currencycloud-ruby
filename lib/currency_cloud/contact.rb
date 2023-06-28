@@ -3,6 +3,10 @@ module CurrencyCloud
     include CurrencyCloud::Resource
 
     resource :contacts
-    actions :create, :retrieve, :find, :update, :current
+    actions :create, :retrieve, :update, :current
+
+    def self.find(params)
+      client.post('find', params)
+    end
   end
 end
