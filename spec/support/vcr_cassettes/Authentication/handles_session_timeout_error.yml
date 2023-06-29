@@ -1,7 +1,7 @@
 ---
 http_interactions:
 - request:
-    method: get
+    method: post
     uri: https://devapi.currencycloud.com/v2/beneficiaries/find
     body:
       encoding: US-ASCII
@@ -66,7 +66,7 @@ http_interactions:
     http_version: 
   recorded_at: Sat, 25 Apr 2015 06:32:32 GMT
 - request:
-    method: get
+    method: post
     uri: https://devapi.currencycloud.com/v2/beneficiaries/find
     body:
       encoding: US-ASCII

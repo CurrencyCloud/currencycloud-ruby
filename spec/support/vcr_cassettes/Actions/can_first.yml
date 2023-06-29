@@ -1,11 +1,11 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://devapi.currencycloud.com/v2/beneficiaries/find?bank_account_holder_name=Test%20User&per_page=1
+    method: post
+    uri: https://devapi.currencycloud.com/v2/beneficiaries/find
     body:
       encoding: US-ASCII
-      string: ''
+      string: 'bank_account_holder_name=Test%20User&per_page=1'
     headers:
       X-Auth-Token:
       - 4df5b3e5882a412f148dcd08fa4e5b73

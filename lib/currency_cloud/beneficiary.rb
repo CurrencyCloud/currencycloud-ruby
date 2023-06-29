@@ -3,7 +3,8 @@ module CurrencyCloud
     include CurrencyCloud::Resource
 
     resource :beneficiaries
-    actions :create, :retrieve, :find, :update, :delete
+    actions :create, :retrieve, :update, :delete
+    actions_post :find
 
     def self.validate(params)
       new(client.post('validate', params))

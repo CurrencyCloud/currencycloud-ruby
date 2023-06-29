@@ -1,5 +1,6 @@
 require 'set'
 require_relative './actions'
+require_relative './actions_post/find_post'
 
 module CurrencyCloud
   module Resource
@@ -68,6 +69,15 @@ module CurrencyCloud
         actions.each do |action|
           class_eval do
             action_module = CurrencyCloud::Actions.const_get(action.to_s.capitalize)
+            extend(action_module)
+          end
+        end
+      end
+
+      def actions_post(*actions)
+        actions.each do |action|
+          class_eval do
+            action_module = CurrencyCloud::ActionsPost.const_get(action.to_s.capitalize)
             extend(action_module)
           end
         end
