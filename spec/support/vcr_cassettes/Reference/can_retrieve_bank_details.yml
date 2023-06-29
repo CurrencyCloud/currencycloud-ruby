@@ -50,10 +50,10 @@ http_interactions:
     recorded_at: Mon, 16 Jul 2018 08:20:14 GMT
   - request:
       method: post
-      uri: https://devapi.currencycloud.com/v2/reference/bank_details/find?identifier_type=iban&identifier_value=GB19TCCL00997901654515
+      uri: https://devapi.currencycloud.com/v2/reference/bank_details/find
       body:
         encoding: US-ASCII
-        string: ''
+        string: 'identifier_type=iban&identifier_value=GB19TCCL00997901654515'
       headers:
         X-Auth-Token:
           - deadbeefdeadbeefdeadbeefdeadbeef
