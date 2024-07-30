@@ -11,7 +11,7 @@ module CurrencyCloud
     end
 
     def self.account_verification(params)
-      AccountVerification::new(client.post('account_verification', params))
+      result = AccountVerification::new(client.post('account_verification', params))
     end
   end
 end
