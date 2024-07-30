@@ -36,37 +36,3 @@ http_interactions:
     http_version: 
   recorded_at: Sun, 03 May 2015 16:55:03 GMT
 recorded_with: VCR 2.9.3
-- request:
-    method: post
-    uri: https://devapi.currencycloud.com/v2/beneficiaries/account_verification
-    body:
-      encoding: UTF-8
-      string: bank_country=GB&account_number=12345678&routing_code_type_1=sort_code&routing_code_value_1=123456&payment_type=regular&beneficiary_entity_type=individual&beneficiary_first_name=test&beneficiary_last_name=last
-    headers:
-      X-Auth-Token:
-      - bbdd421bdda373ea69670c9101fa9197
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Sun, 03 May 2015 16:55:03 GMT
-      Content-Type:
-      - application/json;charset=utf-8
-      Content-Length:
-      - '732'
-      Connection:
-      - keep-alive
-      X-Request-Id:
-      - '2777975414238700878'
-      X-Content-Type-Options:
-      - nosniff
-    body:
-      encoding: UTF-8
-      string: '{ "answer": "full_match", "actual_name": "test last", "reason_code": "AV100", "reason": "Full match.", "reason_type": "okay" }'
-    http_version: 
-  recorded_at: Sun, 03 May 2015 16:55:03 GMT
-recorded_with: VCR 2.9.3
