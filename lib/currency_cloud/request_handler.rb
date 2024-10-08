@@ -20,6 +20,13 @@ module CurrencyCloud
       end
     end
 
+    def put(route, params = {}, opts = {})
+      retry_authenticate('put', route, params, opts) do |url, new_params, options|
+        options[:body] = new_params
+        HTTParty.put(url, options)
+      end
+    end
+
     private
 
     def retry_authenticate(verb, route, params, opts)
