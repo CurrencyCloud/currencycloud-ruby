@@ -1,5 +1,5 @@
 module CurrencyCloud
-  class ScreeningResponse
+  class CollectionsScreening
     include CurrencyCloud::Resource
   end
 end

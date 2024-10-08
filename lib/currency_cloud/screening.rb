@@ -2,11 +2,11 @@ module CurrencyCloud
   class Screening
     include CurrencyCloud::Resource
 
-    resource :screening_response
+    resource :collections_screening
 
     def self.complete(transaction_id, params = {})
       result = client.put("#{transaction_id}/complete", params)
-      ScreeningResponse.new(result)
+      CollectionsScreening.new(result)
     end
 
   end

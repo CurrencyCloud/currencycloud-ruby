@@ -133,8 +133,7 @@ http_interactions:
       - 5de03d62eeb50762-LHR
     body:
       encoding: UTF-8
-      string: |-
-        {"transaction_id": "ae305c98-e46f-465a-b468-f92d39fad977","account_id": "7a116d7d-6310-40ae-8d54-0ffbe41dc1c9","house_account_id": "7a116d7d-6310-40ae-8d54-0ffbe41dc1c9","result": {"reason": "Accepted","accepted": true}}
+      string: '{"transaction_id": "ae305c98-e46f-465a-b468-f92d39fad977","account_id": "7a116d7d-6310-40ae-8d54-0ffbe41dc1c9","house_account_id": "7a116d7d-6310-40ae-8d54-0ffbe41dc1c9","result": {"reason": "Accepted","accepted": true}}'
     http_version: 
   recorded_at: Tue, 06 Oct 2024 14:58:18 GMT
 recorded_with: VCR 5.0.0
