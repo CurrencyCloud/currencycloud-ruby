@@ -19,9 +19,8 @@ describe "Screenings", vcr: true do
     expect(collections_screening.account_id).to eq("7a116d7d-6310-40ae-8d54-0ffbe41dc1c9")
     expect(collections_screening.house_account_id).to eq("7a116d7d-6310-40ae-8d54-0ffbe41dc1c9")
 
-    #result = collections_screening.result
-    #expect(result.reason).to eq("Accepted")
-    #expect(collections_screening.result.accepted).to eq(true)
+    expect(collections_screening.result['reason']).to eq("Accepted")
+    expect(collections_screening.result['accepted']).to eq(true)
   end
 
 end
