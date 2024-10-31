@@ -128,6 +128,30 @@ describe 'Actions', vcr: true do
     expect(beneficiary.payment_types).to include('regular')
   end
 
+  it 'can #account_verify beneficiaries' do
+    params = {
+      bank_country: 'GB',
+      account_number: '12345678',
+      routing_code_type_1: 'sort_code',
+      routing_code_value_1: '123456',
+      payment_type: 'regular',
+      beneficiary_entity_type: 'individual',
+      beneficiary_first_name: 'test',
+      beneficiary_last_name: 'last',
+    }
+
+    puts "test1"
+    account_verifaction = CurrencyCloud::Beneficiary.account_verification(params)
+    puts "test3"
+
+    expect(account_verifaction).to be_a_kind_of(CurrencyCloud::AccountVerification)
+
+    expect(account_verifaction.actual_name).to include('test last')
+    expect(account_verifaction.reason_code).to include('AV100')
+    expect(account_verifaction.answer).to include('full_match')
+    expect(account_verifaction.reason_type).to include('okay')
+  end
+
   it 'can use #currency to retrieve balance' do
     balance = CurrencyCloud::Balance.currency('GBP')
 
