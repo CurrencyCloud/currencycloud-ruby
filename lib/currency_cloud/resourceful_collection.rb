@@ -1,3 +1,5 @@
+require 'forwardable'
+
 module CurrencyCloud
   class ResourcefulCollection
     include Enumerable
