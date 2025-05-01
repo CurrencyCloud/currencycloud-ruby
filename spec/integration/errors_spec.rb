@@ -16,8 +16,7 @@ describe 'Error', vcr: true do
     CurrencyCloud.login_id = 'non-existent-login-id'
     CurrencyCloud.api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
 
-    expected_error = %{CurrencyCloud::BadRequestError
----
+    expected_error = %{CurrencyCloud::BadRequestError---
 platform: #{platform}
 request:
   parameters:
@@ -89,8 +88,7 @@ errors:
       CurrencyCloud.session
       expect(0).to eq 1, 'expected exception that was not raised'
     rescue CurrencyCloud::UnexpectedError => error
-      expected_error = %(CurrencyCloud::UnexpectedError
----
+      expected_error = %(CurrencyCloud::UnexpectedError---
 platform: #{platform}
 request:
   parameters:
