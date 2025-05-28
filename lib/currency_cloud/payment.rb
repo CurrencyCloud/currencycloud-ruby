@@ -10,6 +10,11 @@ module CurrencyCloud
       PaymentSubmission.new(result)
     end
 
+    def submission_info(params = {})
+      result = client.get("#{id}/submission_info", params)
+      PaymentSubmissionInfo.new(result)
+    end
+
     def self.authorise(*ids)
       result = client.post("authorise", payment_ids: ids)['authorisations']
       result.map { |pa| PaymentAuthorisationResult.new(pa) }
