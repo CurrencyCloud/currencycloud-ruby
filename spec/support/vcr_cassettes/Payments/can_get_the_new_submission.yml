@@ -154,7 +154,7 @@ http_interactions:
   recorded_at: Mon, 16 Jul 2018 09:18:07 GMT
 - request:
     method: get
-    uri: https://devapi.currencycloud.com/v2/payments/af7cb12e-56d1-41a9-983d-a47927609e32/submission
+    uri: https://devapi.currencycloud.com/v2/payments/af7cb12e-56d1-41a9-983d-a47927609e32/submission_info
     body:
       encoding: US-ASCII
       string: ''
@@ -199,7 +199,7 @@ http_interactions:
       - 43b36130eeeebbe4-LHR
     body:
       encoding: US-ASCII
-      string: '{"status":null,"mt103":null,"submission_ref":null}'
+      string: '{"status":null,"message":null,"format":null,"submission_ref":null}'
     http_version:
   recorded_at: Mon, 16 Jul 2018 09:18:07 GMT
 recorded_with: VCR 4.0.0

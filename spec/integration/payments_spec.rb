@@ -45,6 +45,15 @@ describe 'Payments', vcr: true do
     expect(submission).to be_a(CurrencyCloud::PaymentSubmission)
   end
 
+  it 'can get the new submission' do
+    payment = CurrencyCloud::Payment.create(payment_details)
+    expect(payment).to_not be_nil
+
+    submission = payment.submission_info
+    expect(submission).to_not be_nil
+    expect(submission).to be_a(CurrencyCloud::PaymentSubmissionInfo)
+  end
+
   describe "can #authorise" do
     before do
       @payment = CurrencyCloud::Payment.create(payment_details)
