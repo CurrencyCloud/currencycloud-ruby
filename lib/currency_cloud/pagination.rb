@@ -1,3 +1,5 @@
+require 'ostruct' 
+
 module CurrencyCloud
   class Pagination < OpenStruct
   end

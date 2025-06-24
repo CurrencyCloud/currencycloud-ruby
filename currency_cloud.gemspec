@@ -15,13 +15,13 @@ Gem::Specification.new do |s|
 
   s.add_dependency('httparty', '~> 0.21')
 
-  s.add_dependency('json', '~> 2.3.0')
-  s.add_development_dependency('rake', '~> 12.3.3')
+  s.add_dependency('json', '>= 2.3', '< 2.7.6')
+  s.add_development_dependency('rake', '~> 13.2.1')
 
-  s.add_development_dependency('addressable', '<= 2.8.0')
+  s.add_development_dependency('addressable', '<= 2.9.0')
   s.add_development_dependency('rspec', '~> 3.1')
-  s.add_development_dependency('vcr', '~> 3.0.3')
-  s.add_development_dependency('webmock', '~> 2.3.2')
+  s.add_development_dependency('vcr', '~> 6.0.0')
+  s.add_development_dependency('webmock', '~> 3.25.0')
 
   s.files = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- spec/*`.split("\n")
