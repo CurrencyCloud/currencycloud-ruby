@@ -16,7 +16,8 @@ describe 'Error', vcr: true do
     CurrencyCloud.login_id = 'non-existent-login-id'
     CurrencyCloud.api_key = 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef'
 
-    expected_error = %{CurrencyCloud::BadRequestError---
+    expected_error = %{CurrencyCloud::BadRequestError
+---
 platform: #{platform}
 request:
   parameters:
@@ -36,7 +37,11 @@ errors:
     length: 64
 }
 
-    expect { CurrencyCloud.session }.to raise_error(CurrencyCloud::BadRequestError, expected_error)
+    expect { CurrencyCloud.session }.to raise_error(CurrencyCloud::BadRequestError) do |error|
+    # Normalize error msg to avoid differences in platform
+    normalized_error = error.to_s.sub('CurrencyCloud::BadRequestError---', "CurrencyCloud::BadRequestError\n---")
+    expect(normalized_error).to eq(expected_error)
+    end
   end
 
   it 'is raised on a bad request' do
@@ -88,7 +93,8 @@ errors:
       CurrencyCloud.session
       expect(0).to eq 1, 'expected exception that was not raised'
     rescue CurrencyCloud::UnexpectedError => error
-      expected_error = %(CurrencyCloud::UnexpectedError---
+      expected_error = %(CurrencyCloud::UnexpectedError
+---
 platform: #{platform}
 request:
   parameters:
@@ -99,7 +105,9 @@ request:
 inner_error: Timeout::Error
 )
 
-      expect(error.to_s).to eq(expected_error)
+      # Normalize error msg to avoid differences in platform
+      normalized_error = error.to_s.sub('CurrencyCloud::UnexpectedError---', "CurrencyCloud::UnexpectedError\n---")
+      expect(normalized_error).to eq(expected_error)
       expect(error.inner_error).to_not be_nil
       expect(error.inner_error.class).to eq(Timeout::Error)
     end

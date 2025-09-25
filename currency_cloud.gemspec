@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.add_dependency('httparty', '~> 0.21')
 
   s.add_dependency('json', '>= 2.3', '< 2.7.6')
-  s.add_development_dependency('rake', '~> 13.2.1')
+  s.add_development_dependency('rake', '~> 13.3.0')
 
   s.add_development_dependency('addressable', '<= 2.9.0')
   s.add_development_dependency('rspec', '~> 3.1')

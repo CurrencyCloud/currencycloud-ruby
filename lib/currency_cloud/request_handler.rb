@@ -14,9 +14,18 @@ module CurrencyCloud
     end
 
     def post(route, params = {}, opts = {})
-      retry_authenticate('post', route, params, opts) do |url, new_params, options|
+      return_response_headers = opts.delete(:return_response_headers) || false
+      raw_response = nil
+      response = retry_authenticate('post', route, params, opts) do |url, new_params, options|
         options[:body] = new_params
-        HTTParty.post(url, options)
+        raw_response = HTTParty.post(url, options)
+        raw_response
+      end
+
+      if return_response_headers
+        [response, raw_response&.headers || {}]
+      else
+        response
       end
     end
 
@@ -47,7 +56,9 @@ module CurrencyCloud
     end
 
     def process_options(opts)
-      options = { headers: headers }
+      # Add request specific headers
+      request_headers = opts.delete(:headers) || {}
+      options = { headers: headers.merge(request_headers) }
       options.merge(opts)
     end
 

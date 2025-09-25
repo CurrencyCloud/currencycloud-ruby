@@ -1,4 +1,4 @@
-[![Gem Version](https://badge.fury.io/rb/currency_cloud.svg)](http://badge.fury.io/rb/currency_cloud) [![Build Status](https://travis-ci.org/CurrencyCloud/currencycloud-ruby.png?branch=master)](https://travis-ci.org/CurrencyCloud/currencycloud-ruby)
+[![Gem Version](https://badge.fury.io/rb/currency_cloud.svg)](http://badge.fury.io/rb/currency_cloud) [![CodeQL](https://github.com/CurrencyCloud/currencycloud-ruby/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/CurrencyCloud/currencycloud-ruby/actions/workflows/github-code-scanning/codeql)
 
 # Currencycloud
 
@@ -20,7 +20,7 @@ If you want to build the gem from source:
 
 ## Supported Ruby versions
 
-This library aims to support and is [tested against][travis] the following Ruby
+This library aims to support and is tested against the following Ruby
 implementations:
 
 * MRI 2.5
@@ -177,8 +177,7 @@ We actively support the latest version of the SDK. We support the immediate prev
 
 Copyright (c) 2016-2019 Currencycloud. See [LICENSE][license] for details.
 
-[developer]: https://developer.currencycloud.com/documentation/getting-started/introduction/
-[travis]:    https://travis-ci.org/CurrencyCloud/currencycloud-ruby
+[developer]: https://developer.currencycloud.com/guides/getting-started/introduction/
 [jruby]:     http://jruby.org/
 [rubinius]:  http://rubini.us/
 [httparty]:  https://github.com/jnunemaker/httparty

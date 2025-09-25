@@ -8,8 +8,8 @@ module CurrencyCloud
       request.get(build_url(url), params)
     end
 
-    def post(url, params = {})
-      request.post(build_url(url), params)
+    def post(url, params = {}, opts = {})
+      request.post(build_url(url), params, opts)
     end
 
     def build_url(url)
