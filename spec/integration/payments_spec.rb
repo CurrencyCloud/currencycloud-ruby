@@ -145,4 +145,34 @@ describe 'Payments', vcr: true do
     end
   end
 
+  it "can #validate" do
+    payment_validation_result = CurrencyCloud::Payment.validate(payment_details, true)
+    expect(payment_validation_result).to be_a(CurrencyCloud::PaymentValidationResult)
+    expect(payment_validation_result.validation_result).to eq('success')
+    expect(payment_validation_result.response_headers).to have_key('x-sca-id')
+    expect(payment_validation_result.response_headers).to have_key('x-sca-required')
+    expect(payment_validation_result.response_headers['x-sca-id']).not_to be_empty
+    expect(payment_validation_result.response_headers['x-sca-required']).to eq('false')
+  end
+
+  it "can #validate and #create with sca" do
+    payment_validation_result = CurrencyCloud::Payment.validate(payment_details, false)
+    expect(payment_validation_result).to be_a(CurrencyCloud::PaymentValidationResult)
+    expect(payment_validation_result.validation_result).to eq('success')
+    expect(payment_validation_result.response_headers).to have_key('x-sca-id')
+    expect(payment_validation_result.response_headers).to have_key('x-sca-required')
+    expect(payment_validation_result.response_headers).to have_key('x-sca-type')
+    expect(payment_validation_result.response_headers['x-sca-id']).not_to be_empty
+    expect(payment_validation_result.response_headers['x-sca-required']).to eq('true')
+    expect(payment_validation_result.response_headers['x-sca-type']).to eq('SMS')
+
+    sca_id    = payment_validation_result.response_headers['x-sca-id']
+    sca_token = '123456'
+    payment = CurrencyCloud::Payment.create(payment_details, sca_id, sca_token)
+
+    expect(payment).to_not be_nil
+    expect(payment).to be_a(CurrencyCloud::Payment)
+    expect(payment.reference).to eq("Testing SCA payments")
+    expect(payment.reason).to eq 'Testing SCA payments'
+  end
 end
