@@ -10,7 +10,7 @@ http_interactions:
       X-Auth-Token:
       - bbdd421bdda373ea69670c9101fa9197
       User-Agent:
-      - CurrencyCloudSDK/2.0 Ruby/1.8.0
+      - CurrencyCloudSDK/2.0 Ruby/2.0.0
   response:
     status:
       code: 200

@@ -36,15 +36,6 @@ describe 'Payments', vcr: true do
     expect(payment.reason).to eq 'Testing payments'
   end
 
-  it 'can get the submission' do
-    payment = CurrencyCloud::Payment.create(payment_details)
-    expect(payment).to_not be_nil
-
-    submission = payment.submission
-    expect(submission).to_not be_nil
-    expect(submission).to be_a(CurrencyCloud::PaymentSubmission)
-  end
-
   it 'can get the new submission' do
     payment = CurrencyCloud::Payment.create(payment_details)
     expect(payment).to_not be_nil

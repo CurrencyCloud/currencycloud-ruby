@@ -159,9 +159,6 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 
 ### List of features being deprecated
 ```
-2025-05-13
-- GET /payments/{id}/submission (to be removed 2025-10-01)
-
 2025-07-07
 - Remove support for Ruby versions 2.5, 2.6 and 2.7
 ```
