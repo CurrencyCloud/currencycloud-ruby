@@ -23,11 +23,12 @@ If you want to build the gem from source:
 This library aims to support and is tested against the following Ruby
 implementations:
 
-* MRI 2.5
-* MRI 2.6
-* MRI 2.7
-* [JRuby][jruby]
-* [Rubinius][rubinius]
+* MRI 3.0
+* MRI 3.1
+* MRI 3.2
+* MRI 3.3
+* MRI 3.4
+* [JRuby][jruby] 9.4.X
 
 # Usage
 
@@ -139,6 +140,7 @@ Our sincere thanks for [helping us][hof] create the best API for moving money an
 
 * [HTTParty][httparty]
 * [json][json]
+* [base64][base64]
 
 ## Versioning
 
@@ -174,11 +176,10 @@ We actively support the latest version of the SDK. We support the immediate prev
 
 Copyright (c) 2016-2019 Currencycloud. See [LICENSE][license] for details.
 
-[developer]: https://developer.currencycloud.com/guides/getting-started/introduction/
 [jruby]:     http://jruby.org/
-[rubinius]:  http://rubini.us/
 [httparty]:  https://github.com/jnunemaker/httparty
 [json]:      https://github.com/intridea/multi_json
+[base64]:    https://github.com/ruby/base64
 [semver]:    http://semver.org/
 [license]:   LICENSE.md
 [contr]:     CONTRIBUTING.md

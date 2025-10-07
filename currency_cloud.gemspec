@@ -11,17 +11,17 @@ Gem::Specification.new do |s|
   s.email = ['liam.mcandrew@currencycloud.com', 'richard.nienaber@currencycloud.com']
   s.homepage = 'https://github.com/Currencycloud/currencycloud-ruby/'
   s.licenses = ['MIT']
-  s.required_ruby_version = '>= 2.5'
+  s.required_ruby_version = '>= 3.0'
 
-  s.add_dependency('httparty', '~> 0.21')
+  s.add_dependency('httparty', '~> 0.23.1')
+  s.add_dependency('json', '~> 2.12.2')
+  s.add_dependency('base64', '~> 0.3.0')
 
-  s.add_dependency('json', '>= 2.3', '< 2.7.6')
   s.add_development_dependency('rake', '~> 13.3.0')
-
   s.add_development_dependency('addressable', '<= 2.9.0')
-  s.add_development_dependency('rspec', '~> 3.1')
-  s.add_development_dependency('vcr', '~> 6.0.0')
-  s.add_development_dependency('webmock', '~> 3.25.0')
+  s.add_development_dependency('rspec', '~> 3.13.1')
+  s.add_development_dependency('vcr', '~> 6.3.1')
+  s.add_development_dependency('webmock', '~> 3.25.1')
 
   s.files = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- spec/*`.split("\n")

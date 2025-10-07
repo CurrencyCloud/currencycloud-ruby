@@ -38,9 +38,9 @@ errors:
 }
 
     expect { CurrencyCloud.session }.to raise_error(CurrencyCloud::BadRequestError) do |error|
-    # Normalize error msg to avoid differences in platform
-    normalized_error = error.to_s.sub('CurrencyCloud::BadRequestError---', "CurrencyCloud::BadRequestError\n---")
-    expect(normalized_error).to eq(expected_error)
+      # Normalize error msg to avoid differences in platform
+      normalized_error = error.to_s.sub('CurrencyCloud::BadRequestError---', "CurrencyCloud::BadRequestError\n---")
+      expect(normalized_error).to eq(expected_error)
     end
   end
 

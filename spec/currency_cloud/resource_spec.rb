@@ -12,7 +12,7 @@ describe 'Resource' do
   describe '#save' do
     it 'only updates changed records' do
       person = Person.new(id: 1, name: 'Richard', surname: 'Nienaber')
-      allow(Person.client).to receive(:post).with(1, name: 'John').and_return(id: 1, name: 'John', surname: 'Nienaber')
+      allow(Person.client).to receive(:post).with(1, name: 'John').and_return({id: 1, name: 'John', surname: 'Nienaber'})
       person.name = 'John'
 
       expect(person.save).to eq(person)
