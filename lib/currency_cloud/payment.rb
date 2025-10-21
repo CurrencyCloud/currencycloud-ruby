@@ -10,6 +10,10 @@ module CurrencyCloud
       PaymentSubmissionInfo.new(result)
     end
 
+    def retry_notifications(params = {})
+      client.post("#{id}/notifications/retry", params)
+    end
+
     def self.authorise(*ids)
       result = client.post("authorise", payment_ids: ids)['authorisations']
       result.map { |pa| PaymentAuthorisationResult.new(pa) }
