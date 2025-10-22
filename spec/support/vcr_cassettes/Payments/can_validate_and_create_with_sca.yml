@@ -8,7 +8,7 @@ http_interactions:
       string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
     headers:
       User-Agent:
-      - CurrencyCloudSDK/2.0 Ruby/3.0.0
+      - CurrencyCloudSDK/2.0 Ruby/3.1.0
   response:
     status:
       code: 200
@@ -58,7 +58,7 @@ http_interactions:
       X-Auth-Token:
       - a897e685e3a6483a50151431a2593a57
       User-Agent:
-      - CurrencyCloudSDK/2.0 Ruby/3.0.0
+      - CurrencyCloudSDK/2.0 Ruby/3.1.0
   response:
     status:
       code: 200
@@ -111,7 +111,7 @@ http_interactions:
       X-Auth-Token:
       - a897e685e3a6483a50151431a2593a57
       User-Agent:
-      - CurrencyCloudSDK/2.0 Ruby/3.0.0
+      - CurrencyCloudSDK/2.0 Ruby/3.1.0
       x-sca-to-authenticated-user:
       - false
   response:
@@ -169,7 +169,7 @@ http_interactions:
       X-Auth-Token:
       - a897e685e3a6483a50151431a2593a57
       User-Agent:
-      - CurrencyCloudSDK/2.0 Ruby/3.0.0
+      - CurrencyCloudSDK/2.0 Ruby/3.1.0
       x-sca-id:
       - 123e4567-e89b-12d3-a456-426614174000
       x-sca-token:

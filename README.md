@@ -29,6 +29,7 @@ implementations:
 * MRI 3.3
 * MRI 3.4
 * [JRuby][jruby] 9.4.X
+* [JRuby][jruby] 10.0.X
 
 # Usage
 
@@ -161,8 +162,6 @@ Once a feature has been marked as deprecated, we no longer develop the code or i
 
 ### List of features being deprecated
 ```
-2025-07-07
-- Remove support for Ruby versions 2.5, 2.6 and 2.7
 ```
 
 # Security Consideration

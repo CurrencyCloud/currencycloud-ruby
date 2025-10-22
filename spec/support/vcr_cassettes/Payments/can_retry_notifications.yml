@@ -8,14 +8,14 @@ http_interactions:
       string: login_id=development%40currencycloud.com&api_key=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
     headers:
       User-Agent:
-      - CurrencyCloudSDK/2.0 Ruby/3.1.0
+      - CurrencyCloudSDK/2.0 Ruby/2.0.0
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Mon, 16 Jul 2018 09:18:06 GMT
+      - Mon, 16 Jul 2018 09:16:09 GMT
       Content-Type:
       - application/json;charset=utf-8
       Transfer-Encoding:
@@ -23,12 +23,12 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - AWSALB=Eitx/FGN3EPrLRfUj4m3bdN74Evvtb3wuOG1ReBiSPzXZrCa8naOsqZeYE/a84LLcRLWGleKA7X1SHkXyuS2CFNwx2f2VWY8RWJKQWovk7H/twnUy8ZnevMxCGpj; Expires=Mon, 23 Jul 2018 09:18:04 GMT; Path=/
-      - __cfduid=d1061aa9ff939c5be99f1eed8c46f70fc1531732684; expires=Tue, 16-Jul-19 09:18:04 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      - AWSALB=TtAWDo5N+GECcIa4nIynhdsZCM6f+hUyKIlQToVtfMkkjYzMPgDMpTAHL3sktf3Dzch3GjfCEXMuUhHUDzbmrCjTEPF338HaFj6TxT/pbIaZx1gNf+r44S58jEYP; Expires=Mon, 23 Jul 2018 09:16:07 GMT; Path=/
+      - __cfduid=d4c30a2963f6c01ef9b2b3deed1fe1e2b1531732567; expires=Tue, 16-Jul-19 09:16:07 GMT; path=/; domain=.currencycloud.com; HttpOnly
       Access-Control-Allow-Origin:
       - "*"
       X-Request-Id:
-      - 5feb46eb-699b-40c4-8fc7-df9cad60a38b
+      - 0039ce2b-220c-43fc-b20d-63a64bcb71ba
       Access-Control-Allow-Methods:
       - POST
       X-Content-Type-Options:
@@ -42,12 +42,12 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 43b3611d8e33bbba-LHR
+      - 43b35e44e908bbae-LHR
     body:
       encoding: US-ASCII
       string: '{"auth_token":"deadbeefdeadbeefdeadbeefdeadbeef"}'
     http_version:
-  recorded_at: Mon, 16 Jul 2018 09:18:06 GMT
+  recorded_at: Mon, 16 Jul 2018 09:16:09 GMT
 - request:
     method: post
     uri: https://devapi.currencycloud.com/v2/beneficiaries/create
@@ -56,43 +56,43 @@ http_interactions:
       string: bank_account_holder_name=Test%20User&bank_country=GB&currency=GBP&name=Test%20User&account_number=12345678&routing_code_type_1=sort_code&routing_code_value_1=123456
     headers:
       X-Auth-Token:
-      - deadbeefdeadbeefdeadbeefdeadbeef
+        - deadbeefdeadbeefdeadbeefdeadbeef
       User-Agent:
-      - CurrencyCloudSDK/2.0 Ruby/3.1.0
+        - CurrencyCloudSDK/2.0 Ruby/2.0.0
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Mon, 16 Jul 2018 09:18:06 GMT
+        - Mon, 16 Jul 2018 09:18:06 GMT
       Content-Type:
-      - application/json;charset=utf-8
+        - application/json;charset=utf-8
       Transfer-Encoding:
-      - chunked
+        - chunked
       Connection:
-      - keep-alive
+        - keep-alive
       Set-Cookie:
-      - AWSALB=pPddo35SeNLw41e+IDFX3FoFmp29FdYKaDZOAukXSqvkWV5CQ2R3vosq8EnyF0e98f2uPHfbEFtUiFGXO/taiZkht3vyEqNy7wm0/Jsra2kH/2idcJFjuxs1O/Xp; Expires=Mon, 23 Jul 2018 09:18:06 GMT; Path=/
-      - __cfduid=d294a21425beb6795322afff02562d9161531732686; expires=Tue, 16-Jul-19 09:18:06 GMT; path=/; domain=.currencycloud.com; HttpOnly
+        - AWSALB=pPddo35SeNLw41e+IDFX3FoFmp29FdYKaDZOAukXSqvkWV5CQ2R3vosq8EnyF0e98f2uPHfbEFtUiFGXO/taiZkht3vyEqNy7wm0/Jsra2kH/2idcJFjuxs1O/Xp; Expires=Mon, 23 Jul 2018 09:18:06 GMT; Path=/
+        - __cfduid=d294a21425beb6795322afff02562d9161531732686; expires=Tue, 16-Jul-19 09:18:06 GMT; path=/; domain=.currencycloud.com; HttpOnly
       Access-Control-Allow-Origin:
-      - "*"
+        - "*"
       X-Request-Id:
-      - 7d734f24-9714-41d1-a54b-f874a0ecdfb3
+        - 7d734f24-9714-41d1-a54b-f874a0ecdfb3
       Access-Control-Allow-Methods:
-      - POST
+        - POST
       X-Content-Type-Options:
-      - nosniff
+        - nosniff
       Vary:
-      - Origin
+        - Origin
       Access-Control-Allow-Headers:
-      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+        - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
       Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+        - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
-      - cloudflare
+        - cloudflare
       Cf-Ray:
-      - 43b361284b1ebbcc-LHR
+        - 43b361284b1ebbcc-LHR
     body:
       encoding: US-ASCII
       string: '{"id":"fefe1c10-9e62-48d2-9b97-7304bb9e40f4","bank_account_holder_name":"Test
@@ -109,16 +109,67 @@ http_interactions:
       string: currency=GBP&beneficiary_id=fefe1c10-9e62-48d2-9b97-7304bb9e40f4&amount=1000&reason=Testing%20payments&reference=Testing%20payments&payment_type=regular
     headers:
       X-Auth-Token:
-      - deadbeefdeadbeefdeadbeefdeadbeef
+        - deadbeefdeadbeefdeadbeefdeadbeef
       User-Agent:
-      - CurrencyCloudSDK/2.0 Ruby/3.1.0
+        - CurrencyCloudSDK/2.0 Ruby/2.0.0
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Mon, 16 Jul 2018 09:18:07 GMT
+        - Mon, 16 Jul 2018 09:18:07 GMT
+      Content-Type:
+        - application/json;charset=utf-8
+      Transfer-Encoding:
+        - chunked
+      Connection:
+        - keep-alive
+      Set-Cookie:
+        - AWSALB=35mC30qH9ESAuuaxoBcNINoaAFsOZ/mAeJoTgI3k3L1eJkU0XKwJLFpB2AkEdsEM5y4Vxxami7H1eiqhOxK64KhH1U1v03/O64YO27We8J9A4Fdzi5knhIfk2Fha; Expires=Mon, 23 Jul 2018 09:18:06 GMT; Path=/
+        - __cfduid=d4aecdab018d0b197e1136cc064a5c3e61531732686; expires=Tue, 16-Jul-19 09:18:06 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      Access-Control-Allow-Origin:
+        - "*"
+      X-Request-Id:
+        - fdf86e2a-cf9a-4266-96e8-b0f63d188543
+      Access-Control-Allow-Methods:
+        - POST
+      X-Content-Type-Options:
+        - nosniff
+      Vary:
+        - Origin
+      Access-Control-Allow-Headers:
+        - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+      Expect-Ct:
+        - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+        - cloudflare
+      Cf-Ray:
+        - 43b3612b8ae4bbae-LHR
+    body:
+      encoding: US-ASCII
+      string: '{"id":"af7cb12e-56d1-41a9-983d-a47927609e32","amount":"1000.00","beneficiary_id":"fefe1c10-9e62-48d2-9b97-7304bb9e40f4","currency":"GBP","reference":"Testing
+        payments","reason":"Testing payments","status":"ready_to_send","creator_contact_id":"97bd468f-c7bc-446f-ba68-dd8cf2bddef2","payment_type":"regular","payment_date":"2018-07-16","transferred_at":"","authorisation_steps_required":"0","last_updater_contact_id":"97bd468f-c7bc-446f-ba68-dd8cf2bddef2","short_reference":"180716-MWSMWM001","conversion_id":null,"failure_reason":"","payer_id":"08200442-7a72-4260-baa3-041d0535051e","payer_details_source":"account","created_at":"2018-07-16T09:18:07+00:00","updated_at":"2018-07-16T09:18:07+00:00","payment_group_id":null,"unique_request_id":null,"failure_returned_amount":"0.00","ultimate_beneficiary_name":null}'
+    http_version:
+  recorded_at: Mon, 16 Jul 2018 09:18:07 GMT
+- request:
+    method: post
+    uri: https://devapi.currencycloud.com/v2/payments/af7cb12e-56d1-41a9-983d-a47927609e32/notifications/retry
+    body:
+      encoding: US-ASCII
+      string: notification_type=payment_notification
+    headers:
+      X-Auth-Token:
+        - deadbeefdeadbeefdeadbeefdeadbeef
+      User-Agent:
+      - CurrencyCloudSDK/2.0 Ruby/2.0.0
+  response:
+    status:
+      code: 400
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Jul 2018 09:16:11 GMT
       Content-Type:
       - application/json;charset=utf-8
       Transfer-Encoding:
@@ -126,12 +177,12 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - AWSALB=35mC30qH9ESAuuaxoBcNINoaAFsOZ/mAeJoTgI3k3L1eJkU0XKwJLFpB2AkEdsEM5y4Vxxami7H1eiqhOxK64KhH1U1v03/O64YO27We8J9A4Fdzi5knhIfk2Fha; Expires=Mon, 23 Jul 2018 09:18:06 GMT; Path=/
-      - __cfduid=d4aecdab018d0b197e1136cc064a5c3e61531732686; expires=Tue, 16-Jul-19 09:18:06 GMT; path=/; domain=.currencycloud.com; HttpOnly
+      - AWSALB=0ycVcRI0d4yjQb76b0TGmhNAoEzme0BzoMuH525zKBZBhJEnRyw4c2KSoJuy/aduJ9s805MWsQasXWCNxUMOnP6wcv7nvCasjips2FVwZBdtU7Bf6YdbInONHRcE; Expires=Mon, 23 Jul 2018 09:16:10 GMT; Path=/
+      - __cfduid=d2c9daf706da60d2d0e7599a0a68fd2a41531732570; expires=Tue, 16-Jul-19 09:16:10 GMT; path=/; domain=.currencycloud.com; HttpOnly
       Access-Control-Allow-Origin:
       - "*"
       X-Request-Id:
-      - fdf86e2a-cf9a-4266-96e8-b0f63d188543
+      - 2c3d5627-520c-49d0-ac53-66539a814927
       Access-Control-Allow-Methods:
       - POST
       X-Content-Type-Options:
@@ -145,61 +196,60 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 43b3612b8ae4bbae-LHR
+      - 43b35e5368e7bba8-LHR
     body:
       encoding: US-ASCII
-      string: '{"id":"af7cb12e-56d1-41a9-983d-a47927609e32","amount":"1000.00","beneficiary_id":"fefe1c10-9e62-48d2-9b97-7304bb9e40f4","currency":"GBP","reference":"Testing
-        payments","reason":"Testing payments","status":"ready_to_send","creator_contact_id":"97bd468f-c7bc-446f-ba68-dd8cf2bddef2","payment_type":"regular","payment_date":"2018-07-16","transferred_at":"","authorisation_steps_required":"0","last_updater_contact_id":"97bd468f-c7bc-446f-ba68-dd8cf2bddef2","short_reference":"180716-MWSMWM001","conversion_id":null,"failure_reason":"","payer_id":"08200442-7a72-4260-baa3-041d0535051e","payer_details_source":"account","created_at":"2018-07-16T09:18:07+00:00","updated_at":"2018-07-16T09:18:07+00:00","payment_group_id":null,"unique_request_id":null,"failure_returned_amount":"0.00","ultimate_beneficiary_name":null}'
+      string: '{"error_code": "payment_notification_retry_failed","error_messages": {"notification_type": [{"code": "notification_type_not_in_range","message": "notification_type should be in range: payment_ready_to_send_notification, payment_released_notification, payment_failed_notification","params": {"range": "payment_ready_to_send_notification, payment_released_notification, payment_failed_notification"}}]}}'
     http_version:
-  recorded_at: Mon, 16 Jul 2018 09:18:07 GMT
+  recorded_at: Mon, 16 Jul 2018 09:16:11 GMT
 - request:
-    method: get
-    uri: https://devapi.currencycloud.com/v2/payments/af7cb12e-56d1-41a9-983d-a47927609e32/submission_info
+    method: post
+    uri: https://devapi.currencycloud.com/v2/payments/af7cb12e-56d1-41a9-983d-a47927609e32/notifications/retry
     body:
       encoding: US-ASCII
-      string: ''
+      string: notification_type=payment_released_notification
     headers:
       X-Auth-Token:
-      - deadbeefdeadbeefdeadbeefdeadbeef
+        - deadbeefdeadbeefdeadbeefdeadbeef
       User-Agent:
-      - CurrencyCloudSDK/2.0 Ruby/3.1.0
+        - CurrencyCloudSDK/2.0 Ruby/2.0.0
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Mon, 16 Jul 2018 09:18:07 GMT
+        - Mon, 16 Jul 2018 09:18:11 GMT
       Content-Type:
-      - application/json;charset=utf-8
+        - application/json;charset=utf-8
       Transfer-Encoding:
-      - chunked
+        - chunked
       Connection:
-      - keep-alive
+        - keep-alive
       Set-Cookie:
-      - AWSALB=/6jU7TfV1kIoKJzny4kQgKBL1UKQBlKqEmxv7XeGzpNIvXKBNPQCRlYf2ZO9Lb00aY6r9gXQRQllgBwLcGYPy22UCX98x1PG88LpOrtMSUm01Zv4aHzRUueOaI4z; Expires=Mon, 23 Jul 2018 09:18:07 GMT; Path=/
-      - __cfduid=d28f922ef766a399aec7f05f79530e3341531732687; expires=Tue, 16-Jul-19 09:18:07 GMT; path=/; domain=.currencycloud.com; HttpOnly
+        - AWSALB=0ycVcRI0d4yjQb76b0TGmhNAoEzme0BzoMuH525zKBZBhJEnRyw4c2KSoJuy/aduJ9s805MWsQasXWCNxUMOnP6wcv7nvCasjips2FVwZBdtU7Bf6YdbInONHRcE; Expires=Mon, 23 Jul 2018 09:16:10 GMT; Path=/
+        - __cfduid=d2c9daf706da60d2d0e7599a0a68fd2a41531732570; expires=Tue, 16-Jul-19 09:16:10 GMT; path=/; domain=.currencycloud.com; HttpOnly
       Access-Control-Allow-Origin:
-      - "*"
+        - "*"
       X-Request-Id:
-      - 850d1fe4-76f8-4863-b8f3-c764f7b2cef5
+        - 2c3d5627-520c-49d0-ac53-66539a814929
       Access-Control-Allow-Methods:
-      - GET
+        - POST
       X-Content-Type-Options:
-      - nosniff
+        - nosniff
       Vary:
-      - Origin
+        - Origin
       Access-Control-Allow-Headers:
-      - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
+        - authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,X-Auth-Token,Origin,Authority
       Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+        - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
-      - cloudflare
+        - cloudflare
       Cf-Ray:
-      - 43b36130eeeebbe4-LHR
+        - 43b35e5368e7bba8-LHR
     body:
       encoding: US-ASCII
-      string: '{"status":null,"message":null,"format":null,"submission_ref":null}'
+      string: '{}'
     http_version:
-  recorded_at: Mon, 16 Jul 2018 09:18:07 GMT
+  recorded_at: Mon, 16 Jul 2018 09:16:11 GMT
 recorded_with: VCR 4.0.0

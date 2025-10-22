@@ -166,4 +166,19 @@ describe 'Payments', vcr: true do
     expect(payment.reference).to eq("Testing SCA payments")
     expect(payment.reason).to eq 'Testing SCA payments'
   end
+
+  it "can retry notifications" do
+    payment = CurrencyCloud::Payment.create(payment_details)
+    expect(payment).to_not be_nil
+
+    # Fails on invalid notification type
+    begin
+      payment.retry_notifications(notification_type: "payment_notification")
+    rescue CurrencyCloud::BadRequestError => error
+      expect(error.status_code).to eq 400
+    end
+
+    res = payment.retry_notifications(notification_type: "payment_released_notification")
+    expect(res).to_not be_nil
+  end
 end
