@@ -39,8 +39,8 @@ module CurrencyCloud
       PaymentTrackingInfo.new(result)
     end
 
-    def self.validate(params, sca_to_authenticated_user = false)
-      headers = { 'x-sca-to-authenticated-user' => sca_to_authenticated_user.to_s }
+    def self.validate(params, sca_to_authenticated_user = nil)
+      headers = sca_to_authenticated_user.nil? ? {} : { 'x-sca-to-authenticated-user' => sca_to_authenticated_user.to_s }
       opts = { headers: headers, return_response_headers: true }
       body, response_headers = client.post("validate", params, opts)
       PaymentValidationResult.new(body, response_headers)
