@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.licenses = ['MIT']
   s.required_ruby_version = '>= 3.0'
 
-  s.add_dependency('httparty', '~> 0.23.1')
+  s.add_dependency('httparty', '~> 0.24')
   s.add_dependency('json', '>= 2.12.2', '< 2.17.0')
   s.add_dependency('base64', '~> 0.3.0')
 
