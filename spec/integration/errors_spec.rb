@@ -53,7 +53,8 @@ errors:
       expect(0).to eq 1, 'expected exception that was not raised'
     rescue CurrencyCloud::BadRequestError => error
       expect(error.code).to eq('auth_invalid_user_login_details')
-      expect(error.raw_response).to_not be_nil
+      expect(error.raw_response.body).to_not be_nil
+      expect(error.raw_response.body).to_not be_empty
       expect(error.status_code).to eq(400)
       expect(error.messages.length).to eq(1)
 
@@ -74,7 +75,8 @@ errors:
       expect(0).to eq 1, 'expected exception that was not raised'
     rescue CurrencyCloud::AuthenticationError => error
       expect(error.code).to eq('auth_failed')
-      expect(error.raw_response).to_not be_nil
+      expect(error.raw_response.body).to_not be_nil
+      expect(error.raw_response.body).to_not be_empty
       expect(error.status_code).to eq(401)
       expect(error.messages.length).to eq(1)
 
@@ -119,7 +121,8 @@ inner_error: Timeout::Error
       expect(0).to eq 1, 'expected exception that was not raised'
     rescue CurrencyCloud::ForbiddenError => error
       expect(error.code).to eq('auth_failed')
-      expect(error.raw_response).to_not be_nil
+      expect(error.raw_response.body).to_not be_nil
+      expect(error.raw_response.body).to_not be_empty
       expect(error.status_code).to eq(403)
       expect(error.messages.length).to eq(1)
 
@@ -138,7 +141,8 @@ inner_error: Timeout::Error
       expect(0).to eq 1, 'expected exception that was not raised'
     rescue CurrencyCloud::NotFoundError => error
       expect(error.code).to eq('beneficiary_not_found')
-      expect(error.raw_response).to_not be_nil
+      expect(error.raw_response.body).to_not be_nil
+      expect(error.raw_response.body).to_not be_empty
       expect(error.status_code).to eq(404)
       expect(error.messages.length).to eq(1)
 
@@ -156,7 +160,8 @@ inner_error: Timeout::Error
       expect(0).to eq 1, 'expected exception that was not raised'
     rescue CurrencyCloud::InternalApplicationError => error
       expect(error.code).to eq('internal_application_error')
-      expect(error.raw_response).to_not be_nil
+      expect(error.raw_response.body).to_not be_nil
+      expect(error.raw_response.body).to_not be_empty
       expect(error.status_code).to eq(500)
       expect(error.messages.length).to eq(1)
 
@@ -177,7 +182,8 @@ inner_error: Timeout::Error
       expect(0).to eq 1, 'expected exception that was not raised'
     rescue CurrencyCloud::TooManyRequestsError => error
       expect(error.code).to eq('too_many_requests')
-      expect(error.raw_response).to_not be_nil
+      expect(error.raw_response.body).to_not be_nil
+      expect(error.raw_response.body).to_not be_empty
       expect(error.status_code).to eq(429)
       expect(error.messages.length).to eq(1)
 
