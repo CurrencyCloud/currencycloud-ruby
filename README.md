@@ -28,6 +28,7 @@ implementations:
 * MRI 3.2
 * MRI 3.3
 * MRI 3.4
+* MRI 4.0
 * [JRuby][jruby] 9.4.X
 * [JRuby][jruby] 10.0.X
 
