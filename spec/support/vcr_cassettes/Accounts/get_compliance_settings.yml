@@ -49,11 +49,11 @@ http_interactions:
       http_version:
     recorded_at: Mon, 16 Jul 2018 08:20:14 GMT
   - request:
-      method: post
-      uri: https://devapi.currencycloud.com/v2/reference/bank_details/find
+      method: get
+      uri: https://devapi.currencycloud.com/v2/accounts/3e12053j-ae22-40b1-cc4e-cc0230c009a5/compliance_settings
       body:
         encoding: US-ASCII
-        string: 'identifier_type=iban&identifier_value=GB19TCCL00997901654515'
+        string: ''
       headers:
         X-Auth-Token:
           - deadbeefdeadbeefdeadbeefdeadbeef
@@ -95,7 +95,27 @@ http_interactions:
           - 43b30c692e8606d0-LHR
       body:
         encoding: US-ASCII
-        string: '{"identifier_value":"GB19TCCL00997901654515","identifier_type":"iban","account_number":"GB19TCCL00997901654515","bic_swift":"TCCLGB22XXX","bank_name":"THE CURRENCY CLOUD LIMITED","bank_branch":"","bank_address":"12 STEWARD STREET  THE STEWARD BUILDING FLOOR 0","bank_city":"LONDON","bank_state":"LONDON","bank_post_code":"E1 6FQ","bank_country":"UNITED KINGDOM","bank_country_ISO":"GB","currency":null}'
+        string: >-
+          {
+            "account_id": "3e12053j-ae22-40b1-cc4e-cc0230c009a5",
+            "industry_type": "some-type",
+            "country_of_incorporation": "US",
+            "date_of_incorporation": "2020-01-30",
+            "business_website_url": "no_website_available",
+            "expected_transaction_countries": ["US", "GB"],
+            "expected_transaction_currencies": ["GBP"],
+            "expected_monthly_activity_volume": 10,
+            "expected_monthly_activity_value": "30.00",
+            "tax_identification": "some-tax-id",
+            "national_identification": "some-national-id",
+            "country_of_citizenship": "US",
+            "trading_address_street": "some-street",
+            "trading_address_city": "some-city",
+            "trading_address_state": "NY",
+            "trading_address_postalcode": "90210",
+            "trading_address_country": "US",
+            "customer_risk": "LOW"
+          }
       http_version:
     recorded_at: Mon, 16 Jul 2018 08:20:15 GMT
 recorded_with: VCR 4.0.0

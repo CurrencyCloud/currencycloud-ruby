@@ -16,5 +16,14 @@ module CurrencyCloud
       AccountPaymentChargesSetting.new(settings)
     end
 
+    def self.get_compliance_settings(account_id, params={})
+      settings = client.get("#{account_id}/compliance_settings", params)
+      AccountComplianceSetting.new(settings)
+    end
+
+    def self.update_compliance_settings(account_id, params)
+      settings = client.post("#{account_id}/compliance_settings", params)
+      AccountComplianceSetting.new(settings)
+    end
   end
 end
