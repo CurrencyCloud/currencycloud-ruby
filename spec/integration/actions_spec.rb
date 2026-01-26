@@ -149,4 +149,27 @@ describe 'Actions', vcr: true do
     expect(top_up.currency).to eq('GBP')
     expect(top_up.transfer_completed_at).to eq('2007-11-19T08:37:48-06:00')
   end
+
+  it 'can #verify account' do
+    params = {
+      bank_country: 'GB',
+      currency: 'GBP',
+      account_number: '12345678',
+      routing_code_type_1: 'sort_code',
+      routing_code_value_1: '123456',
+      payment_type: 'regular',
+      beneficiary_first_name: 'Test',
+      beneficiary_last_name: 'User',
+      beneficiary_entity_type: 'individual'
+    }
+
+    result = CurrencyCloud::Beneficiary.verify_account(params)
+    expect(result).to be_a_kind_of(CurrencyCloud::BeneficiaryAccountVerificationResult)
+
+    expect(result.answer).to eq('full_match')
+    expect(result.actual_name).to eq('Test User')
+    expect(result.reason).to eq('Full match')
+    expect(result.reason_code).to eq('FMCH')
+    expect(result.reason_type).to eq('okay')
+  end
 end
