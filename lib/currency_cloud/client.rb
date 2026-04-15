@@ -12,6 +12,10 @@ module CurrencyCloud
       request.post(build_url(url), params, opts)
     end
 
+    def put(url, params = {}, opts = {})
+      request.put(build_url(url), params, opts)
+    end
+
     def build_url(url)
       if url && url != '' && url != '/'
         "#{resource}/#{url}"
