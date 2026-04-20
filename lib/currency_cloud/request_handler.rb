@@ -29,6 +29,22 @@ module CurrencyCloud
       end
     end
 
+    def put(route, params = {}, opts = {})
+      return_response_headers = opts.delete(:return_response_headers) || false
+      raw_response = nil
+      response = retry_authenticate('put', route, params, opts) do |url, new_params, options|
+        options[:body] = new_params
+        raw_response = HTTParty.put(url, options)
+        raw_response
+      end
+
+      if return_response_headers
+        [response, raw_response&.headers || {}]
+      else
+        response
+      end
+    end
+
     private
 
     def retry_authenticate(verb, route, params, opts)

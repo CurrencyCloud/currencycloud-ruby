@@ -15,20 +15,20 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 04 Dec 2018 08:20:00 GMT
+      - Sat, 10 Apr 2026 10:00:00 GMT
       Content-Type:
       - text/plain; charset=UTF-8
     body:
       encoding: UTF-8
       string: '{"auth_token":"deadbeefdeadbeefdeadbeef"}'
-    http_version: 
-  recorded_at: Tue, 04 Dec 2018 08:20:00 GMT
+    http_version:
+  recorded_at: Sat, 10 Apr 2026 10:00:00 GMT
 - request:
-    method: get
-    uri: https://devapi.currencycloud.com/v2/transactions/sender/e68301d3-5b04-4c1d-8f8b-13a9b8437040
+    method: put
+    uri: https://devapi.currencycloud.com/v2/collections_screening/cdcca5e6-32fe-45f6-9476-6f8f518e6271/complete
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: accepted=false&reason=suspected_fraud
     headers:
       X-Auth-Token:
       - deadbeefdeadbeefdeadbeef
@@ -40,10 +40,12 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 04 Dec 2018 08:21:22 GMT
+      - Sat, 10 Apr 2026 10:00:01 GMT
+      Content-Type:
+      - application/json
     body:
       encoding: UTF-8
-      string: '{"id":"e68301d3-5b04-4c1d-8f8b-13a9b8437040","amount":"1701.51","currency":"EUR","additional_information":"USTRD-0001","value_date":"2018-07-04T00:00:00+00:00","sender":"FR7615589290001234567890113, CMBRFR2BARK, Debtor, FR, Centre ville","receiving_account_number":null,"receiving_account_iban":"GB99OXPH94665099600083","created_at":"2018-07-04T14:57:38+00:00","updated_at":"2018-07-04T14:57:39+00:00"}'
-    http_version: 
-  recorded_at: Tue, 04 Dec 2018 08:21:22 GMT
+      string: '{"transaction_id":"cdcca5e6-32fe-45f6-9476-6f8f518e6271","account_id":"8b227e8e-7421-51bf-9e65-1ggge51ed2d0","house_account_id":"8b227e8e-7421-51bf-9e65-1ggge51ed2d0","result":{"accepted":false,"reason":"suspected_fraud"}}'
+    http_version:
+  recorded_at: Sat, 10 Apr 2026 10:00:01 GMT
 recorded_with: VCR 3.0.3
