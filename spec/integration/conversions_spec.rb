@@ -8,7 +8,8 @@ describe 'Conversions', vcr: true do
       fixed_side: :buy,
       amount: 95_000,
       reason: 'SDK conversion testing',
-      term_agreement: true
+      term_agreement: true,
+      quote_id: '3c25ce4a-3552-45bb-869e-406c795052aa'
     }
   end
 
