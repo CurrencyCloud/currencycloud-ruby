@@ -194,4 +194,27 @@ inner_error: Timeout::Error
       expect(error_message.params).to be_empty
     end
   end
+
+  it 'handles malformed error_messages as String' do
+    raw_response = double('response',
+      code: 400,
+      parsed_response: {
+        'error_code' => 'invalid_conversion_pair',
+        'error_messages' => 'The conversion pair specified was invalid'
+      },
+      body: '{"error_code":"invalid_conversion_pair","error_messages":"The conversion pair specified was invalid"}',
+      headers: {
+        'Date' => 'Mon, 01 Jan 2024 00:00:00 GMT',
+        'x-request-id' => '12345'
+      }
+    )
+
+    error = CurrencyCloud::BadRequestError.new('get', '/v2/reference/conversion_dates', { conversion_pair: 'CADUSD' }, raw_response)
+
+    expect(error.code).to eq('invalid_conversion_pair')
+    expect(error.messages.length).to eq(1)
+    expect(error.messages[0].field).to eq('base')
+    expect(error.messages[0].code).to eq('invalid_conversion_pair')
+    expect(error.messages[0].message).to eq('The conversion pair specified was invalid')
+  end
 end

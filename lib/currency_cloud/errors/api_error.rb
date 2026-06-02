@@ -36,14 +36,24 @@ module CurrencyCloud
 
       return unless errors['error_messages']
 
-      errors['error_messages'].each do |field, messages|
-        if messages.is_a?(Array)
-          messages.each do |message|
-            @messages << ApiErrorMessage.new(field, message)
+      error_messages = errors['error_messages']
+
+      if error_messages.is_a?(Hash)
+        error_messages.each do |field, messages|
+          if messages.is_a?(Array)
+            messages.each do |message|
+              @messages << ApiErrorMessage.new(field, message)
+            end
+          else
+            @messages << ApiErrorMessage.new(field, messages)
           end
-        else
-          @messages << ApiErrorMessage.new(field, messages)
         end
+      else
+        @messages << ApiErrorMessage.new('base', {
+          'code' => @code,
+          'message' => error_messages.to_s,
+          'params' => {}
+        })
       end
     end
 
