@@ -7,7 +7,16 @@ module CurrencyCloud
     }.freeze
 
     attr_reader :environment, :login_id, :api_key
-    attr_accessor :token, :on_behalf_of
+    attr_accessor :token
+
+    # Stored fiber-local so the shared session can't leak contact context across threads.
+    def on_behalf_of
+      Thread.current[obo_key]
+    end
+
+    def on_behalf_of=(value)
+      Thread.current[obo_key] = value
+    end
 
     def self.validate_environment(environment)
       return if ENVIRONMENTS.key?(environment)
@@ -47,6 +56,10 @@ module CurrencyCloud
     end
 
     private
+
+    def obo_key
+      @obo_key ||= :"cc_on_behalf_of_#{object_id}"
+    end
 
     def validate
       self.class.validate_environment(environment)

@@ -110,5 +110,37 @@ describe CurrencyCloud do
         end
       end.to raise_error(CurrencyCloud::GeneralError, 'contact id for on behalf of is not a UUID')
     end
+
+    it 'rejects a UUID embedded in a larger string' do
+      expect do
+        CurrencyCloud.on_behalf_of('junk-c6ece846-6df1-461d-acaa-b42a6aa74045-?x=1') do
+          raise 'Should raise exception'
+        end
+      end.to raise_error(CurrencyCloud::GeneralError, 'contact id for on behalf of is not a UUID')
+    end
+
+    it 'does not leak the contact context across concurrent threads' do
+      uuid_a = 'c6ece846-6df1-461d-acaa-b42a6aa74045'
+      uuid_b = 'f57b2d33-652c-4589-a8ff-7762add2706d'
+      observed = {}
+      errors = []
+
+      threads = { a: uuid_a, b: uuid_b }.map do |name, uuid|
+        Thread.new do
+          CurrencyCloud.on_behalf_of(uuid) do
+            sleep 0.05 # widen the window for a cross-thread write to be observed
+            observed[name] = CurrencyCloud.session.on_behalf_of
+          end
+        rescue StandardError => e
+          errors << e
+        end
+      end
+      threads.each(&:join)
+
+      expect(errors).to be_empty
+      expect(observed[:a]).to eq(uuid_a)
+      expect(observed[:b]).to eq(uuid_b)
+      expect(CurrencyCloud.session.on_behalf_of).to be_nil
+    end
   end
 end

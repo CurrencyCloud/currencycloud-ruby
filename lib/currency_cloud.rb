@@ -8,7 +8,7 @@ lib_path = File.join(File.dirname(__FILE__), '**/*.*')
 Dir[lib_path].sort.each { |f| require f }
 
 module CurrencyCloud
-  UUID_REGEX = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i
+  UUID_REGEX = /\A[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\z/i
 
   class << self
      attr_accessor :environment, :login_id, :api_key, :token
