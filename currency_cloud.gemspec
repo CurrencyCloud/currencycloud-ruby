@@ -14,11 +14,11 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 3.0'
 
   s.add_dependency('httparty', '~> 0.24')
-  s.add_dependency('json', '>= 2.12.2', '< 2.19.0')
+  s.add_dependency('json', '>= 2.12.2', '< 2.22.0')
   s.add_dependency('base64', '~> 0.3.0')
   s.add_dependency('ostruct', '~> 0.6.3')
 
-  s.add_development_dependency('rake', '~> 13.3.0')
+  s.add_development_dependency('rake', '~> 13.4.2')
   s.add_development_dependency('addressable', '<= 2.9.0')
   s.add_development_dependency('rspec', '~> 3.13.1')
   s.add_development_dependency('vcr', '~> 6.4.0')
